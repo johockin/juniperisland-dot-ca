@@ -32,7 +32,7 @@
       <div class="footer-container">
         <div class="footer-content">
           <div class="footer-logo">
-            <img src="@/assets/logo-white.svg" alt="Juniper Island" class="footer-logo-img">
+            <img src="@/assets/logo.png" alt="Juniper Island" class="footer-logo-img">
           </div>
           <div class="footer-links">
             <div class="footer-nav">
@@ -92,6 +92,8 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Caudex:wght@400;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
 :root {
   --primary-color: #0c2340;
   --secondary-color: #ffffff;
@@ -101,7 +103,7 @@ export default {
   --background-color: #f8f8f8;
   --transition-speed: 0.3s;
   --font-primary: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  --font-secondary: 'EB Garamond', serif;
+  --font-secondary: 'Caudex', serif;
 }
 
 * {

@@ -163,8 +163,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import url('https://fonts.googleapis.com/css2?family=Caudex:wght@400;700&display=swap');
-
 .home {
   padding-top: 0;
   font-family: var(--font-primary);
@@ -241,7 +239,7 @@ export default {
   font-weight: 400;
   line-height: 1.1;
   margin-bottom: 2rem;
-  font-family: 'Caudex', serif !important;
+  font-family: var(--font-secondary);
   color: #e6d08a;
 }
 
