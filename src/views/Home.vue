@@ -9,126 +9,99 @@
       <div class="hero-content">
         <div class="container">
           <h1>TORONTO'S PREMIER VIDEO PRODUCTION COMPANY</h1>
-          <p class="hero-text">Elevating Brands with Visually Compelling Video Content</p>
-          <p class="hero-subtext">Position Your Brand as Industry Leaders with Our Unique Storytelling Approach</p>
-          <router-link to="/contact" class="cta-button">Work with us</router-link>
+          <p class="hero-text">Crafting Compelling Brand Stories Through Video</p>
+          <p class="hero-subtext">We help industry leaders communicate their value through strategic video content</p>
+          <router-link to="/contact" class="cta-button">Let's Create Together</router-link>
+        </div>
+      </div>
+    </section>
+
+    <section class="trusted-by">
+      <div class="container">
+        <h3 class="trusted-title">Trusted By Industry Leaders</h3>
+        <div class="logo-strip">
+          <img src="/src/assets/client-logos.png" alt="Trusted by Industry Leaders" class="logo-strip-img">
         </div>
       </div>
     </section>
 
     <section class="welcome">
       <div class="container">
-        <div class="logo-strip">
-          <img src="/src/assets/logo-strip.png" alt="Client Logos" class="logo-strip-img">
-        </div>
         <div class="welcome-content">
-          <p class="welcome-text">Most brands are doing video for video's sake, entrusting the voice of the brand to the nearest employee with an iPhone.</p>
-          <p class="welcome-text-highlight">But you're not most brands… you know video content can uniquely position your brand, amplify ad impact and establish deep connections with your customers.</p>
+          <p class="welcome-text">In today's digital landscape, video isn't just content—it's the cornerstone of modern brand communication.</p>
+          <p class="welcome-text-highlight">But creating video that truly resonates requires more than just technical expertise. It demands a deep understanding of your brand's story and your audience's needs.</p>
         </div>
-        <div class="newsletter-signup">
-          <div class="signup-icon">
-            <img src="/src/assets/memo.png" alt="Memo" class="memo-icon">
+        <div class="process-guide">
+          <div class="guide-icon">
+            <img src="/src/assets/process-icon.svg" alt="Process Guide" class="process-icon">
           </div>
-          <h3>Discover Our Process—receive a detailed overview of how we transform your brand's story through our video production process.</h3>
-          <form class="signup-form">
-            <input type="email" placeholder="Your work email" class="email-input">
-            <button type="submit" class="submit-button">SUBMIT</button>
+          <h3>Download Our Video Production Process Guide</h3>
+          <p>Learn how we transform your brand's story into compelling video content that drives results.</p>
+          <form class="guide-form">
+            <div class="form-group">
+              <input type="email" placeholder="Your work email" class="email-input" required>
+              <button type="submit" class="submit-button">GET THE GUIDE</button>
+            </div>
+            <div class="form-checkbox">
+              <input type="checkbox" id="newsletter">
+              <label for="newsletter">Subscribe to our monthly video marketing insights</label>
+            </div>
           </form>
-          <div class="newsletter-checkbox">
-            <input type="checkbox" id="newsletter">
-            <label for="newsletter">Also subscribe to our newsletter</label>
-          </div>
-          <p class="thank-you-message">Thank you. We'll be in touch shortly.</p>
         </div>
       </div>
     </section>
 
-    <section class="our-work">
+    <section class="featured-work">
       <div class="container">
-        <div class="work-header">
-          <h2 class="section-title">Our Work</h2>
-          <router-link to="/work" class="view-work-link">></router-link>
+        <div class="section-header">
+          <h2>Featured Work</h2>
+          <router-link to="/work" class="view-all">View All Projects <span class="arrow">→</span></router-link>
         </div>
-        <div class="work-stats">
-          <p class="stat-item">🎬 300+ video projects</p>
-          <p class="stat-item">👀 25 million+ views</p>
-          <p class="stat-item">📺 Broadcast television</p>
-          <p class="stat-item">📸 Instagram</p>
-          <p class="stat-item">🎥 YouTube</p>
-          <p class="stat-item">🎵 TikTok</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="sustainability">
-      <div class="container">
-        <div class="sustainability-grid">
-          <div class="sustainability-item">
-            <img src="/src/assets/bullfrog.png" alt="Bullfrog Power Logo" class="sustainability-logo">
-            <h3>Proudly 100% Bullfrog Powered</h3>
-          </div>
-          <div class="sustainability-item">
-            <img src="/src/assets/green-guide.png" alt="Green Production Guide Logo" class="sustainability-logo">
-            <h3>Our sets voluntarily adhere to the Green Production Guide for on-set sustainability</h3>
+        <div class="work-grid">
+          <div v-for="(project, index) in featuredProjects" :key="index" class="project-card">
+            <div class="project-thumbnail">
+              <img :src="project.thumbnail" :alt="project.title">
+              <div class="project-overlay">
+                <h3>{{ project.title }}</h3>
+                <p>{{ project.category }}</p>
+                <router-link :to="project.link" class="project-link">View Project</router-link>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section class="process">
-      <div class="container">
-        <h2 class="process-title">Here's how...</h2>
-        <div class="process-steps">
-          <div class="process-step">
-            <h2 class="step-number">1.</h2>
-            <h3 class="step-title">Discover & Define</h3>
-            <p class="step-description">We start with a thorough consultation to grasp your brand's specific needs. Delving into your story and market position, we craft a creative direction aligned with your goals.</p>
-          </div>
-          <div class="process-step">
-            <h2 class="step-number">2.</h2>
-            <h3 class="step-title">Create & Craft</h3>
-            <p class="step-description">Our experts turn your narrative into striking video content, covering scriptwriting, storyboarding, filming, and editing, to echo your brand's voice and vision.</p>
-          </div>
-          <div class="process-step">
-            <h2 class="step-number">3.</h2>
-            <h3 class="step-title">Deliver & Drive Impact</h3>
-            <p class="step-description">Deliver the final video content along with a tailored distribution strategy to maximize impact, engagement, and meet your marketing goals.</p>
-          </div>
-        </div>
-        <div class="process-cta">
-          <router-link to="/contact" class="cta-button">Work with us</router-link>
-          <router-link to="/work" class="view-work-button">View Our Work</router-link>
-        </div>
-      </div>
-    </section>
-
-    <section class="testimonial">
-      <div class="container">
-        <div class="testimonial-content">
-          <h3 class="testimonial-quote">"</h3>
-          <p class="testimonial-text">"The Juniper Island team are ideal partners, anticipating our needs and exceeding our expectations at every turn.</p>
-          <p class="testimonial-text">They take time to understand the "why" of everything we're doing, and then put in the work to make sure it's as creative and beautiful as possible."</p>
-          <p class="testimonial-author">Andrew Addison, Vice-President, Communications, Marketing & Membership</p>
-          <p class="testimonial-company">The Canadian Media Producers Association (CMPA)</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="newsletter">
-      <div class="container">
-        <h4 class="newsletter-title">Our quarterly newsletter offers essential insights for brand marketers determined to make a real impact in a saturated market.</h4>
-        <form class="newsletter-form">
-          <input type="email" placeholder="Your work email" class="email-input">
-          <button type="submit" class="submit-button">Subscribe</button>
-        </form>
-        <p class="newsletter-thanks">Thanks for subscribing!</p>
       </div>
     </section>
   </div>
 </template>
 
-<script setup>
-// Component logic will go here
+<script>
+export default {
+  name: 'Home',
+  data() {
+    return {
+      featuredProjects: [
+        {
+          title: 'Brand Story - Tech Innovation',
+          category: 'Corporate Documentary',
+          thumbnail: '/src/assets/projects/tech-innovation.svg',
+          link: '/work/tech-innovation'
+        },
+        {
+          title: 'Product Launch Campaign',
+          category: 'Commercial',
+          thumbnail: '/src/assets/projects/product-launch.svg',
+          link: '/work/product-launch'
+        },
+        {
+          title: 'Leadership Series',
+          category: 'Interview Series',
+          thumbnail: '/src/assets/projects/leadership.svg',
+          link: '/work/leadership-series'
+        }
+      ]
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -141,510 +114,214 @@
 .hero {
   position: relative;
   height: 100vh;
-  min-height: 600px;
-  color: var(--secondary-color);
-  background: var(--primary-color);
+  min-height: 800px;
   overflow: hidden;
+}
 
-  .hero-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
+.hero-background video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+}
 
-    &::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(12, 35, 64, 0.7); /* Navy blue overlay */
-    }
+.hero-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+}
 
-    video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  line-height: 1.2;
+}
 
-  .hero-content {
-    position: relative;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    z-index: 2;
+.hero-text {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
 
-    h1 {
-      font-size: 3.5rem;
-      margin-bottom: 1rem;
-      font-weight: 700;
-      letter-spacing: 0.03em;
-      line-height: 1.1;
-      text-transform: uppercase;
-    }
+.hero-subtext {
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  opacity: 0.9;
+}
 
-    .hero-text {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-      font-weight: 400;
-      line-height: 1.4;
-    }
+.trusted-by {
+  padding: 4rem 0;
+  background: #f8f8f8;
+}
 
-    .hero-subtext {
-      font-size: 1.25rem;
-      margin-bottom: 2rem;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-      font-weight: 300;
-      line-height: 1.4;
-      opacity: 0.9;
-    }
+.trusted-title {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
 
-    .cta-button {
-      margin-top: 1rem;
-    }
-  }
+.logo-strip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-strip-img {
+  max-width: 100%;
+  height: auto;
 }
 
 .welcome {
-  padding: 5rem 0;
-  background: #fff;
-  
-  .logo-strip {
-    text-align: center;
-    margin-bottom: 3rem;
-    
-    .logo-strip-img {
-      max-width: 100%;
-      height: auto;
-    }
-  }
-  
-  .welcome-content {
-    max-width: 800px;
-    margin: 0 auto 3rem;
-    text-align: center;
-    
-    .welcome-text {
-      font-size: 1.5rem;
-      line-height: 1.6;
-      margin-bottom: 1.5rem;
-      color: var(--primary-color);
-    }
-    
-    .welcome-text-highlight {
-      font-size: 1.5rem;
-      line-height: 1.6;
-      color: var(--primary-color);
-      font-weight: 600;
-    }
-  }
-  
-  .newsletter-signup {
-    max-width: 600px;
-    margin: 3rem auto;
-    text-align: center;
-    
-    .signup-icon {
-      margin-bottom: 1rem;
-      
-      .memo-icon {
-        width: 50px;
-        height: auto;
-      }
-    }
-    
-    h3 {
-      margin-bottom: 1.5rem;
-      font-size: 1.25rem;
-      font-weight: 400;
-      line-height: 1.5;
-      color: var(--primary-color);
-    }
-    
-    .signup-form {
-      display: flex;
-      margin-bottom: 1rem;
-      
-      .email-input {
-        flex: 1;
-        padding: 0.75rem 1rem;
-        border: 1px solid #ddd;
-        border-radius: 4px 0 0 4px;
-        font-size: 1rem;
-        font-family: var(--font-primary);
-      }
-      
-      .submit-button {
-        padding: 0.75rem 1.5rem;
-        background: var(--gold-color);
-        color: white;
-        border: none;
-        border-radius: 0 4px 4px 0;
-        font-size: 1rem;
-        font-weight: 600;
-        cursor: pointer;
-        transition: background 0.3s ease;
-        
-        &:hover {
-          background: var(--dark-gold);
-        }
-      }
-    }
-    
-    .newsletter-checkbox {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1rem;
-      font-size: 0.9rem;
-      
-      input {
-        margin-right: 0.5rem;
-      }
-    }
-    
-    .thank-you-message {
-      font-size: 0.9rem;
-      color: green;
-      display: none;
-    }
-  }
+  padding: 6rem 0;
+  background: #ffffff;
 }
 
-.our-work {
-  padding: 5rem 0;
-  background: var(--primary-color);
-  color: var(--secondary-color);
-  
-  .work-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 3rem;
-    
-    .section-title {
-      font-size: 2.5rem;
-      margin: 0;
-      margin-right: 1rem;
-      font-weight: 700;
-      color: var(--secondary-color);
-    }
-    
-    .view-work-link {
-      font-size: 2rem;
-      color: var(--gold-color);
-      text-decoration: none;
-      
-      &:hover {
-        color: var(--light-gold);
-      }
-    }
-  }
-  
-  .work-stats {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    max-width: 800px;
-    margin: 0 auto;
-    
-    .stat-item {
-      flex: 0 0 33.333%;
-      text-align: center;
-      font-size: 1.25rem;
-      margin-bottom: 2rem;
-      padding: 0 1rem;
-      
-      @media (max-width: 768px) {
-        flex: 0 0 50%;
-      }
-      
-      @media (max-width: 576px) {
-        flex: 0 0 100%;
-      }
-    }
-  }
+.welcome-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
 }
 
-.sustainability {
-  padding: 5rem 0;
-  background: #fff;
-
-  .sustainability-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 4rem;
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-
-  .sustainability-item {
-    text-align: center;
-
-    .sustainability-logo {
-      height: 60px;
-      margin-bottom: 1.5rem;
-      object-fit: contain;
-      transition: opacity 0.3s ease;
-
-      &:hover {
-        opacity: 0.8;
-      }
-    }
-
-    h3 {
-      font-size: 1.25rem;
-      line-height: 1.4;
-      font-weight: 300;
-      color: var(--primary-color);
-    }
-  }
+.welcome-text {
+  font-size: 1.8rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: #333;
 }
 
-.process {
-  padding: 5rem 0;
-  background: var(--primary-color);
-  color: var(--secondary-color);
-  
-  .process-title {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    color: var(--secondary-color);
-  }
-  
-  .process-steps {
-    max-width: 1000px;
-    margin: 0 auto 3rem;
-  }
-  
-  .process-step {
-    margin-bottom: 3rem;
-    text-align: center;
-    
-    .step-number {
-      font-size: 3rem;
-      color: var(--gold-color);
-      margin-bottom: 0.5rem;
-    }
-    
-    .step-title {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: var(--secondary-color);
-    }
-    
-    .step-description {
-      max-width: 800px;
-      margin: 0 auto;
-      font-size: 1.1rem;
-      line-height: 1.6;
-      color: rgba(255, 255, 255, 0.9);
-    }
-  }
-  
-  .process-cta {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    
-    @media (max-width: 576px) {
-      flex-direction: column;
-      align-items: center;
-    }
-    
-    .cta-button, .view-work-button {
-      padding: 0.75rem 1.5rem;
-    }
-    
-    .view-work-button {
-      background: transparent;
-      border: 1px solid var(--secondary-color);
-      color: var(--secondary-color);
-      
-      &:hover {
-        background: rgba(255, 255, 255, 0.1);
-      }
-    }
-  }
+.welcome-text-highlight {
+  font-size: 1.8rem;
+  line-height: 1.6;
+  color: #000;
+  font-weight: 600;
 }
 
-.testimonial {
-  padding: 5rem 0;
-  background: #fff;
-  
-  .testimonial-content {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-    position: relative;
-    
-    .testimonial-quote {
-      font-size: 5rem;
-      color: var(--gold-color);
-      margin-bottom: -2rem;
-      line-height: 1;
-    }
-    
-    .testimonial-text {
-      font-size: 1.5rem;
-      line-height: 1.6;
-      margin-bottom: 1rem;
-      font-style: italic;
-      color: var(--primary-color);
-    }
-    
-    .testimonial-author {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: 0.25rem;
-      color: var(--primary-color);
-    }
-    
-    .testimonial-company {
-      font-size: 1rem;
-      color: var(--primary-color);
-      opacity: 0.8;
-    }
-  }
+.process-guide {
+  max-width: 600px;
+  margin: 4rem auto 0;
+  padding: 3rem;
+  background: #f8f8f8;
+  border-radius: 8px;
+  text-align: center;
 }
 
-.newsletter {
-  padding: 5rem 0;
-  background: var(--primary-color);
-  color: var(--secondary-color);
-  
-  .newsletter-title {
-    max-width: 800px;
-    margin: 0 auto 2rem;
-    text-align: center;
-    font-size: 1.25rem;
-    font-weight: 400;
-    line-height: 1.6;
-  }
-  
-  .newsletter-form {
-    display: flex;
-    max-width: 500px;
-    margin: 0 auto 1rem;
-    
-    @media (max-width: 576px) {
-      flex-direction: column;
-    }
-    
-    .email-input {
-      flex: 1;
-      padding: 0.75rem 1rem;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 4px 0 0 4px;
-      font-size: 1rem;
-      font-family: var(--font-primary);
-      color: var(--secondary-color);
-      
-      &::placeholder {
-        color: rgba(255, 255, 255, 0.7);
-      }
-      
-      @media (max-width: 576px) {
-        border-radius: 4px;
-        margin-bottom: 1rem;
-      }
-    }
-    
-    .submit-button {
-      padding: 0.75rem 1.5rem;
-      background: var(--gold-color);
-      color: white;
-      border: none;
-      border-radius: 0 4px 4px 0;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.3s ease;
-      
-      &:hover {
-        background: var(--dark-gold);
-      }
-      
-      @media (max-width: 576px) {
-        border-radius: 4px;
-      }
-    }
-  }
-  
-  .newsletter-thanks {
-    text-align: center;
-    font-size: 0.9rem;
-    color: var(--gold-color);
-    display: none;
-  }
+.guide-form {
+  margin-top: 2rem;
+}
+
+.form-group {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.email-input {
+  flex: 1;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.submit-button {
+  padding: 1rem 2rem;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.featured-work {
+  padding: 6rem 0;
+  background: #f8f8f8;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.project-thumbnail {
+  position: relative;
+}
+
+.project-thumbnail img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-card:hover .project-thumbnail img {
+  transform: scale(1.05);
 }
 
 @media (max-width: 768px) {
-  .hero {
-    .hero-content {
-      h1 {
-        font-size: 2.5rem;
-      }
-
-      .hero-text {
-        font-size: 1.25rem;
-      }
-      
-      .hero-subtext {
-        font-size: 1rem;
-      }
-    }
-  }
-  
-  .welcome {
-    .welcome-content {
-      .welcome-text, .welcome-text-highlight {
-        font-size: 1.25rem;
-      }
-    }
+  .hero-content h1 {
+    font-size: 2.5rem;
   }
 
-  .sustainability {
-    .sustainability-grid {
-      grid-template-columns: 1fr;
-      gap: 3rem;
-    }
+  .hero-text {
+    font-size: 1.4rem;
   }
-  
-  .process {
-    .process-step {
-      .step-number {
-        font-size: 2.5rem;
-      }
-      
-      .step-title {
-        font-size: 1.75rem;
-      }
-      
-      .step-description {
-        font-size: 1rem;
-      }
-    }
+
+  .welcome-text,
+  .welcome-text-highlight {
+    font-size: 1.4rem;
   }
-  
-  .testimonial {
-    .testimonial-content {
-      .testimonial-text {
-        font-size: 1.25rem;
-      }
-    }
+
+  .form-group {
+    flex-direction: column;
+  }
+
+  .work-grid {
+    grid-template-columns: 1fr;
   }
 }
 </style>
