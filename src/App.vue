@@ -20,11 +20,13 @@
       </div>
     </nav>
 
-    <router-view v-slot="{ Component }">
-      <transition name="fade" mode="out-in">
-        <component :is="Component" />
-      </transition>
-    </router-view>
+    <main class="main-content">
+      <router-view v-slot="{ Component }">
+        <transition name="fade" mode="out-in">
+          <component :is="Component" />
+        </transition>
+      </router-view>
+    </main>
 
     <footer class="footer">
       <div class="footer-container">
@@ -91,7 +93,7 @@ export default {
 
 <style>
 :root {
-  --primary-color: #000000;
+  --primary-color: #0c2340;
   --secondary-color: #ffffff;
   --accent-color: #D6BD68;
   --accent-secondary: #ACCED2;
@@ -112,6 +114,17 @@ body {
   font-family: var(--font-primary);
   line-height: 1.6;
   color: var(--text-color);
+  min-height: 100vh;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
 }
 
 .container {
@@ -128,6 +141,7 @@ body {
   z-index: 1000;
   padding: 1.5rem 0;
   transition: all var(--transition-speed) ease;
+  background-color: rgba(12, 35, 64, 0.9);
 }
 
 .navbar.scrolled {
@@ -196,6 +210,7 @@ body {
   background: var(--primary-color);
   color: var(--secondary-color);
   padding: 4rem 0 2rem;
+  margin-top: auto;
 }
 
 .footer-container {

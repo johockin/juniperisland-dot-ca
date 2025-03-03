@@ -108,7 +108,7 @@ export default {
 
 <style scoped>
 .blog {
-  padding-top: 80px;
+  padding-top: 0;
 }
 
 .hero {

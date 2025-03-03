@@ -145,7 +145,7 @@ export default {
 
 <style scoped>
 .contact {
-  padding-top: 80px;
+  padding-top: 0;
 }
 
 .hero {

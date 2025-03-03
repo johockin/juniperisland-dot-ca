@@ -154,7 +154,7 @@ export default {
 
 <style lang="scss" scoped>
 .home {
-  padding-top: 80px;
+  padding-top: 0;
   font-family: var(--font-primary);
   color: var(--text-color);
 }

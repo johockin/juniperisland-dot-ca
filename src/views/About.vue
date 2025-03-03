@@ -129,7 +129,7 @@ export default {
 
 <style scoped>
 .about {
-  padding-top: 80px;
+  padding-top: 0;
 }
 
 .hero {
