@@ -367,6 +367,4 @@
     }
   }
 }
-</style> 
-}
-</style> 
+</style>
