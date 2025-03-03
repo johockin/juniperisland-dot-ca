@@ -7,11 +7,27 @@
         </video>
       </div>
       <div class="hero-content">
-        <div class="container">
-          <h1>TORONTO'S PREMIER VIDEO PRODUCTION COMPANY</h1>
-          <p class="hero-text">Elevating Brands with Visually Compelling Video Content</p>
-          <p class="hero-subtext">Position Your Brand as Industry Leaders with Our Unique Storytelling Approach</p>
-          <a href="#contact" class="cta-button">WORK WITH US</a>
+        <div class="container hero-container">
+          <div class="hero-text-container">
+            <p class="hero-label">TORONTO'S PREMIER VIDEO PRODUCTION COMPANY</p>
+            <h1 class="hero-title">
+              Elevating<br>
+              Brands with<br>
+              Visually<br>
+              Compelling<br>
+              Video Content
+            </h1>
+            <p class="hero-subtext">Position Your Brand as Industry Leaders with<br>Our Unique Storytelling Approach</p>
+            <a href="#contact" class="cta-button">WORK WITH US</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trusted-brands">
+      <div class="container">
+        <div class="brands-grid">
+          <img src="@/assets/client-logos.svg" alt="Trusted brands including Olympus, RedBull, Nike, Dentsu Creative, Riley, Subway" class="brands-image">
         </div>
       </div>
     </section>
@@ -167,6 +183,7 @@ export default {
   height: auto;
   transform: translate(-50%, -50%);
   object-fit: cover;
+  filter: brightness(0.7);
 }
 
 .hero-content {
@@ -175,27 +192,45 @@ export default {
   height: 100%;
   display: flex;
   align-items: center;
-  text-align: center;
   color: #ffffff;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
-.hero-content h1 {
-  font-size: 3.5rem;
-  font-weight: 700;
+.hero-container {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.hero-text-container {
+  text-align: left;
+  max-width: 800px;
+  padding-left: 2rem;
+}
+
+.hero-label {
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-title {
+  font-size: 5rem;
+  font-weight: 400;
+  line-height: 1.1;
   margin-bottom: 2rem;
-  line-height: 1.2;
-}
-
-.hero-text {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
+  font-family: var(--font-secondary);
+  color: #e6d08a;
 }
 
 .hero-subtext {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   margin-bottom: 3rem;
-  opacity: 0.9;
+  line-height: 1.6;
+  font-weight: 300;
 }
 
 .cta-button {
@@ -206,13 +241,32 @@ export default {
   text-decoration: none;
   border-radius: 4px;
   font-weight: 600;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
   text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .cta-button:hover {
   background: var(--dark-gold);
   transform: translateY(-3px);
+}
+
+.trusted-brands {
+  padding: 3rem 0;
+  background-color: #0c2340;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.brands-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.brands-image {
+  max-width: 100%;
+  height: auto;
+  filter: brightness(0.9);
 }
 
 .process-guide-section {
@@ -482,21 +536,28 @@ export default {
   margin: 0 auto;
 }
 
+@media (max-width: 992px) {
+  .hero-title {
+    font-size: 4rem;
+  }
+}
+
 @media (max-width: 768px) {
-  .hero-content h1 {
-    font-size: 2.5rem;
+  .hero-text-container {
+    padding-left: 0;
+    text-align: center;
   }
   
-  .hero-text {
-    font-size: 1.5rem;
+  .hero-title {
+    font-size: 3.5rem;
+  }
+  
+  .hero-label {
+    font-size: 0.9rem;
   }
   
   .hero-subtext {
-    font-size: 1rem;
-  }
-  
-  .message-text, .message-text-highlight {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
   
   .form-group {
