@@ -2,8 +2,8 @@
   <div class="home">
     <section class="hero">
       <div class="hero-background">
-        <video autoplay muted loop playsinline poster="/src/assets/video-thumbnail.jpg">
-          <source src="/src/assets/hero.mp4" type="video/mp4">
+        <video autoplay muted loop playsinline poster="@/assets/video-thumbnail.jpg">
+          <source src="@/assets/hero.mp4" type="video/mp4">
         </video>
       </div>
       <div class="hero-content">
@@ -20,7 +20,7 @@
       <div class="container">
         <h3 class="trusted-title">Trusted By Industry Leaders</h3>
         <div class="logo-strip">
-          <img src="/src/assets/client-logos.png" alt="Trusted by Industry Leaders" class="logo-strip-img">
+          <img src="@/assets/client-logos.svg" alt="Trusted by Industry Leaders" class="logo-strip-img">
         </div>
       </div>
     </section>
@@ -33,7 +33,7 @@
         </div>
         <div class="process-guide">
           <div class="guide-icon">
-            <img src="/src/assets/process-icon.svg" alt="Process Guide" class="process-icon">
+            <img src="@/assets/process-icon.svg" alt="Process Guide" class="process-icon">
           </div>
           <h3>Download Our Video Production Process Guide</h3>
           <p>Learn how we transform your brand's story into compelling video content that drives results.</p>
@@ -60,7 +60,7 @@
         <div class="work-grid">
           <div v-for="(project, index) in featuredProjects" :key="index" class="project-card">
             <div class="project-thumbnail">
-              <img :src="project.thumbnail" :alt="project.title">
+              <img :src="project.thumbnail.replace('/src', '@')" :alt="project.title">
               <div class="project-overlay">
                 <h3>{{ project.title }}</h3>
                 <p>{{ project.category }}</p>
@@ -83,19 +83,19 @@ export default {
         {
           title: 'Brand Story - Tech Innovation',
           category: 'Corporate Documentary',
-          thumbnail: '/src/assets/projects/tech-innovation.svg',
+          thumbnail: '@/assets/projects/tech-innovation.svg',
           link: '/work/tech-innovation'
         },
         {
           title: 'Product Launch Campaign',
           category: 'Commercial',
-          thumbnail: '/src/assets/projects/product-launch.svg',
+          thumbnail: '@/assets/projects/product-launch.svg',
           link: '/work/product-launch'
         },
         {
           title: 'Leadership Series',
           category: 'Interview Series',
-          thumbnail: '/src/assets/projects/leadership.svg',
+          thumbnail: '@/assets/projects/leadership.svg',
           link: '/work/leadership-series'
         }
       ]

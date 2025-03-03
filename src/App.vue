@@ -3,7 +3,7 @@
     <nav class="navbar" :class="{ scrolled: isNavbarScrolled }">
       <div class="navbar-container">
         <router-link to="/" class="logo">
-          <img src="/src/assets/logo.svg" alt="Juniper Island" class="logo-img">
+          <img src="@/assets/logo.svg" alt="Juniper Island" class="logo-img">
         </router-link>
         <div class="nav-links" :class="{ active: isMobileMenuOpen }">
           <router-link to="/" exact @click="closeMobileMenu">Home</router-link>
@@ -30,7 +30,7 @@
       <div class="footer-container">
         <div class="footer-content">
           <div class="footer-logo">
-            <img src="/src/assets/logo-white.svg" alt="Juniper Island" class="footer-logo-img">
+            <img src="@/assets/logo-white.svg" alt="Juniper Island" class="footer-logo-img">
           </div>
           <div class="footer-links">
             <div class="footer-nav">
