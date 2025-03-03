@@ -6,9 +6,9 @@
           <img src="@/assets/logo.png" alt="Juniper Island" />
         </router-link>
         <div class="nav-links">
-          <router-link to="/our-work">Our Work</router-link>
+          <router-link to="/work">Work</router-link>
           <router-link to="/blog">Blog</router-link>
-          <router-link to="/our-work" class="cta-button">Work With Us</router-link>
+          <router-link to="/contact" class="cta-button">Contact</router-link>
         </div>
       </div>
     </nav>
@@ -21,23 +21,26 @@
 
     <footer class="footer">
       <div class="footer-container">
-        <img src="@/assets/logo.png" alt="Juniper Island" class="footer-logo" />
-        <div class="footer-links">
-          <router-link to="/">Home</router-link>
-          <router-link to="/our-work">Our Work</router-link>
-          <router-link to="/blog">Blog</router-link>
+        <div class="footer-content">
+          <img src="@/assets/logo.png" alt="Juniper Island" class="footer-logo" />
+          <div class="footer-links">
+            <router-link to="/">Home</router-link>
+            <router-link to="/work">Work</router-link>
+            <router-link to="/blog">Blog</router-link>
+            <router-link to="/contact">Contact</router-link>
+          </div>
+          <div class="social-links">
+            <a href="https://www.instagram.com/juniper.island/" target="_blank" rel="noopener">
+              <img src="@/assets/instagram.svg" alt="Instagram" />
+            </a>
+            <a href="https://www.linkedin.com/company/juniper-island/" target="_blank" rel="noopener">
+              <img src="@/assets/linkedin.svg" alt="LinkedIn" />
+            </a>
+          </div>
         </div>
-        <div class="social-links">
-          <a href="https://www.facebook.com/JuniperIsland" target="_blank" rel="noopener">
-            <img src="@/assets/facebook.png" alt="Facebook" />
-          </a>
-          <a href="https://www.instagram.com/juniper.island/" target="_blank" rel="noopener">
-            <img src="@/assets/instagram.png" alt="Instagram" />
-          </a>
+        <div class="footer-bottom">
+          <p>&copy; 2024 Juniper Island. All rights reserved.</p>
         </div>
-      </div>
-      <div class="footer-bottom">
-        <p>©2021-2025 Juniper Island.</p>
       </div>
     </footer>
   </div>
@@ -60,8 +63,7 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.98);
   padding: 1rem 0;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 
@@ -77,6 +79,7 @@
   .logo {
     img {
       height: 40px;
+      width: auto;
     }
   }
 
@@ -98,7 +101,7 @@
       &.cta-button {
         background: #000;
         color: #fff;
-        padding: 0.5rem 1.5rem;
+        padding: 0.75rem 1.5rem;
         border-radius: 4px;
         transition: background-color 0.3s ease;
 
@@ -120,14 +123,18 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
+  }
+
+  .footer-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
   }
 
   .footer-logo {
     height: 40px;
+    width: auto;
   }
 
   .footer-links {
@@ -151,6 +158,7 @@
 
     img {
       height: 24px;
+      width: 24px;
       transition: opacity 0.3s ease;
     }
 
@@ -163,6 +171,8 @@
     text-align: center;
     padding-top: 2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.875rem;
+    color: #999;
   }
 }
 
@@ -174,5 +184,30 @@
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    .navbar-container {
+      padding: 0 1rem;
+    }
+
+    .nav-links {
+      gap: 1rem;
+    }
+  }
+
+  .footer {
+    .footer-content {
+      flex-direction: column;
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .footer-links {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
 }
 </style> 
