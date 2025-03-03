@@ -168,8 +168,8 @@ export default {
 
 .hero {
   position: relative;
-  height: 100vh;
-  min-height: 800px;
+  height: 90vh;
+  min-height: 650px;
   overflow: hidden;
 }
 
@@ -222,7 +222,7 @@ export default {
   font-weight: 400;
   line-height: 1.1;
   margin-bottom: 2rem;
-  font-family: var(--font-secondary);
+  font-family: 'Caudex', serif;
   color: #e6d08a;
 }
 
