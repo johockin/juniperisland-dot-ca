@@ -13,23 +13,6 @@
   --font-secondary: 'Caudex', Georgia, serif;
 }
 
-/* Ensure fonts are loaded */
-@font-face {
-  font-family: 'Caudex';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/caudex/v15/esDQ311QOP6BJUr4w_KBv1U.woff2) format('woff2');
-}
-
-@font-face {
-  font-family: 'Caudex';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/caudex/v15/esDT311QOP6BJUrwdteUkZ8DOJKuGA.woff2) format('woff2');
-}
-
 html {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;

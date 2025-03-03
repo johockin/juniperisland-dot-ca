@@ -244,9 +244,11 @@ export default {
   font-weight: 400;
   line-height: 1.1;
   margin-bottom: 1.5rem;
-  font-family: 'Caudex', serif;
+  font-family: 'Caudex', Georgia, serif;
   color: #e6d08a;
   letter-spacing: -0.02em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .hero-subtext {

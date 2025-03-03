@@ -71,6 +71,10 @@ export default {
   },
   mounted() {
     window.addEventListener('scroll', this.handleScroll)
+    const link = document.createElement('link')
+    link.href = 'https://fonts.googleapis.com/css2?family=Caudex:wght@400;700&display=swap'
+    link.rel = 'stylesheet'
+    document.head.appendChild(link)
   },
   beforeUnmount() {
     window.removeEventListener('scroll', this.handleScroll)
