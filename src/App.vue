@@ -66,11 +66,22 @@ export default {
   data() {
     return {
       isNavbarScrolled: false,
-      isMobileMenuOpen: false
+      isMobileMenuOpen: false,
+      fontsLoaded: false
     }
   },
   mounted() {
     window.addEventListener('scroll', this.handleScroll)
+    
+    // Check if fonts are loaded
+    if (document.fonts) {
+      document.fonts.ready.then(() => {
+        this.fontsLoaded = true;
+        console.log('Fonts loaded successfully');
+      }).catch(err => {
+        console.error('Error loading fonts:', err);
+      });
+    }
   },
   beforeUnmount() {
     window.removeEventListener('scroll', this.handleScroll)
