@@ -173,6 +173,26 @@ export default {
   overflow: hidden;
 }
 
+.hero-background {
+  position: relative;
+  height: 100%;
+  width: 100%;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+      url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000000' fill-opacity='0.1' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+    z-index: 1;
+    pointer-events: none;
+  }
+}
+
 .hero-background video {
   position: absolute;
   top: 50%;
@@ -193,7 +213,6 @@ export default {
   display: flex;
   align-items: center;
   color: #ffffff;
-  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .hero-container {
@@ -225,8 +244,9 @@ export default {
   font-weight: 400;
   line-height: 1.1;
   margin-bottom: 1.5rem;
-  font-family: var(--font-secondary);
+  font-family: 'Caudex', serif;
   color: #e6d08a;
+  letter-spacing: -0.02em;
 }
 
 .hero-subtext {
