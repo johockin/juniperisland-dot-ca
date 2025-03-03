@@ -8,9 +8,6 @@
       </div>
       <div class="hero-content">
         <div class="container hero-container">
-          <div class="hero-logo">
-            <img src="@/assets/logo.png" alt="Juniper Island" class="site-logo">
-          </div>
           <div class="hero-text-container">
             <p class="hero-label">TORONTO'S PREMIER VIDEO PRODUCTION COMPANY</p>
             <h1 class="hero-title">
@@ -171,8 +168,8 @@ export default {
 
 .hero {
   position: relative;
-  height: 80vh;
-  min-height: 550px;
+  height: 70vh;
+  min-height: 450px;
   overflow: hidden;
 }
 
@@ -200,52 +197,41 @@ export default {
 }
 
 .hero-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
   width: 100%;
   position: relative;
-}
-
-.hero-logo {
-  position: absolute;
-  top: 20px;
-  left: 0;
-}
-
-.site-logo {
-  height: 40px;
-  width: auto;
 }
 
 .hero-text-container {
   text-align: left;
   max-width: 800px;
   padding-left: 2rem;
-  margin-top: 60px;
+  margin-top: 40px;
 }
 
 .hero-label {
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: 500;
   letter-spacing: 0.05em;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.9);
 }
 
 .hero-title {
-  font-size: 5rem;
+  font-size: 4rem;
   font-weight: 400;
   line-height: 1.1;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   font-family: var(--font-secondary);
   color: #e6d08a;
 }
 
 .hero-subtext {
-  font-size: 1.4rem;
-  margin-bottom: 3rem;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
   line-height: 1.6;
   font-weight: 300;
 }
@@ -500,7 +486,7 @@ export default {
   top: -2rem;
   left: -2rem;
   color: var(--accent-color);
-  font-family: serif;
+  font-family: var(--font-secondary);
 }
 
 .testimonial-content {
@@ -555,7 +541,7 @@ export default {
 
 @media (max-width: 992px) {
   .hero-title {
-    font-size: 4rem;
+    font-size: 3.8rem;
   }
 }
 
@@ -566,7 +552,7 @@ export default {
   }
   
   .hero-title {
-    font-size: 3.5rem;
+    font-size: 3.2rem;
   }
   
   .hero-label {
