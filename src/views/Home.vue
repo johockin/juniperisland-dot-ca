@@ -240,15 +240,16 @@ export default {
 }
 
 .hero-title {
-  font-size: 4rem;
+  font-family: Caudex, serif !important;
+  font-size: 4.5rem;
   font-weight: 400;
   line-height: 1.1;
   margin-bottom: 1.5rem;
-  font-family: 'Caudex', Georgia, serif;
   color: #e6d08a;
   letter-spacing: -0.02em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 .hero-subtext {
