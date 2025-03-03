@@ -1,6 +1,11 @@
 <template>
   <div class="home">
     <section class="hero">
+      <div class="hero-background">
+        <video autoplay muted loop playsinline poster="/src/assets/video-thumbnail.jpg">
+          <source src="/src/assets/hero.mp4" type="video/mp4">
+        </video>
+      </div>
       <div class="hero-content">
         <div class="container">
           <h1>Video Production in Toronto</h1>
@@ -57,9 +62,11 @@
       <div class="container">
         <div class="sustainability-grid">
           <div class="sustainability-item">
+            <img src="/src/assets/bullfrog.png" alt="Bullfrog Power Logo" class="sustainability-logo">
             <h3>Proudly 100% Bullfrog Powered</h3>
           </div>
           <div class="sustainability-item">
+            <img src="/src/assets/green-guide.png" alt="Green Production Guide Logo" class="sustainability-logo">
             <h3>Our sets voluntarily adhere to the Green Production Guide for on-set sustainability</h3>
           </div>
         </div>
@@ -81,17 +88,53 @@
 </script>
 
 <style lang="scss" scoped>
+:root {
+  --primary-color: #000000;
+  --secondary-color: #ffffff;
+  --text-color: #333333;
+  --accent-color: #f8f8f8;
+  --font-primary: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-secondary: 'Georgia', serif;
+}
+
 .home {
-  padding-top: 80px; // Account for fixed navbar
+  padding-top: 80px;
+  font-family: var(--font-primary);
+  color: var(--text-color);
 }
 
 .hero {
   position: relative;
   height: 100vh;
   min-height: 600px;
-  color: #fff;
-  background: #000;
+  color: var(--secondary-color);
+  background: var(--primary-color);
   overflow: hidden;
+
+  .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
 
   .hero-content {
     position: relative;
@@ -99,10 +142,14 @@
     display: flex;
     align-items: center;
     text-align: center;
+    z-index: 2;
 
     h1 {
       font-size: 4rem;
       margin-bottom: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
     }
 
     .hero-text {
@@ -111,20 +158,26 @@
       max-width: 800px;
       margin-left: auto;
       margin-right: auto;
+      font-weight: 300;
+      line-height: 1.4;
     }
 
     .cta-button {
       display: inline-block;
-      background: #fff;
-      color: #000;
+      background: var(--secondary-color);
+      color: var(--primary-color);
       padding: 1rem 2rem;
       border-radius: 4px;
       font-weight: 600;
       text-decoration: none;
-      transition: background-color 0.3s ease;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-size: 1rem;
 
       &:hover {
-        background: #f0f0f0;
+        background: rgba(255, 255, 255, 0.9);
+        transform: translateY(-2px);
       }
     }
   }
@@ -132,12 +185,14 @@
 
 .services {
   padding: 6rem 0;
-  background: #f8f8f8;
+  background: var(--accent-color);
 
   h2 {
     text-align: center;
     font-size: 3rem;
     margin-bottom: 4rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
   }
 
   .services-grid {
@@ -153,11 +208,14 @@
     h3 {
       font-size: 1.5rem;
       margin-bottom: 1rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
     }
 
     p {
       color: #666;
       line-height: 1.6;
+      font-weight: 300;
     }
   }
 }
@@ -169,6 +227,8 @@
     text-align: center;
     font-size: 3rem;
     margin-bottom: 4rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
   }
 
   .video-grid {
@@ -182,9 +242,10 @@
       padding-bottom: 56.25%;
       height: 0;
       margin-bottom: 1.5rem;
-      background: #000;
+      background: var(--primary-color);
       border-radius: 8px;
       overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 
       iframe {
         position: absolute;
@@ -199,12 +260,15 @@
       font-size: 1.5rem;
       margin-bottom: 0.5rem;
       text-align: center;
+      font-weight: 600;
+      letter-spacing: -0.01em;
     }
 
     p {
       color: #666;
       text-align: center;
       line-height: 1.6;
+      font-weight: 300;
     }
   }
 
@@ -214,16 +278,20 @@
 
     .view-more-button {
       display: inline-block;
-      background: #000;
-      color: #fff;
+      background: var(--primary-color);
+      color: var(--secondary-color);
       padding: 1rem 2rem;
       border-radius: 4px;
       font-weight: 600;
       text-decoration: none;
-      transition: background-color 0.3s ease;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-size: 1rem;
 
       &:hover {
         background: #333;
+        transform: translateY(-2px);
       }
     }
   }
@@ -231,7 +299,7 @@
 
 .sustainability {
   padding: 6rem 0;
-  background: #f8f8f8;
+  background: var(--accent-color);
 
   .sustainability-grid {
     display: grid;
@@ -244,42 +312,63 @@
   .sustainability-item {
     text-align: center;
 
+    .sustainability-logo {
+      height: 60px;
+      margin-bottom: 1.5rem;
+      object-fit: contain;
+      transition: opacity 0.3s ease;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
     h3 {
       font-size: 1.25rem;
       line-height: 1.4;
+      font-weight: 300;
+      color: #666;
     }
   }
 }
 
 .cta {
   padding: 6rem 0;
-  background: #000;
-  color: #fff;
+  background: var(--primary-color);
+  color: var(--secondary-color);
   text-align: center;
 
   h2 {
     font-size: 3rem;
     margin-bottom: 1rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
   }
 
   p {
     font-size: 1.25rem;
     margin-bottom: 2rem;
     opacity: 0.8;
+    font-weight: 300;
+    line-height: 1.4;
   }
 
   .cta-button {
     display: inline-block;
-    background: #fff;
-    color: #000;
+    background: var(--secondary-color);
+    color: var(--primary-color);
     padding: 1rem 2rem;
     border-radius: 4px;
     font-weight: 600;
     text-decoration: none;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 1rem;
 
     &:hover {
-      background: #f0f0f0;
+      background: rgba(255, 255, 255, 0.9);
+      transform: translateY(-2px);
     }
   }
 }
