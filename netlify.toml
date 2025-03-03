@@ -3,8 +3,8 @@
   publish = "dist"
   
 [build.environment]
-  NODE_VERSION = "16"
-  NPM_VERSION = "7"
+  NODE_VERSION = "20"
+  NPM_VERSION = "10"
 
 # Production context: all deploys from the Production branch set in your site's
 # deploy contexts will inherit these settings.
