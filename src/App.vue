@@ -3,7 +3,7 @@
     <nav class="navbar">
       <div class="navbar-container">
         <router-link to="/" class="logo">
-          <img src="@/assets/logo.png" alt="Juniper Island" />
+          Juniper Island
         </router-link>
         <div class="nav-links">
           <router-link to="/work">Work</router-link>
@@ -22,7 +22,7 @@
     <footer class="footer">
       <div class="footer-container">
         <div class="footer-content">
-          <img src="@/assets/logo.png" alt="Juniper Island" class="footer-logo" />
+          <div class="footer-brand">Juniper Island</div>
           <div class="footer-links">
             <router-link to="/">Home</router-link>
             <router-link to="/work">Work</router-link>
@@ -30,12 +30,8 @@
             <router-link to="/contact">Contact</router-link>
           </div>
           <div class="social-links">
-            <a href="https://www.instagram.com/juniper.island/" target="_blank" rel="noopener">
-              <img src="@/assets/instagram.svg" alt="Instagram" />
-            </a>
-            <a href="https://www.linkedin.com/company/juniper-island/" target="_blank" rel="noopener">
-              <img src="@/assets/linkedin.svg" alt="LinkedIn" />
-            </a>
+            <a href="https://www.instagram.com/juniper.island/" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.linkedin.com/company/juniper-island/" target="_blank" rel="noopener">LinkedIn</a>
           </div>
         </div>
         <div class="footer-bottom">
@@ -77,10 +73,10 @@
   }
 
   .logo {
-    img {
-      height: 40px;
-      width: auto;
-    }
+    text-decoration: none;
+    color: #000;
+    font-weight: 700;
+    font-size: 1.5rem;
   }
 
   .nav-links {
@@ -132,9 +128,9 @@
     margin-bottom: 3rem;
   }
 
-  .footer-logo {
-    height: 40px;
-    width: auto;
+  .footer-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
   }
 
   .footer-links {
@@ -156,14 +152,14 @@
     display: flex;
     gap: 1rem;
 
-    img {
-      height: 24px;
-      width: 24px;
-      transition: opacity 0.3s ease;
-    }
+    a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s ease;
 
-    a:hover img {
-      opacity: 0.8;
+      &:hover {
+        color: #ccc;
+      }
     }
   }
 

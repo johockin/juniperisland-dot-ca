@@ -1,11 +1,6 @@
 <template>
   <div class="home">
     <section class="hero">
-      <div class="hero-video">
-        <video autoplay loop muted playsinline>
-          <source src="@/assets/hero.mp4" type="video/mp4">
-        </video>
-      </div>
       <div class="hero-content">
         <div class="container">
           <h1>Video Production in Toronto</h1>
@@ -62,11 +57,9 @@
       <div class="container">
         <div class="sustainability-grid">
           <div class="sustainability-item">
-            <img src="@/assets/bullfrog.png" alt="Bullfrog Powered" />
             <h3>Proudly 100% Bullfrog Powered</h3>
           </div>
           <div class="sustainability-item">
-            <img src="@/assets/green-guide.png" alt="Green Production Guide" />
             <h3>Our sets voluntarily adhere to the Green Production Guide for on-set sustainability</h3>
           </div>
         </div>
@@ -97,22 +90,8 @@
   height: 100vh;
   min-height: 600px;
   color: #fff;
+  background: #000;
   overflow: hidden;
-
-  .hero-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-
-    video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
 
   .hero-content {
     position: relative;
@@ -120,7 +99,6 @@
     display: flex;
     align-items: center;
     text-align: center;
-    background: rgba(0, 0, 0, 0.4);
 
     h1 {
       font-size: 4rem;
@@ -265,12 +243,6 @@
 
   .sustainability-item {
     text-align: center;
-
-    img {
-      max-width: 200px;
-      height: auto;
-      margin-bottom: 2rem;
-    }
 
     h3 {
       font-size: 1.25rem;
