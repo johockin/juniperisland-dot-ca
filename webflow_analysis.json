@@ -1,0 +1,138 @@
+{
+  "base_url": "https://juniperisland.webflow.io",
+  "total_pages": 3,
+  "known_pages": [
+    "/",
+    "/our-work",
+    "/blog"
+  ],
+  "pages_data": {
+    "https://juniperisland.webflow.io/": {
+      "title": "juniperisland",
+      "meta_description": "No description",
+      "headings": [
+        "TORONTO'S PREMIER VIDEO PRODUCTION COMPANY",
+        "Elevating Brands with Visually Compelling Video Content",
+        "Proudly 100% Bullfrog Powered",
+        "Our sets voluntarily adhere to the Green Production Guide for on-set sustainability",
+        "Here's how...",
+        "1.",
+        "Discover & Define",
+        "2.",
+        "Create & Craft",
+        "3.",
+        "Deliver & Drive Impact"
+      ]
+    },
+    "https://juniperisland.webflow.io/our-work": {
+      "title": "Our Work",
+      "meta_description": "No description",
+      "headings": [
+        "Discover how we elevate brands with our diverse range of video styles and formats, tailored to make a lasting impact in the competitive marketplace.",
+        "Short Spots and Advertisements",
+        "Branded Content Documentary",
+        "Hosted Personality Videos",
+        "Reels and TikToks"
+      ]
+    },
+    "https://juniperisland.webflow.io/blog": {
+      "title": "404 - Page not found",
+      "meta_description": "The page you are looking for doesn't exist or has been moved.",
+      "headings": [
+        "Page not found"
+      ]
+    }
+  },
+  "assets": {
+    "https://juniperisland.webflow.io/": [
+      "https://cdn.prod.website-files.com/67c20f60581f837224a00859/67c20f84ecc685a529abffb6_Juniper%20Logo%202019%20fb%20alpha_edited_edited.avif",
+      "https://cdn.prod.website-files.com/67c20f60581f837224a00859/67c20f9bc9dad9fa3c84b6b1_1.png",
+      "https://cdn.prod.website-files.com/67c20f60581f837224a00859/67c20f9bc9dad9fa3c84b6b3_2.png",
+      "https://cdn.prod.website-files.com/67c20f60581f837224a00859/67c20f9bc9dad9fa3c84b6b5_3.png",
+      "https://cdn.prod.website-files.com/67c20f60581f837224a00859/67c20f9bc9dad9fa3c84b6b7_4.png",
+      "https://cdn.prod.website-files.com/67c20f60581f837224a00859/67c20f9bc9dad9fa3c84b6b9_5.png",
+      "https://cdn.prod.website-files.com/67c20f60581f837224a00859/67c20f9bc9dad9fa3c84b6bb_6.png",
+      "https://cdn.prod.website-files.com/67c20f60581f837224a00859/67c20fa4b5aa465c86c5da9e_new-img.png",
+      "https://cdn.prod.website-files.com/67c20f60581f837224a00859/67c20fb61f1b8154aff9331a_bullfrogpowered_logo_en_edited_edited.avif",
+      "https://cdn.prod.website-files.com/67c20f60581f837224a00859/67c20fb61f1b8154aff93318_green-production-guide_edited.avif",
+      "https://cdn.prod.website-files.com/62434fa732124a0fb112aab4/62434fa732124a91e612aae8_quote-mark.svg",
+      "https://cdn.prod.website-files.com/67c20f60581f837224a00859/67c20fcbbe8ce6aec42d0d38_dummy-image.jpg",
+      "https://cdn.prod.website-files.com/62434fa732124a0fb112aab4/62434fa732124a91e612aae8_quote-mark.svg",
+      "https://cdn.prod.website-files.com/67c20f60581f837224a00859/67c20fcbbe8ce6aec42d0d38_dummy-image.jpg",
+      "https://cdn.prod.website-files.com/62434fa732124a0fb112aab4/62434fa732124a91e612aae8_quote-mark.svg",
+      "https://cdn.prod.website-files.com/67c20f60581f837224a00859/67c20fcbbe8ce6aec42d0d38_dummy-image.jpg",
+      "https://cdn.prod.website-files.com/62434fa732124a0fb112aab4/62434fa732124a91e612aae8_quote-mark.svg",
+      "https://cdn.prod.website-files.com/67c20f60581f837224a00859/67c20fcbbe8ce6aec42d0d38_dummy-image.jpg",
+      "https://cdn.prod.website-files.com/678fc789c262a699c76a7050/678fcc9d4e447c29d9fb1763_Juniper%20Logo%202019%20fb%20alpha_edited_edited.avif",
+      "https://cdn.prod.website-files.com/67c20f60581f837224a00859/67c20fdb87fa9f62bb837859_Facebook.avif",
+      "https://cdn.prod.website-files.com/67c20f60581f837224a00859/67c20fdb87fa9f62bb837857_Instagram.avif"
+    ],
+    "https://juniperisland.webflow.io/our-work": [
+      "https://cdn.prod.website-files.com/67c20f60581f837224a00859/67c20f84ecc685a529abffb6_Juniper%20Logo%202019%20fb%20alpha_edited_edited.avif",
+      "https://cdn.prod.website-files.com/678fc789c262a699c76a7050/678fcc9d4e447c29d9fb1763_Juniper%20Logo%202019%20fb%20alpha_edited_edited.avif",
+      "https://cdn.prod.website-files.com/67c20f60581f837224a00859/67c20fdb87fa9f62bb837859_Facebook.avif",
+      "https://cdn.prod.website-files.com/67c20f60581f837224a00859/67c20fdb87fa9f62bb837857_Instagram.avif"
+    ]
+  },
+  "forms": {
+    "https://juniperisland.webflow.io/": [
+      {
+        "action": "",
+        "method": "get",
+        "inputs": [
+          {
+            "type": "text",
+            "name": "Your-work-email"
+          },
+          {
+            "type": "submit",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "action": "",
+        "method": "get",
+        "inputs": [
+          {
+            "type": "email",
+            "name": "Hero-Email"
+          },
+          {
+            "type": "submit",
+            "name": ""
+          }
+        ]
+      }
+    ]
+  },
+  "scripts": {
+    "https://juniperisland.webflow.io/": [
+      "https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=67c20f60581f837224a00859",
+      "https://cdn.prod.website-files.com/67c20f60581f837224a00859/js/webflow.schunk.02e5214ae639960c.js",
+      "https://cdn.prod.website-files.com/67c20f60581f837224a00859/js/webflow.schunk.d6f45dac261143bb.js",
+      "https://cdn.prod.website-files.com/67c20f60581f837224a00859/js/webflow.e9f171aa.d3acb988a9839950.js"
+    ],
+    "https://juniperisland.webflow.io/our-work": [
+      "https://player.vimeo.com/api/player.js",
+      "https://player.vimeo.com/api/player.js",
+      "https://player.vimeo.com/api/player.js",
+      "https://player.vimeo.com/api/player.js",
+      "https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=67c20f60581f837224a00859",
+      "https://cdn.prod.website-files.com/67c20f60581f837224a00859/js/webflow.schunk.02e5214ae639960c.js",
+      "https://cdn.prod.website-files.com/67c20f60581f837224a00859/js/webflow.schunk.d6f45dac261143bb.js",
+      "https://cdn.prod.website-files.com/67c20f60581f837224a00859/js/webflow.2e647129.fc0ad8fbd8353708.js"
+    ]
+  },
+  "styles": {
+    "https://juniperisland.webflow.io/": [
+      "https://cdn.prod.website-files.com/67c20f60581f837224a00859/css/juniperisland.webflow.eaf190e84.css"
+    ],
+    "https://juniperisland.webflow.io/our-work": [
+      "https://cdn.prod.website-files.com/67c20f60581f837224a00859/css/juniperisland.webflow.eaf190e84.css"
+    ],
+    "https://juniperisland.webflow.io/blog": [
+      "https://d3e54v103j8qbb.cloudfront.net/css/webflow-https-errors.webflow.css"
+    ]
+  }
+}
