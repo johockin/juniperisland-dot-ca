@@ -8,6 +8,9 @@
       </div>
       <div class="hero-content">
         <div class="container hero-container">
+          <div class="hero-logo">
+            <img src="@/assets/logo.png" alt="Juniper Island" class="site-logo">
+          </div>
           <div class="hero-text-container">
             <p class="hero-label">TORONTO'S PREMIER VIDEO PRODUCTION COMPANY</p>
             <h1 class="hero-title">
@@ -160,6 +163,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import url('https://fonts.googleapis.com/css2?family=Caudex:wght@400;700&display=swap');
+
 .home {
   padding-top: 0;
   font-family: var(--font-primary);
@@ -168,8 +173,8 @@ export default {
 
 .hero {
   position: relative;
-  height: 90vh;
-  min-height: 650px;
+  height: 80vh;
+  min-height: 550px;
   overflow: hidden;
 }
 
@@ -198,14 +203,28 @@ export default {
 
 .hero-container {
   display: flex;
+  flex-direction: column;
   justify-content: flex-start;
   width: 100%;
+  position: relative;
+}
+
+.hero-logo {
+  position: absolute;
+  top: 20px;
+  left: 0;
+}
+
+.site-logo {
+  height: 40px;
+  width: auto;
 }
 
 .hero-text-container {
   text-align: left;
   max-width: 800px;
   padding-left: 2rem;
+  margin-top: 60px;
 }
 
 .hero-label {
@@ -222,7 +241,7 @@ export default {
   font-weight: 400;
   line-height: 1.1;
   margin-bottom: 2rem;
-  font-family: 'Caudex', serif;
+  font-family: 'Caudex', serif !important;
   color: #e6d08a;
 }
 

@@ -3,7 +3,7 @@
     <nav class="navbar" :class="{ scrolled: isNavbarScrolled }">
       <div class="navbar-container">
         <router-link to="/" class="logo">
-          <img src="@/assets/logo.svg" alt="Juniper Island" class="logo-img">
+          <img src="@/assets/logo.png" alt="Juniper Island" class="logo-img">
         </router-link>
         <div class="nav-links" :class="{ active: isMobileMenuOpen }">
           <router-link to="/" exact @click="closeMobileMenu">Home</router-link>
