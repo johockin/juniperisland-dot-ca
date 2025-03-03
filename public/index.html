@@ -7,9 +7,26 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caudex:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      /* Ensure fonts are loaded before rendering */
+      .wf-loading {
+        visibility: hidden;
+      }
+      .wf-active {
+        visibility: visible;
+      }
+      /* Force Caudex font to load */
+      .preload-font {
+        font-family: 'Caudex', serif;
+        position: absolute;
+        left: -9999px;
+      }
+    </style>
     <title>Juniper Island</title>
   </head>
   <body>
+    <div class="preload-font">.</div>
     <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
   </body>

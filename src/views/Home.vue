@@ -240,7 +240,7 @@ export default {
 }
 
 .hero-title {
-  font-family: Caudex, serif !important;
+  font-family: 'Caudex', Georgia, serif;
   font-size: 4.5rem;
   font-weight: 400;
   line-height: 1.1;
@@ -250,6 +250,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  visibility: visible !important;
 }
 
 .hero-subtext {

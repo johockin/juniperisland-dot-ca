@@ -92,7 +92,7 @@ export default {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Caudex:wght@400;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import '@/assets/styles/fonts.scss';
 
 :root {
   --primary-color: #0c2340;
@@ -103,7 +103,7 @@ export default {
   --background-color: #f8f8f8;
   --transition-speed: 0.3s;
   --font-primary: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  --font-secondary: 'Caudex', serif;
+  --font-secondary: 'Caudex', Georgia, serif;
 }
 
 * {
