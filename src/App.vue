@@ -93,10 +93,13 @@ export default {
 :root {
   --primary-color: #000000;
   --secondary-color: #ffffff;
-  --accent-color: #4A90E2;
+  --accent-color: #D6BD68;
+  --accent-secondary: #ACCED2;
   --text-color: #333333;
   --background-color: #f8f8f8;
   --transition-speed: 0.3s;
+  --font-primary: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --font-secondary: 'EB Garamond', serif;
 }
 
 * {
@@ -106,7 +109,7 @@ export default {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: var(--font-primary);
   line-height: 1.6;
   color: var(--text-color);
 }
@@ -168,6 +171,8 @@ body {
   background: var(--accent-color);
   border-radius: 4px;
   font-weight: 600;
+  color: var(--primary-color) !important;
+  box-shadow: 4px 4px 0 var(--accent-secondary);
 }
 
 .mobile-menu-toggle {
@@ -252,7 +257,17 @@ body {
   padding-top: 2rem;
   text-align: center;
   font-size: 0.9rem;
-  opacity: 0.8;
+  opacity: 0.7;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 
 @media (max-width: 768px) {
@@ -265,17 +280,19 @@ body {
     background: var(--primary-color);
     flex-direction: column;
     justify-content: center;
-    transform: translateX(-100%);
+    transform: translateY(-100%);
     transition: transform var(--transition-speed) ease;
+    z-index: 999;
   }
 
   .nav-links.active {
-    transform: translateX(0);
+    transform: translateY(0);
   }
 
   .mobile-menu-toggle {
     display: block;
-    z-index: 1001;
+    position: relative;
+    z-index: 1000;
   }
 
   .mobile-menu-toggle.active span:nth-child(1) {
@@ -293,21 +310,10 @@ body {
   .footer-content {
     grid-template-columns: 1fr;
     gap: 2rem;
-    text-align: center;
   }
 
   .footer-contact {
-    text-align: center;
+    text-align: left;
   }
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity var(--transition-speed) ease;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
 }
 </style> 

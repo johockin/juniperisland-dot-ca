@@ -51,6 +51,47 @@
       </div>
     </section>
 
+    <section class="services">
+      <div class="container">
+        <div class="section-header">
+          <h2>Our Services</h2>
+        </div>
+        <div class="services-content">
+          <div class="service-item">
+            <h3>Brand Storytelling</h3>
+            <p>We craft authentic narratives that connect with your audience and communicate your unique value proposition.</p>
+          </div>
+          <div class="service-item">
+            <h3>Commercial Production</h3>
+            <p>High-impact video content designed to drive conversions and elevate your brand presence.</p>
+          </div>
+          <div class="service-item">
+            <h3>Corporate Documentaries</h3>
+            <p>In-depth explorations of your company's journey, culture, and impact in the industry.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <div class="container">
+        <div class="section-header">
+          <h2>What Our Clients Say</h2>
+        </div>
+        <div class="testimonial-slider">
+          <div class="testimonial-item">
+            <div class="quote">"</div>
+            <h3>Transformed Our Brand Perception</h3>
+            <p>Juniper Island's strategic approach to video storytelling helped us communicate our complex services in a way that resonates with our target audience. The results have exceeded our expectations.</p>
+            <div class="client-info">
+              <p class="client-name">Sarah Johnson</p>
+              <p class="client-title">Marketing Director, TechSolutions Inc.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="featured-work">
       <div class="container">
         <div class="section-header">
@@ -60,7 +101,7 @@
         <div class="work-grid">
           <div v-for="(project, index) in featuredProjects" :key="index" class="project-card">
             <div class="project-thumbnail">
-              <img :src="project.thumbnail.replace('/src', '@')" :alt="project.title">
+              <img :src="project.thumbnail" :alt="project.title">
               <div class="project-overlay">
                 <h3>{{ project.title }}</h3>
                 <p>{{ project.category }}</p>
@@ -69,6 +110,13 @@
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="contact-cta">
+      <div class="container">
+        <h2>Ready to elevate your brand with strategic video content?</h2>
+        <router-link to="/contact" class="cta-button">Let's Talk</router-link>
       </div>
     </section>
   </div>
@@ -83,19 +131,19 @@ export default {
         {
           title: 'Brand Story - Tech Innovation',
           category: 'Corporate Documentary',
-          thumbnail: '@/assets/projects/tech-innovation.svg',
+          thumbnail: require('@/assets/projects/tech-innovation.svg'),
           link: '/work/tech-innovation'
         },
         {
           title: 'Product Launch Campaign',
           category: 'Commercial',
-          thumbnail: '@/assets/projects/product-launch.svg',
+          thumbnail: require('@/assets/projects/product-launch.svg'),
           link: '/work/product-launch'
         },
         {
           title: 'Leadership Series',
           category: 'Interview Series',
-          thumbnail: '@/assets/projects/leadership.svg',
+          thumbnail: require('@/assets/projects/leadership.svg'),
           link: '/work/leadership-series'
         }
       ]
@@ -242,6 +290,66 @@ export default {
   font-weight: 600;
 }
 
+.services {
+  padding: 6rem 0;
+  background: #f8f8f8;
+}
+
+.services-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.service-item {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.service-item h3 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.testimonials {
+  padding: 6rem 0;
+  background: #fff;
+}
+
+.testimonial-item {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem;
+  background: #f8f8f8;
+  border-radius: 8px;
+  position: relative;
+}
+
+.quote {
+  font-size: 6rem;
+  position: absolute;
+  top: -20px;
+  left: 20px;
+  color: #ddd;
+  font-family: serif;
+}
+
+.client-info {
+  margin-top: 2rem;
+}
+
+.client-name {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.client-title {
+  color: #666;
+}
+
 .featured-work {
   padding: 6rem 0;
   background: #f8f8f8;
@@ -254,9 +362,19 @@ export default {
   margin-bottom: 3rem;
 }
 
+.view-all {
+  color: #000;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.arrow {
+  margin-left: 0.5rem;
+}
+
 .work-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 2rem;
 }
 
@@ -264,16 +382,18 @@ export default {
   position: relative;
   overflow: hidden;
   border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .project-thumbnail {
   position: relative;
+  height: 300px;
 }
 
 .project-thumbnail img {
   width: 100%;
-  height: auto;
-  transition: transform 0.3s ease;
+  height: 100%;
+  object-fit: cover;
 }
 
 .project-overlay {
@@ -282,46 +402,93 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0,0,0,0.7);
+  color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   opacity: 0;
   transition: opacity 0.3s ease;
-  color: #fff;
-  text-align: center;
-  padding: 2rem;
 }
 
 .project-card:hover .project-overlay {
   opacity: 1;
 }
 
-.project-card:hover .project-thumbnail img {
-  transform: scale(1.05);
+.project-overlay h3 {
+  margin-bottom: 0.5rem;
+}
+
+.project-overlay p {
+  margin-bottom: 1.5rem;
+  opacity: 0.8;
+}
+
+.project-link {
+  padding: 0.75rem 1.5rem;
+  background: #fff;
+  color: #000;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.contact-cta {
+  padding: 6rem 0;
+  background: #000;
+  color: #fff;
+  text-align: center;
+}
+
+.contact-cta h2 {
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  font-size: 2.5rem;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: #fff;
+  color: #000;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #f0f0f0;
 }
 
 @media (max-width: 768px) {
   .hero-content h1 {
     font-size: 2.5rem;
   }
-
+  
   .hero-text {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
-
-  .welcome-text,
-  .welcome-text-highlight {
-    font-size: 1.4rem;
+  
+  .hero-subtext {
+    font-size: 1rem;
   }
-
+  
+  .welcome-text, .welcome-text-highlight {
+    font-size: 1.5rem;
+  }
+  
   .form-group {
     flex-direction: column;
   }
-
+  
   .work-grid {
     grid-template-columns: 1fr;
+  }
+  
+  .contact-cta h2 {
+    font-size: 2rem;
   }
 }
 </style>
