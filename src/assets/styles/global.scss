@@ -341,7 +341,7 @@ button {
 /* Layout Components */
 .hero {
   position: relative;
-  height: 95vh;
+  height: 100vh;
   min-height: 800px;
   overflow: hidden;
   display: grid;
@@ -385,7 +385,7 @@ button {
     height: auto;
     transform: translate(-50%, -50%);
     object-fit: cover;
-    filter: brightness(0.75) contrast(1.1);
+    filter: brightness(0.75) contrast(1.15);
   }
 }
 
@@ -396,38 +396,37 @@ button {
   grid-row: 2 / span 9;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(8, 1fr);
-  gap: 3rem;
+  grid-template-rows: repeat(12, 1fr);
+  gap: 2.5rem;
 }
 
 .hero-text-container {
-  grid-column: 1 / span 10;
-  grid-row: 2 / span 5;
+  grid-column: 1 / span 11;
+  grid-row: 2 / span 8;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .hero-label {
   font-size: 1rem;
   font-weight: 500;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.15em;
   margin-bottom: 3rem;
   text-transform: uppercase;
   color: var(--light-gold);
   font-family: var(--font-primary);
-  opacity: 0.9;
-  max-width: 24ch;
+  opacity: 0.95;
 }
 
 .hero-title {
   font-family: var(--font-secondary);
-  font-size: 12rem;
+  font-size: 11rem;
   font-weight: 400;
   line-height: 0.9;
-  margin-bottom: 4rem;
+  margin-bottom: 3.5rem;
   color: var(--light-gold);
-  letter-spacing: -0.04em;
+  letter-spacing: -0.03em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -435,26 +434,25 @@ button {
 }
 
 .hero-subtext {
-  font-size: 1.4rem;
+  font-size: 2rem;
   margin-bottom: 4rem;
   line-height: 1.4;
   font-weight: 300;
-  max-width: 32ch;
+  max-width: 800px;
   font-family: var(--font-primary);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
   color: var(--light-gold);
-  opacity: 0.9;
+  opacity: 0.95;
 }
 
 .hero-cta-container {
   grid-column: 1 / span 4;
-  grid-row: 6 / span 2;
+  grid-row: 10 / span 2;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2.5rem;
   justify-content: flex-start;
   position: relative;
-  margin-top: 2rem;
 }
 
 .hero-cta-text {
@@ -475,11 +473,17 @@ button {
   height: 100%;
   pointer-events: none;
   z-index: 1;
-  opacity: 0.05;
+  opacity: 0.06;
   background-image: 
     linear-gradient(to right, var(--accent-color) 1px, transparent 1px),
     linear-gradient(to bottom, var(--accent-color) 1px, transparent 1px);
   background-size: 12rem 12rem;
+}
+
+@media (max-width: 1400px) {
+  .hero-title {
+    font-size: 9rem;
+  }
 }
 
 @media (max-width: 992px) {
@@ -489,6 +493,7 @@ button {
 
   .hero-content {
     grid-column: 1 / -1;
+    grid-template-columns: repeat(6, 1fr);
     gap: 2rem;
   }
 
@@ -498,38 +503,40 @@ button {
   }
 
   .hero-title {
-    font-size: 8rem;
-  }
-
-  .hero-label {
-    font-size: 0.9rem;
-    margin-bottom: 2rem;
-  }
-
-  .hero-subtext {
-    font-size: 1.2rem;
-    margin-bottom: 3rem;
+    font-size: 7rem;
   }
 
   .hero-cta-container {
-    grid-column: 1 / span 6;
-    margin-top: 1rem;
+    grid-column: 1 / span 3;
+    margin-top: 2rem;
   }
 }
 
 @media (max-width: 768px) {
   .hero {
     padding: 2rem;
+    height: auto;
     min-height: 100vh;
   }
 
+  .hero-text-container {
+    text-align: left;
+    padding: 0;
+  }
+
   .hero-title {
-    font-size: 5rem;
+    font-size: 4.5rem;
     margin-bottom: 2rem;
   }
 
-  .hero-text-container {
-    padding: 0;
+  .hero-subtext {
+    font-size: 1.4rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-cta-container {
+    grid-column: 1 / -1;
+    margin-top: 1rem;
   }
 
   .technical-overlay {
