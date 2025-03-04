@@ -57,19 +57,7 @@
       </div>
     </section>
 
-    <section class="brand-message">
-      <div class="container">
-        <div class="message-content">
-          <p class="message-text">
-            Most brands are doing video for video's sake, entrusting the voice of the brand to the nearest employee with an iPhone.
-          </p>
-          <p class="message-text-highlight">
-            But you're not most brands… you know video content can uniquely position your brand, amplify ad impact and establish deep connections with your customers.
-          </p>
-          <a href="/our-work" class="view-work-link">View Our Work →</a>
-        </div>
-      </div>
-    </section>
+
 
     <section class="stats-section">
       <div class="container">
@@ -190,43 +178,6 @@ export default {
   align-items: center;
 }
 
-.hero-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: 
-      linear-gradient(135deg, rgba(6, 29, 32, 0.85), rgba(6, 29, 32, 0.75)),
-      url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03' fill-rule='evenodd'%3E%3Cpath d='M0 0h80v80H0V0zm40 40h40v40H40V40zM0 40h40v40H0V40z'/%3E%3C/g%3E%3C/svg%3E");
-    background-size: 100% 100%, 80px 80px;
-    z-index: 1;
-    pointer-events: none;
-    backdrop-filter: blur(1px);
-  }
-}
-
-.hero-background video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  transform: translate(-50%, -50%);
-  object-fit: cover;
-  filter: brightness(0.8) contrast(1.1);
-}
-
 .hero-content {
   position: relative;
   z-index: 2;
@@ -265,7 +216,7 @@ export default {
   font-weight: 400;
   line-height: 1.1;
   margin-bottom: 1.5rem;
-  color: #e6d08a;
+  color: var(--light-gold);
   letter-spacing: -0.02em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
