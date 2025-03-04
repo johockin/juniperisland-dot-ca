@@ -27,7 +27,7 @@
     <section class="trusted-brands">
       <div class="container">
         <div class="brands-grid">
-          <img src="@/assets/client-logos.svg" alt="Trusted brands including Olympus, RedBull, Nike, Dentsu Creative, Riley, Subway" class="brands-image">
+          <img src="@/assets/logo-strip.png" alt="Trusted brands including Olympus, RedBull, Nike, Dentsu Creative, Riley, Subway" class="brands-image">
         </div>
       </div>
     </section>
@@ -288,12 +288,18 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 1rem 0;
 }
 
 .brands-image {
   max-width: 100%;
   height: auto;
-  filter: brightness(0.9);
+  filter: brightness(0.9) grayscale(100%);
+  transition: filter 0.3s ease;
+
+  &:hover {
+    filter: brightness(1) grayscale(0%);
+  }
 }
 
 .process-guide-section {
