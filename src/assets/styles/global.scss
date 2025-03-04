@@ -76,22 +76,73 @@ a:hover {
 .cta-button, .view-more-button, .submit-button {
   font-family: var(--font-accent);
   display: inline-block;
-  background: linear-gradient(135deg, var(--gold-color), var(--dark-gold));
-  color: var(--secondary-color);
-  padding: 1rem 2rem;
-  border-radius: 4px;
-  font-weight: 600;
+  background: transparent;
+  color: var(--accent-color);
+  padding: 0.8rem 1.8rem;
+  border-radius: 2px;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  transition: all 0.3s ease;
-  border: none;
-  box-shadow: 0 4px 15px rgba(184, 134, 11, 0.2);
-}
+  letter-spacing: 0.08em;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid var(--accent-color);
+  position: relative;
+  overflow: hidden;
+  font-size: 0.9rem;
+  min-width: 160px;
+  text-align: center;
 
-.cta-button:hover, .view-more-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(184, 134, 11, 0.3);
-  background: linear-gradient(135deg, var(--dark-gold), var(--gold-color));
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(74, 158, 74, 0.1),
+      transparent
+    );
+    transition: 0.5s;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      135deg,
+      transparent 0%,
+      rgba(74, 158, 74, 0.05) 50%,
+      transparent 100%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover {
+    background: rgba(74, 158, 74, 0.05);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(74, 158, 74, 0.15);
+    border-color: var(--accent-secondary);
+
+    &::before {
+      left: 100%;
+    }
+
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(74, 158, 74, 0.1);
+  }
 }
 
 img {
@@ -630,24 +681,52 @@ button {
 
   .nav-contact-button {
     display: inline-block;
-    padding: 0.5rem 1.25rem;
+    padding: 0.4rem 1rem;
     background: transparent;
-    border: 1px solid var(--light-gold);
-    color: var(--light-gold);
-    border-radius: 4px;
-    font-size: 0.9rem;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    border-radius: 2px;
+    font-size: 0.8rem;
     font-weight: 500;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     margin-left: 1.5rem;
-    backdrop-filter: blur(5px);
+    position: relative;
+    overflow: hidden;
+    min-width: 120px;
+    text-align: center;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(74, 158, 74, 0.05),
+        transparent
+      );
+      transition: 0.5s;
+    }
 
     &:hover {
-      background: var(--light-gold);
-      color: var(--primary-color);
+      background: rgba(74, 158, 74, 0.03);
       transform: translateY(-1px);
-      box-shadow: 0 4px 15px rgba(255, 215, 0, 0.2);
+      box-shadow: 0 2px 8px rgba(74, 158, 74, 0.1);
+      border-color: var(--accent-secondary);
+
+      &::before {
+        left: 100%;
+      }
+    }
+
+    &:active {
+      transform: translateY(0);
+      box-shadow: 0 1px 4px rgba(74, 158, 74, 0.05);
     }
   }
 }
