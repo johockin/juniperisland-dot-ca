@@ -22,6 +22,14 @@
       </div>
     </section>
 
+    <section class="trusted-brands">
+      <div class="container">
+        <div class="brands-grid">
+          <img src="@/assets/logo-strip.png" alt="Trusted brands including Olympus, RedBull, Nike, Dentsu Creative, Riley, Subway" class="brands-image">
+        </div>
+      </div>
+    </section>
+
     <!-- Value Proposition Section -->
     <section class="value-proposition">
       <div class="value-content">
@@ -45,14 +53,6 @@
 
         <div class="value-cta">
           <a href="/work" class="cta-button">See Our Work</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="trusted-brands">
-      <div class="container">
-        <div class="brands-grid">
-          <img src="@/assets/logo-strip.png" alt="Trusted brands including Olympus, RedBull, Nike, Dentsu Creative, Riley, Subway" class="brands-image">
         </div>
       </div>
     </section>
