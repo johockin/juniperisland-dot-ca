@@ -25,7 +25,9 @@
     <section class="trusted-brands">
       <div class="container">
         <div class="brands-grid">
-          <img src="@/assets/logo-strip.png" alt="Trusted brands including Olympus, RedBull, Nike, Dentsu Creative, Riley, Subway" class="brands-image">
+          <router-link to="/work" class="brands-image-container">
+            <img src="@/assets/logo-strip.png" alt="Trusted brands including Olympus, RedBull, Nike, Dentsu Creative, Riley, Subway" class="brands-image">
+          </router-link>
         </div>
       </div>
     </section>
