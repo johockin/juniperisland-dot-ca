@@ -106,7 +106,7 @@ export default {
 @import '@/assets/styles/fonts.scss';
 
 :root {
-  --primary-color: #0b1c26;
+  --primary-color: #0c232c;
   --secondary-color: #ffffff;
   --accent-color: #D6BD68;
   --accent-secondary: #ACCED2;
