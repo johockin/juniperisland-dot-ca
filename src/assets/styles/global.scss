@@ -4,11 +4,11 @@
   --primary-color: #061D20;
   --secondary-color: #ffffff;
   --text-color: #2C2C2C;
-  --accent-color: #B8860B;
-  --accent-secondary: #D4AF37;
-  --gold-color: #B8860B;
-  --dark-gold: #8B6914;
-  --light-gold: #FFD700;
+  --accent-color: #8A8A8A;
+  --accent-secondary: #A5A5A5;
+  --gold-color: #8A8A8A;
+  --dark-gold: #6B6B6B;
+  --light-gold: #B5B5B5;
   --warm-neutral: #F5F2ED;
   --deep-sea: #061D20;
   --glass-bg: rgba(255, 255, 255, 0.03);
@@ -368,7 +368,7 @@ button {
   background-color: var(--primary-color);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  height: 120px;
+  height: 180px;
   display: flex;
   align-items: center;
 }
