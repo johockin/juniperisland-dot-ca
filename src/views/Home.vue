@@ -11,13 +11,9 @@
           <div class="hero-text-container">
             <p class="hero-label">TORONTO'S PREMIER VIDEO PRODUCTION COMPANY</p>
             <h1 class="hero-title">
-              Elevating<br>
-              Brands with<br>
-              Visually<br>
-              Compelling<br>
-              Video Content
+              Elevating Brands with Visually Compelling Video Content
             </h1>
-            <p class="hero-subtext">Position Your Brand as Industry Leaders with<br>Our Unique Storytelling Approach</p>
+            <p class="hero-subtext">Position Your Brand as Industry Leaders with Our Unique Storytelling Approach</p>
             <a href="#contact" class="cta-button">WORK WITH US</a>
           </div>
         </div>
@@ -186,7 +182,7 @@ export default {
     width: 100%;
     height: 100%;
     background: 
-      linear-gradient(rgba(6, 29, 32, 0.4), rgba(6, 29, 32, 0.4)),
+      linear-gradient(rgba(6, 29, 32, 0.7), rgba(6, 29, 32, 0.7)),
       url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000000' fill-opacity='0.08' fill-rule='evenodd'%3E%3Cpath d='M36 34v-4l-2-2V24v-2l2-2v-4l-2-2V8l4-4 4 4v6l-2 2v4l2 2v2l-2 2v4l2 2v6l-4 4-4-4v-6l2-2zm0-4l2-2v-4l-2-2V24z'/%3E%3C/g%3E%3C/svg%3E");
     z-index: 1;
     pointer-events: none;
@@ -208,7 +204,7 @@ export default {
 
 .hero-content {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   height: 100%;
   display: flex;
   align-items: center;
@@ -216,18 +212,19 @@ export default {
 }
 
 .hero-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   align-items: center;
   width: 100%;
   position: relative;
+  padding: 0 2rem;
 }
 
 .hero-text-container {
   text-align: left;
   max-width: 800px;
-  padding-left: 2rem;
   margin-top: 40px;
+  position: relative;
+  z-index: 4;
 }
 
 .hero-label {
@@ -248,9 +245,7 @@ export default {
   color: #e6d08a;
   letter-spacing: -0.02em;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-  visibility: visible !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .hero-subtext {
@@ -576,8 +571,11 @@ export default {
 }
 
 @media (max-width: 768px) {
+  .hero-container {
+    padding: 0 1rem;
+  }
+  
   .hero-text-container {
-    padding-left: 0;
     text-align: center;
   }
   
