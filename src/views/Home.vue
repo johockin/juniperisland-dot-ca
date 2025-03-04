@@ -186,10 +186,12 @@ export default {
     width: 100%;
     height: 100%;
     background: 
-      linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-      url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000000' fill-opacity='0.1' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+      linear-gradient(rgba(11, 28, 38, 0.7), rgba(11, 28, 38, 0.7)),
+      radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05) 2px, transparent 3px) 0 0 / 20px 20px,
+      radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.03) 1px, transparent 2px) 10px 10px / 20px 20px;
     z-index: 1;
     pointer-events: none;
+    mix-blend-mode: overlay;
   }
 }
 
