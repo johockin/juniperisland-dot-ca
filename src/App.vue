@@ -149,33 +149,9 @@ body {
   padding: 0 2rem;
 }
 
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  padding: 1.5rem 0;
-  transition: all var(--transition-speed) ease;
-  background: linear-gradient(180deg, 
-    rgba(6, 29, 32, 0.98) 0%,
-    rgba(6, 29, 32, 0.95) 100%
-  );
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-}
 
-.navbar.scrolled {
-  background: linear-gradient(180deg, 
-    rgba(6, 29, 32, 0.98) 0%,
-    rgba(6, 29, 32, 0.98) 100%
-  );
-  padding: 1rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-}
+
+
 
 .navbar-container {
   display: flex;
