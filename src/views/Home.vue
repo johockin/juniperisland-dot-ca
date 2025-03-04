@@ -318,11 +318,7 @@ export default {
   transform: translateY(-3px);
 }
 
-.trusted-brands {
-  padding: 3rem 0;
-  background-color: var(--primary-color);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
+
 
 .brands-grid {
   display: flex;
