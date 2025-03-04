@@ -488,51 +488,17 @@ button {
 
 /* Section Components */
 .trusted-brands {
-  padding: 1.5rem 0;
+  padding: 2rem 0;
   background-color: var(--primary-color);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  height: 120px;
+  height: 140px;
   display: flex;
   align-items: center;
   position: relative;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   transform-style: preserve-3d;
-  perspective: 1000px;
-
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 20px;
-    background: linear-gradient(180deg, rgba(6, 29, 32, 0.2) 0%, transparent 100%);
-    opacity: 0;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    pointer-events: none;
-  }
-
-  &::before {
-    top: -20px;
-    transform: translateY(20px);
-  }
-
-  &::after {
-    bottom: -20px;
-    transform: translateY(-20px);
-    background: linear-gradient(0deg, rgba(6, 29, 32, 0.2) 0%, transparent 100%);
-  }
-
-  &:hover {
-    transform: translateZ(-20px);
-    
-    &::before,
-    &::after {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+  perspective: 2000px;
+  overflow: visible;
 }
 
 .brands-grid {
@@ -542,15 +508,55 @@ button {
   width: 100%;
   height: 100%;
   position: relative;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+  }
+
+  &::before {
+    top: -40px;
+    background: linear-gradient(180deg, transparent, rgba(213, 215, 209, 0.15));
+    transform: translateY(40px);
+  }
+
+  &::after {
+    bottom: -40px;
+    background: linear-gradient(0deg, transparent, rgba(213, 215, 209, 0.15));
+    transform: translateY(-40px);
+  }
+
+  &:hover {
+    transform: translateZ(-60px);
+    
+    &::before,
+    &::after {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
 
 .brands-image-container {
   position: relative;
-  max-width: 25%;
+  width: 90%;
+  max-width: none;
   height: auto;
   cursor: pointer;
-  overflow: hidden;
+  overflow: visible;
   transform-style: preserve-3d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &::before {
     content: 'VIEW OUR CASE STUDIES';
@@ -559,7 +565,7 @@ button {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(6, 29, 32, 0.85);
+    background: rgba(6, 29, 32, 0.92);
     color: var(--light-gold);
     display: flex;
     align-items: center;
@@ -570,10 +576,10 @@ button {
     letter-spacing: 0.15em;
     text-transform: uppercase;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 2;
-    transform: translateZ(30px);
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transform: translateZ(60px);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   }
 
   &:hover {
@@ -584,19 +590,20 @@ button {
 }
 
 .brands-image {
-  max-width: 100%;
+  max-width: none;
+  width: 100%;
   height: auto;
-  filter: brightness(0.7) grayscale(100%);
+  filter: brightness(0.8) grayscale(100%);
   transition: all 0.3s ease;
-  opacity: 0.4;
+  opacity: 0.5;
   margin: 0;
   object-fit: contain;
-  transform: scale(1.2);
+  transform: scale(1.6);
   transform-origin: center;
 
   &:hover {
-    filter: brightness(0.5) grayscale(100%);
-    opacity: 0.3;
+    filter: brightness(0.6) grayscale(100%);
+    opacity: 0.4;
   }
 }
 
