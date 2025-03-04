@@ -186,7 +186,7 @@ export default {
     width: 100%;
     height: 100%;
     background: 
-      linear-gradient(rgba(12, 35, 64, 0.4), rgba(12, 35, 64, 0.4)),
+      linear-gradient(rgba(6, 29, 32, 0.4), rgba(6, 29, 32, 0.4)),
       url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000000' fill-opacity='0.08' fill-rule='evenodd'%3E%3Cpath d='M36 34v-4l-2-2V24v-2l2-2v-4l-2-2V8l4-4 4 4v6l-2 2v4l2 2v2l-2 2v4l2 2v6l-4 4-4-4v-6l2-2zm0-4l2-2v-4l-2-2V24z'/%3E%3C/g%3E%3C/svg%3E");
     z-index: 1;
     pointer-events: none;
@@ -280,7 +280,7 @@ export default {
 
 .trusted-brands {
   padding: 3rem 0;
-  background-color: #0c2340;
+  background-color: var(--primary-color);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -409,7 +409,7 @@ export default {
 
 .sustainability {
   padding: 4rem 0;
-  background-color: #0c2340;
+  background-color: var(--primary-color);
   color: white;
 }
 

@@ -306,7 +306,7 @@ const getVideoSrc = (videoId) => {
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(12, 35, 64, 0.4);
+        background: rgba(6, 29, 32, 0.4);
         transition: opacity 0.3s ease;
       }
 

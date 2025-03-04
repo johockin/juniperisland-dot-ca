@@ -154,7 +154,7 @@ body {
   z-index: 1000;
   padding: 1.5rem 0;
   transition: all var(--transition-speed) ease;
-  background-color: rgba(12, 35, 64, 0.9);
+  background-color: rgba(6, 29, 32, 0.9);
 }
 
 .navbar.scrolled {
