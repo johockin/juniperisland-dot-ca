@@ -14,7 +14,10 @@
               Brand Stories.<br>Beautifully Filmed.
             </h2>
             <p class="hero-subtext">Position Your Brand as Industry Leaders with<br>Our Unique Storytelling Approach</p>
-            <a href="#contact" class="cta-button">WORK WITH US</a>
+            <div class="hero-cta-container">
+              <h3 class="hero-cta-text">Great Stories Deserve an Audience—We Make Sure They Find One</h3>
+              <a href="#contact" class="cta-button">WORK WITH US</a>
+            </div>
           </div>
         </div>
       </div>
@@ -259,6 +262,16 @@ export default {
   margin-bottom: 2rem;
   line-height: 1.6;
   font-weight: 300;
+}
+
+.hero-cta-container {
+  margin-top: 2rem;
+}
+
+.hero-cta-text {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
 }
 
 .cta-button {
