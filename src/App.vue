@@ -11,7 +11,7 @@
           <router-link to="/about" @click="closeMobileMenu">About</router-link>
           <router-link to="/blog" @click="closeMobileMenu">Blog</router-link>
           <router-link to="/contact" class="cta-button" @click="closeMobileMenu">
-            <div class="button-content">Let's Talk</div>
+            <div class="button-content">Contact</div>
             <div class="scan-line"></div>
           </router-link>
         </div>
@@ -158,23 +158,23 @@ body {
   padding: 1.5rem 0;
   transition: all var(--transition-speed) ease;
   background: linear-gradient(180deg, 
-    rgba(6, 29, 32, 0.95) 0%,
-    rgba(6, 29, 32, 0.85) 100%
+    rgba(6, 29, 32, 0.98) 0%,
+    rgba(6, 29, 32, 0.95) 100%
   );
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
 }
 
 .navbar.scrolled {
   background: linear-gradient(180deg, 
     rgba(6, 29, 32, 0.98) 0%,
-    rgba(6, 29, 32, 0.95) 100%
+    rgba(6, 29, 32, 0.98) 100%
   );
   padding: 1rem 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
 }
 
 .navbar-container {
