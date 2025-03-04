@@ -422,7 +422,7 @@ button {
   margin-bottom: 2rem;
   line-height: 1.4;
   font-weight: 300;
-  max-width: 40ch;
+  max-width: 20ch;
   color: var(--light-gold);
   opacity: 0.9;
 }
@@ -474,7 +474,7 @@ button {
   }
 
   .hero-subtext {
-    font-size: 1.1rem;
+    font-size: 2.1rem;
   }
 
   .technical-overlay {
@@ -509,10 +509,13 @@ button {
   opacity: 0.4;
   margin: 0;
   object-fit: contain;
+  transform: scale(0.7);
+  transform-origin: center;
 
   &:hover {
     filter: brightness(0.9) grayscale(80%);
     opacity: 0.6;
+    transform: scale(0.75);
   }
 }
 
