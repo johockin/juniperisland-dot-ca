@@ -6,20 +6,17 @@
           <source src="@/assets/hero.mp4" type="video/mp4">
         </video>
       </div>
+      <div class="technical-overlay"></div>
       <div class="hero-content">
-        <div class="container hero-container">
-          <div class="hero-text-container">
-            <h1 class="hero-label">Branded Content & High-End Video Production for Bold Brands</h1>
-            <h2 class="hero-title">
-              Brand Stories.<br>Beautifully Filmed.
-            </h2>
-            <div class="hero-cta-container">
-              <h3 class="hero-cta-text">Great Stories Deserve an Audience—We Make Sure They Find One</h3>
-              <a href="#contact" class="cta-button">
-                <div class="button-content">WORK WITH US</div>
-                <div class="scan-line"></div>
-              </a>
-            </div>
+        <div class="hero-text-container">
+          <div class="hero-label">Branded Content & High-End Video Production for Bold Brands</div>
+          <h1 class="hero-title">Brand Stories.<br>Beautifully Filmed.</h1>
+          <p class="hero-subtext">Great Stories Deserve an Audience—We Make Sure They Find One</p>
+          <div class="hero-cta-container">
+            <a href="#contact" class="cta-button">
+              <div class="button-content">WORK WITH US</div>
+              <div class="scan-line"></div>
+            </a>
           </div>
         </div>
       </div>
@@ -173,94 +170,6 @@ export default {
   padding-top: 0;
   font-family: var(--font-primary);
   color: var(--text-color);
-}
-
-.hero {
-  position: relative;
-  height: 100vh;
-  min-height: 800px;
-  overflow: hidden;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  color: #ffffff;
-}
-
-.hero-container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-.hero-text-container {
-  text-align: left;
-  max-width: 800px;
-  margin-top: 0;
-}
-
-.hero-label {
-  font-size: 0.8rem;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  margin-bottom: 1rem;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.hero-title {
-  font-family: 'Caudex', Georgia, serif;
-  font-size: 4.5rem;
-  font-weight: 400;
-  line-height: 1.1;
-  margin-bottom: 1.5rem;
-  color: var(--light-gold);
-  letter-spacing: -0.02em;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-  visibility: visible !important;
-}
-
-.hero-subtext {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  line-height: 1.6;
-  font-weight: 300;
-}
-
-.hero-cta-container {
-  margin-top: 2rem;
-}
-
-.hero-cta-text {
-  font-size: 1.4rem;
-  font-weight: 500;
-  margin-bottom: 1rem;
-}
-
-.cta-button {
-  display: inline-block;
-  padding: 1rem 2rem;
-  background: var(--accent-color);
-  color: var(--primary-color);
-  text-decoration: none;
-  border-radius: 4px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.cta-button:hover {
-  background: var(--dark-gold);
-  transform: translateY(-3px);
 }
 
 .brands-grid {
