@@ -15,7 +15,10 @@
             </h2>
             <div class="hero-cta-container">
               <h3 class="hero-cta-text">Great Stories Deserve an Audience—We Make Sure They Find One</h3>
-              <a href="#contact" class="cta-button">WORK WITH US</a>
+              <a href="#contact" class="cta-button">
+                <div class="button-content">WORK WITH US</div>
+                <div class="scan-line"></div>
+              </a>
             </div>
           </div>
         </div>
@@ -148,7 +151,10 @@
           <h2>Our quarterly newsletter offers essential insights for brand marketers determined to make a real impact in a saturated market.</h2>
           <form class="newsletter-form">
             <input type="email" placeholder="Your work email" class="email-input" required>
-            <button type="submit" class="submit-button">Subscribe</button>
+            <button type="submit" class="submit-button">
+              <div class="button-content">Subscribe</div>
+              <div class="scan-line"></div>
+            </button>
           </form>
         </div>
       </div>

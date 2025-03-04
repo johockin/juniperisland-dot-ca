@@ -10,7 +10,10 @@
           <router-link to="/work" @click="closeMobileMenu">Our Work</router-link>
           <router-link to="/about" @click="closeMobileMenu">About</router-link>
           <router-link to="/blog" @click="closeMobileMenu">Blog</router-link>
-          <router-link to="/contact" class="cta-button" @click="closeMobileMenu">Let's Talk</router-link>
+          <router-link to="/contact" class="cta-button" @click="closeMobileMenu">
+            <div class="button-content">Let's Talk</div>
+            <div class="scan-line"></div>
+          </router-link>
         </div>
         <button class="mobile-menu-toggle" :class="{ active: isMobileMenuOpen }" @click="toggleMobileMenu">
           <span></span>

@@ -48,7 +48,10 @@
               <label for="newsletter">Subscribe to our monthly video marketing insights</label>
             </div>
             
-            <button type="submit" class="submit-button">Send Message</button>
+            <button type="submit" class="submit-button">
+              <div class="button-content">Send Message</div>
+              <div class="scan-line"></div>
+            </button>
           </form>
         </div>
 

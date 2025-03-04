@@ -71,7 +71,10 @@
       <div class="container">
         <h2>Ready to Create?</h2>
         <p>Let's discuss how we can bring your vision to life.</p>
-        <router-link to="/contact" class="cta-button">Get in Touch</router-link>
+        <router-link to="/contact" class="cta-button">
+          <div class="button-content">Get in Touch</div>
+          <div class="scan-line"></div>
+        </router-link>
       </div>
     </section>
   </div>
