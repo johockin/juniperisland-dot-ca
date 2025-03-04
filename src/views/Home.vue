@@ -13,7 +13,6 @@
             <h2 class="hero-title">
               Brand Stories.<br>Beautifully Filmed.
             </h2>
-            <p class="hero-subtext">Position Your Brand as Industry Leaders with<br>Our Unique Storytelling Approach</p>
             <div class="hero-cta-container">
               <h3 class="hero-cta-text">Great Stories Deserve an Audience—We Make Sure They Find One</h3>
               <a href="#contact" class="cta-button">WORK WITH US</a>
