@@ -171,10 +171,14 @@ export default {
   height: 70vh;
   min-height: 450px;
   overflow: hidden;
+  display: flex;
+  align-items: center;
 }
 
 .hero-background {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   height: 100%;
   width: 100%;
 
@@ -211,6 +215,7 @@ export default {
 .hero-content {
   position: relative;
   z-index: 2;
+  width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
@@ -218,18 +223,16 @@ export default {
 }
 
 .hero-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
   width: 100%;
-  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .hero-text-container {
   text-align: left;
   max-width: 800px;
-  padding-left: 2rem;
-  margin-top: 40px;
+  margin-top: 0;
 }
 
 .hero-label {
