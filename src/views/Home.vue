@@ -11,7 +11,7 @@
           <div class="hero-text-container">
             <h1 class="hero-label">Branded Content & High-End Video Production for Bold Brands</h1>
             <h2 class="hero-title">
-              Elevating Brands with Visually Compelling Video Content
+              Brand Stories. Beautifully Filmed.
             </h2>
             <p class="hero-subtext">Position Your Brand as Industry Leaders with<br>Our Unique Storytelling Approach</p>
             <a href="#contact" class="cta-button">WORK WITH US</a>
