@@ -22,6 +22,33 @@
       </div>
     </section>
 
+    <!-- Value Proposition Section -->
+    <section class="value-proposition">
+      <div class="value-content">
+        <h2 class="value-headline">We Know What Makes Audiences Watch, Share, and Engage.</h2>
+        <p class="value-copy">Brands don't struggle with storytelling—they struggle with getting their stories seen and shared. We craft social-first, strategy-driven videos that don't just look great—they break through.</p>
+        
+        <div class="value-stats">
+          <div class="stat-card">
+            <div class="stat-number">1M+</div>
+            <div class="stat-label">Average Views per Campaign</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">300%</div>
+            <div class="stat-label">Average ROI for Clients</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">50+</div>
+            <div class="stat-label">Brands Trust Us</div>
+          </div>
+        </div>
+
+        <div class="value-cta">
+          <a href="/work" class="cta-button">See Our Work</a>
+        </div>
+      </div>
+    </section>
+
     <section class="trusted-brands">
       <div class="container">
         <div class="brands-grid">
