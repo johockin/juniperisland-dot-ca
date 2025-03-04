@@ -57,26 +57,16 @@
       </div>
     </section>
 
-    <section class="process-guide-section">
-      <div class="container">
-        <div class="process-guide">
-          <h3>Discover Our Process—receive a detailed overview of how we transform your brand's story through our video production process.</h3>
-          <form class="guide-form">
-            <div class="form-group">
-              <input type="email" placeholder="Your work email" class="email-input" required>
-              <button type="submit" class="submit-button">SUBMIT</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </section>
-
     <section class="brand-message">
       <div class="container">
         <div class="message-content">
-          <p class="message-text">Most brands are doing video for video's sake, entrusting the voice of the brand to the nearest employee with an iPhone.</p>
-          <p class="message-text-highlight">But you're not most brands… you know video content can uniquely position your brand, amplify ad impact and establish deep connections with your customers.</p>
-          <router-link to="/work" class="view-work-link">Our Work &gt;</router-link>
+          <p class="message-text">
+            Most brands are doing video for video's sake, entrusting the voice of the brand to the nearest employee with an iPhone.
+          </p>
+          <p class="message-text-highlight">
+            But you're not most brands… you know video content can uniquely position your brand, amplify ad impact and establish deep connections with your customers.
+          </p>
+          <a href="/our-work" class="view-work-link">View Our Work →</a>
         </div>
       </div>
     </section>
