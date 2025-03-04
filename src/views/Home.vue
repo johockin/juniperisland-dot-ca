@@ -188,9 +188,9 @@ export default {
     background: 
       linear-gradient(135deg, rgba(6, 29, 32, 0.85), rgba(6, 29, 32, 0.75)),
       linear-gradient(45deg, rgba(214, 189, 104, 0.1), rgba(172, 206, 210, 0.05)),
-      url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03' fill-rule='evenodd'%3E%3Cpath d='M0 0h40v40H0V0zm20 20h20v20H20V20zM0 20h20v20H0V20z'/%3E%3C/g%3E%3C/svg%3E"),
-      url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'%3E%3Ccircle cx='10' cy='10' r='1'/%3E%3C/g%3E%3C/svg%3E");
-    background-size: 100% 100%, 100% 100%, 40px 40px, 20px 20px;
+      url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03' fill-rule='evenodd'%3E%3Cpath d='M0 0h60v60H0V0zm30 30h30v30H30V30zM0 30h30v30H0V30z'/%3E%3C/g%3E%3C/svg%3E"),
+      url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'%3E%3Ccircle cx='15' cy='15' r='1'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 100% 100%, 100% 100%, 60px 60px, 30px 30px;
     z-index: 1;
     pointer-events: none;
     backdrop-filter: blur(1px);
@@ -284,7 +284,7 @@ export default {
 
 .trusted-brands {
   padding: 3rem 0;
-  background-color: #0c2340;
+  background-color: var(--primary-color);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
