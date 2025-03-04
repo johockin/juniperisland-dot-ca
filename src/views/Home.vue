@@ -318,13 +318,11 @@ export default {
   transform: translateY(-3px);
 }
 
-
-
 .brands-grid {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem 0;
+  padding: 0.25rem 0;
 }
 
 .brands-image {
