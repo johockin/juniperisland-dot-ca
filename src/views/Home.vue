@@ -187,10 +187,8 @@ export default {
     height: 100%;
     background: 
       linear-gradient(135deg, rgba(6, 29, 32, 0.85), rgba(6, 29, 32, 0.75)),
-      linear-gradient(45deg, rgba(214, 189, 104, 0.1), rgba(172, 206, 210, 0.05)),
-      url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03' fill-rule='evenodd'%3E%3Cpath d='M0 0h60v60H0V0zm30 30h30v30H30V30zM0 30h30v30H0V30z'/%3E%3C/g%3E%3C/svg%3E"),
-      url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'%3E%3Ccircle cx='15' cy='15' r='1'/%3E%3C/g%3E%3C/svg%3E");
-    background-size: 100% 100%, 100% 100%, 60px 60px, 30px 30px;
+      url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03' fill-rule='evenodd'%3E%3Cpath d='M0 0h80v80H0V0zm40 40h40v40H40V40zM0 40h40v40H0V40z'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 100% 100%, 80px 80px;
     z-index: 1;
     pointer-events: none;
     backdrop-filter: blur(1px);
