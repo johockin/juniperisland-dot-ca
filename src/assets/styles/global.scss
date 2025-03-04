@@ -4,11 +4,11 @@
   --primary-color: #061D20;
   --secondary-color: #ffffff;
   --text-color: #2C2C2C;
-  --accent-color: #00FF9D;
-  --accent-secondary: #00CC7D;
-  --gold-color: #00FF9D;
-  --dark-gold: #00B36B;
-  --light-gold: #66FFC2;
+  --accent-color: #4A9E4A;
+  --accent-secondary: #3A7E3A;
+  --gold-color: #4A9E4A;
+  --dark-gold: #2A5E2A;
+  --light-gold: #6ABE6A;
   --warm-neutral: #F5F2ED;
   --deep-sea: #061D20;
   --glass-bg: rgba(255, 255, 255, 0.03);
@@ -382,7 +382,7 @@ button {
 }
 
 .brands-image {
-  max-width: 90%;
+  max-width: 75%;
   height: auto;
   filter: brightness(0.8) grayscale(100%);
   transition: filter 0.3s ease;
