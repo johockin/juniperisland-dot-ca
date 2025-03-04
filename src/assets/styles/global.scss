@@ -9,8 +9,8 @@
   --gold-color: #3D7B3D;
   --dark-gold: #1D3B1D;
   --light-gold: #4D8B4D;
-  --tactical-red: #FF3B30;
-  --tactical-red-dark: #CC2F26;
+  --tactical-red: #FF4530;
+  --tactical-red-dark: #E63A26;
   --warm-neutral: #F5F2ED;
   --deep-sea: #061D20;
   --glass-bg: rgba(255, 255, 255, 0.03);
@@ -75,103 +75,48 @@ a:hover {
   color: var(--gold-color);
 }
 
+/* Button Styles */
 .cta-button, .view-more-button, .submit-button {
-  font-family: var(--font-accent);
   display: inline-block;
-  background: transparent;
-  color: #FF4D3D;
-  padding: 0.8rem 1.8rem;
-  border-radius: 2px;
-  font-weight: 500;
+  padding: 1rem 2rem;
+  background: var(--accent-color);
+  color: var(--secondary-color);
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: all 0.3s ease;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid #FF4D3D;
+  letter-spacing: 0.05em;
+  border: none;
+  cursor: pointer;
   position: relative;
   overflow: hidden;
-  font-size: 0.9rem;
-  min-width: 160px;
-  text-align: center;
-  isolation: isolate;
 
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(255, 77, 61, 0.15),
-      transparent
-    );
-    transition: 0.5s;
-    z-index: 1;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      135deg,
-      transparent 0%,
-      rgba(255, 77, 61, 0.1) 50%,
-      transparent 100%
-    );
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: 1;
+  &:hover {
+    background: var(--accent-secondary);
+    transform: translateY(-2px);
+    color: var(--tactical-red);
   }
 
   .button-content {
     position: relative;
     z-index: 2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
   }
 
   .scan-line {
     position: absolute;
-    top: 0;
-    left: -100%;
     width: 100%;
-    height: 1px;
-    background: rgba(255, 77, 61, 0.2);
-    box-shadow: 0 0 1px rgba(255, 77, 61, 0.1);
-    animation: none;
-    z-index: 3;
+    height: 2px;
+    background: var(--tactical-red);
+    top: 50%;
+    left: -100%;
+    transform: translateY(-50%);
+    opacity: 0;
+    animation: scan 2s linear infinite;
   }
 
-  &:hover {
-    background: rgba(255, 77, 61, 0.05);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(255, 77, 61, 0.15);
-    border-color: #FF6B5E;
-
-    &::before {
-      left: 100%;
-    }
-
-    &::after {
-      opacity: 1;
-    }
-
-    .scan-line {
-      animation: scan 2s ease-in-out infinite;
-    }
-  }
-
-  &:active {
-    transform: translateY(0);
-    box-shadow: 0 2px 6px rgba(255, 77, 61, 0.1);
+  &:hover .scan-line {
+    opacity: 1;
   }
 }
 
@@ -520,11 +465,11 @@ button {
 
 /* Section Components */
 .trusted-brands {
-  padding: 0 0;
+  padding: 2rem 0;
   background-color: var(--primary-color);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  height: 180px;
+  height: 120px;
   display: flex;
   align-items: center;
 }
@@ -538,7 +483,7 @@ button {
 }
 
 .brands-image {
-  max-width: 17.5%;
+  max-width: 25%;
   height: auto;
   filter: brightness(0.7) grayscale(100%);
   transition: filter 0.3s ease;

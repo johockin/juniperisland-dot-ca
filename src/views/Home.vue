@@ -53,12 +53,13 @@
         </div>
 
         <div class="value-cta">
-          <a href="/work" class="cta-button">See Our Work</a>
+          <a href="/work" class="cta-button">
+            <div class="button-content">See Our Work</div>
+            <div class="scan-line"></div>
+          </a>
         </div>
       </div>
     </section>
-
-
 
     <section class="stats-section">
       <div class="container">
@@ -121,8 +122,11 @@
           </div>
         </div>
         <div class="process-cta">
-          <a href="#contact" class="cta-button">WORK WITH US</a>
-          <router-link to="/work" class="secondary-button">VIEW OUR WORK</router-link>
+          <a href="#contact" class="cta-button">
+            <div class="button-content">Work With Us</div>
+            <div class="scan-line"></div>
+          </a>
+          <router-link to="/work" class="secondary-button">View Our Work</router-link>
         </div>
       </div>
     </section>
@@ -469,11 +473,14 @@ export default {
   border-radius: 4px;
   font-weight: 600;
   transition: all 0.3s ease;
-}
+  position: relative;
+  overflow: hidden;
 
-.secondary-button:hover {
-  background: var(--primary-color);
-  color: white;
+  &:hover {
+    background: var(--primary-color);
+    color: var(--tactical-red);
+    transform: translateY(-2px);
+  }
 }
 
 .testimonial-section {
