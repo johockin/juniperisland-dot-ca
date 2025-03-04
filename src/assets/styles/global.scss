@@ -514,7 +514,7 @@ button {
   overflow: hidden;
 
   &::before {
-    content: 'View Our Case Studies';
+    content: 'VIEW OUR CASE STUDIES';
     position: absolute;
     top: 0;
     left: 0;
@@ -528,7 +528,8 @@ button {
     font-family: var(--font-accent);
     font-size: 0.875rem;
     font-weight: 500;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
     opacity: 0;
     transition: opacity 0.3s ease;
     z-index: 2;
@@ -549,6 +550,8 @@ button {
   opacity: 0.4;
   margin: 0;
   object-fit: contain;
+  transform: scale(0.6);
+  transform-origin: center;
 
   &:hover {
     filter: brightness(0.5) grayscale(100%);
