@@ -157,12 +157,24 @@ body {
   z-index: 1000;
   padding: 1.5rem 0;
   transition: all var(--transition-speed) ease;
-  background-color: rgba(12, 35, 64, 0.9);
+  background: linear-gradient(180deg, 
+    rgba(6, 29, 32, 0.95) 0%,
+    rgba(6, 29, 32, 0.85) 100%
+  );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 .navbar.scrolled {
-  background: var(--primary-color);
+  background: linear-gradient(180deg, 
+    rgba(6, 29, 32, 0.98) 0%,
+    rgba(6, 29, 32, 0.95) 100%
+  );
   padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
 }
 
 .navbar-container {
