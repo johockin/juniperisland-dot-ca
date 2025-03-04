@@ -39,8 +39,8 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-secondary);
   margin: 0;
-  font-weight: 700;
-  letter-spacing: -0.01em;
+  font-weight: 400;
+  letter-spacing: -0.02em;
   line-height: 1.2;
   color: var(--primary-color);
 }
@@ -285,10 +285,11 @@ button {
 .hero-label {
   font-size: 1.1rem;
   font-weight: 500;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.15em;
   margin-bottom: 1.5rem;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.95);
+  font-family: var(--font-primary);
 }
 
 .hero-title {
@@ -312,6 +313,8 @@ button {
   line-height: 1.4;
   font-weight: 300;
   max-width: 700px;
+  font-family: var(--font-primary);
+  letter-spacing: 0.02em;
 }
 
 .cta-button {
