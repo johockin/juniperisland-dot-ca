@@ -9,7 +9,7 @@
       <div class="hero-content">
         <div class="container hero-container">
           <div class="hero-text-container">
-            <h1 class="hero-label">TORONTO'S PREMIER VIDEO PRODUCTION COMPANY</h1>
+            <h1 class="hero-label">Branded Content & High-End Video Production for Bold Brands</h1>
             <h2 class="hero-title">
               Elevating Brands with Visually Compelling Video Content
             </h2>
