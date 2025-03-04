@@ -11,9 +11,13 @@
           <div class="hero-text-container">
             <p class="hero-label">TORONTO'S PREMIER VIDEO PRODUCTION COMPANY</p>
             <h1 class="hero-title">
-              Elevating Brands with Visually Compelling Video Content
+              Elevating<br>
+              Brands with<br>
+              Visually<br>
+              Compelling<br>
+              Video Content
             </h1>
-            <p class="hero-subtext">Position Your Brand as Industry Leaders with Our Unique Storytelling Approach</p>
+            <p class="hero-subtext">Position Your Brand as Industry Leaders with<br>Our Unique Storytelling Approach</p>
             <a href="#contact" class="cta-button">WORK WITH US</a>
           </div>
         </div>
@@ -182,10 +186,14 @@ export default {
     width: 100%;
     height: 100%;
     background: 
-      linear-gradient(rgba(6, 29, 32, 0.7), rgba(6, 29, 32, 0.7)),
-      url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000000' fill-opacity='0.08' fill-rule='evenodd'%3E%3Cpath d='M36 34v-4l-2-2V24v-2l2-2v-4l-2-2V8l4-4 4 4v6l-2 2v4l2 2v2l-2 2v4l2 2v6l-4 4-4-4v-6l2-2zm0-4l2-2v-4l-2-2V24z'/%3E%3C/g%3E%3C/svg%3E");
+      linear-gradient(135deg, rgba(6, 29, 32, 0.85), rgba(6, 29, 32, 0.75)),
+      linear-gradient(45deg, rgba(214, 189, 104, 0.1), rgba(172, 206, 210, 0.05)),
+      url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03' fill-rule='evenodd'%3E%3Cpath d='M0 0h40v40H0V0zm20 20h20v20H20V20zM0 20h20v20H0V20z'/%3E%3C/g%3E%3C/svg%3E"),
+      url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'%3E%3Ccircle cx='10' cy='10' r='1'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 100% 100%, 100% 100%, 40px 40px, 20px 20px;
     z-index: 1;
     pointer-events: none;
+    backdrop-filter: blur(1px);
   }
 }
 
@@ -199,12 +207,12 @@ export default {
   height: auto;
   transform: translate(-50%, -50%);
   object-fit: cover;
-  filter: brightness(0.7);
+  filter: brightness(0.8) contrast(1.1);
 }
 
 .hero-content {
   position: relative;
-  z-index: 3;
+  z-index: 2;
   height: 100%;
   display: flex;
   align-items: center;
@@ -212,19 +220,18 @@ export default {
 }
 
 .hero-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
   width: 100%;
   position: relative;
-  padding: 0 2rem;
 }
 
 .hero-text-container {
   text-align: left;
   max-width: 800px;
+  padding-left: 2rem;
   margin-top: 40px;
-  position: relative;
-  z-index: 4;
 }
 
 .hero-label {
@@ -245,7 +252,9 @@ export default {
   color: #e6d08a;
   letter-spacing: -0.02em;
   -webkit-font-smoothing: antialiased;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  visibility: visible !important;
 }
 
 .hero-subtext {
@@ -275,7 +284,7 @@ export default {
 
 .trusted-brands {
   padding: 3rem 0;
-  background-color: var(--primary-color);
+  background-color: #0c2340;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -404,7 +413,7 @@ export default {
 
 .sustainability {
   padding: 4rem 0;
-  background-color: var(--primary-color);
+  background-color: #0c2340;
   color: white;
 }
 
@@ -571,11 +580,8 @@ export default {
 }
 
 @media (max-width: 768px) {
-  .hero-container {
-    padding: 0 1rem;
-  }
-  
   .hero-text-container {
+    padding-left: 0;
     text-align: center;
   }
   
