@@ -2,23 +2,25 @@
   <div class="home">
     <section class="hero">
       <div class="hero-background">
-        <video autoplay loop muted playsinline>
+        <video autoplay muted loop playsinline poster="@/assets/video-thumbnail.jpg">
           <source src="@/assets/hero.mp4" type="video/mp4">
         </video>
       </div>
-      <div class="technical-overlay"></div>
       <div class="hero-content">
-        <div class="hero-text-container">
-          <div class="hero-label">Digital Experience Agency</div>
-          <h1 class="hero-title">Juniper Island</h1>
-          <p class="hero-subtext">We craft digital experiences that connect, engage, and inspire.</p>
-        </div>
-        <div class="hero-cta-container">
-          <p class="hero-cta-text">Ready to start your journey?</p>
-          <router-link to="/contact" class="cta-button">
-            <div class="button-content">Get Started</div>
-            <div class="scan-line"></div>
-          </router-link>
+        <div class="container hero-container">
+          <div class="hero-text-container">
+            <h1 class="hero-label">Branded Content & High-End Video Production for Bold Brands</h1>
+            <h2 class="hero-title">
+              Brand Stories.<br>Beautifully Filmed.
+            </h2>
+            <div class="hero-cta-container">
+              <h3 class="hero-cta-text">Great Stories Deserve an Audience—We Make Sure They Find One</h3>
+              <a href="#contact" class="cta-button">
+                <div class="button-content">WORK WITH US</div>
+                <div class="scan-line"></div>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -53,13 +55,12 @@
         </div>
 
         <div class="value-cta">
-          <a href="/work" class="cta-button">
-            <div class="button-content">See Our Work</div>
-            <div class="scan-line"></div>
-          </a>
+          <a href="/work" class="cta-button">See Our Work</a>
         </div>
       </div>
     </section>
+
+
 
     <section class="stats-section">
       <div class="container">
@@ -122,11 +123,8 @@
           </div>
         </div>
         <div class="process-cta">
-          <a href="#contact" class="cta-button">
-            <div class="button-content">Work With Us</div>
-            <div class="scan-line"></div>
-          </a>
-          <router-link to="/work" class="secondary-button">View Our Work</router-link>
+          <a href="#contact" class="cta-button">WORK WITH US</a>
+          <router-link to="/work" class="secondary-button">VIEW OUR WORK</router-link>
         </div>
       </div>
     </section>
@@ -473,14 +471,11 @@ export default {
   border-radius: 4px;
   font-weight: 600;
   transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
+}
 
-  &:hover {
-    background: var(--primary-color);
-    color: var(--tactical-red);
-    transform: translateY(-2px);
-  }
+.secondary-button:hover {
+  background: var(--primary-color);
+  color: white;
 }
 
 .testimonial-section {

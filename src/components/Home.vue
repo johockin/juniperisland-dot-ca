@@ -9,16 +9,15 @@
       <div class="technical-overlay"></div>
       <div class="hero-content">
         <div class="hero-text-container">
-          <div class="hero-label">Digital Experience Agency</div>
-          <h1 class="hero-title">Juniper Island</h1>
-          <p class="hero-subtext">We craft digital experiences that connect, engage, and inspire.</p>
+          <div class="hero-label">Branded Content & High-End Video Production for Bold Brands</div>
+          <h2 class="hero-title">Brand Stories.<br>Beautifully Filmed.</h2>
+          <p class="hero-subtext">Great Stories Deserve an Audience—We Make Sure They Find One</p>
         </div>
         <div class="hero-cta-container">
-          <p class="hero-cta-text">Ready to start your journey?</p>
-          <router-link to="/contact" class="cta-button">
-            <div class="button-content">Get Started</div>
+          <a href="#contact" class="cta-button">
+            <div class="button-content">WORK WITH US</div>
             <div class="scan-line"></div>
-          </router-link>
+          </a>
         </div>
       </div>
     </section>
