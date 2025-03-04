@@ -492,12 +492,12 @@ button {
   background-color: var(--primary-color);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  height: 140px;
+  height: 120px;
   display: flex;
   align-items: center;
   position: relative;
   transform-style: preserve-3d;
-  perspective: 2000px;
+  perspective: 1000px;
   overflow: visible;
 }
 
@@ -508,47 +508,11 @@ button {
   width: 100%;
   height: 100%;
   position: relative;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  transform-style: preserve-3d;
-
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 40px;
-    opacity: 0;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    pointer-events: none;
-  }
-
-  &::before {
-    top: -40px;
-    background: linear-gradient(180deg, transparent, rgba(213, 215, 209, 0.15));
-    transform: translateY(40px);
-  }
-
-  &::after {
-    bottom: -40px;
-    background: linear-gradient(0deg, transparent, rgba(213, 215, 209, 0.15));
-    transform: translateY(-40px);
-  }
-
-  &:hover {
-    transform: translateZ(-60px);
-    
-    &::before,
-    &::after {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
 }
 
 .brands-image-container {
   position: relative;
-  width: 90%;
+  width: 70%;
   max-width: none;
   height: auto;
   cursor: pointer;
@@ -557,6 +521,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
   &::before {
     content: 'VIEW OUR CASE STUDIES';
@@ -578,13 +543,46 @@ button {
     opacity: 0;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 2;
-    transform: translateZ(60px);
+    transform: translateZ(30px);
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   }
 
+  &::after,
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+  }
+
+  &::after {
+    bottom: -30px;
+    background: linear-gradient(0deg, transparent, rgba(255, 255, 255, 0.15));
+    transform: translateY(-30px);
+  }
+
   &:hover {
+    transform: translateZ(-30px);
+
     &::before {
+      content: 'VIEW OUR CASE STUDIES';
       opacity: 1;
+      background: rgba(6, 29, 32, 0.92);
+      transform: translateZ(30px);
+    }
+
+    &::after {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .brands-image {
+      filter: brightness(0.6) grayscale(100%);
+      opacity: 0.4;
     }
   }
 }
@@ -598,13 +596,8 @@ button {
   opacity: 0.5;
   margin: 0;
   object-fit: contain;
-  transform: scale(1.6);
+  transform: scale(1.2);
   transform-origin: center;
-
-  &:hover {
-    filter: brightness(0.6) grayscale(100%);
-    opacity: 0.4;
-  }
 }
 
 .brand-message {
