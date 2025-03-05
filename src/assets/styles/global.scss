@@ -495,6 +495,7 @@ button {
   height: 120px;
   display: flex;
   align-items: center;
+  overflow: hidden;
 }
 
 .brands-grid {
@@ -508,6 +509,7 @@ button {
 .brands-image-container {
   position: relative;
   width: 65%;
+  height: 100%;
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -529,10 +531,12 @@ button {
     letter-spacing: 0.15em;
     opacity: 0;
     transition: opacity 0.3s ease;
+    border: 1px solid rgba(232, 234, 228, 0.1);
+    backdrop-filter: blur(2px);
   }
 
   &:hover {
-    transform: translateY(2px);
+    transform: translateY(1px);
     
     &::before {
       opacity: 1;
@@ -546,7 +550,7 @@ button {
 
 .brands-image {
   width: 100%;
-  height: auto;
+  height: 100%;
   filter: grayscale(100%);
   opacity: 0.6;
   transition: opacity 0.3s ease;
