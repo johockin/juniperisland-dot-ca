@@ -59,8 +59,6 @@
       </div>
     </section>
 
-
-
     <section class="stats-section">
       <div class="container">
         <div class="stats-grid">
@@ -223,41 +221,6 @@ export default {
   cursor: pointer;
   font-weight: 600;
   text-transform: uppercase;
-}
-
-.brand-message {
-  padding: 6rem 0;
-  background-color: var(--secondary-color);
-}
-
-.message-content {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.message-text {
-  font-size: 1.6rem;
-  line-height: 1.6;
-  margin-bottom: 2rem;
-  color: #333;
-}
-
-.message-text-highlight {
-  font-size: 1.6rem;
-  line-height: 1.6;
-  color: #000;
-  font-weight: 600;
-  margin-bottom: 2rem;
-}
-
-.view-work-link {
-  display: inline-block;
-  font-size: 1.2rem;
-  color: var(--primary-color);
-  font-weight: 600;
-  text-decoration: none;
-  margin-top: 1rem;
 }
 
 .stats-section {
