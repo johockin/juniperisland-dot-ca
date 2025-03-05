@@ -174,24 +174,6 @@ export default {
   color: var(--text-color);
 }
 
-.brands-grid {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0.25rem 0;
-}
-
-.brands-image {
-  max-width: 100%;
-  height: auto;
-  filter: brightness(0.9) grayscale(100%);
-  transition: filter 0.3s ease;
-
-  &:hover {
-    filter: brightness(1) grayscale(0%);
-  }
-}
-
 .process-guide-section {
   padding: 4rem 0;
   background-color: var(--secondary-color);
