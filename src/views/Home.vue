@@ -487,40 +487,6 @@ export default {
 
 
 
-
-
-.video-thumbnail {
-  width: 100%;
-  height: auto;
-  display: block;
-  transition: transform 0.5s ease;
-}
-
-.play-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background-color: var(--tactical-red-dark);
-  border: none;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(255, 59, 48, 0.3);
-
-  svg {
-    width: 32px;
-    height: 32px;
-    margin-left: 4px;
-  }
-}
-
 @media (max-width: 768px) {
   .video-preview {
     padding: 4rem 0;
