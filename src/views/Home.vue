@@ -13,7 +13,7 @@
           <h1 class="hero-title">Brand Stories.<br>Beautifully Filmed.</h1>
           <p class="hero-subtext">Great Stories Deserve an Audience—We Make Sure They Find One</p>
           <div class="hero-cta-container">
-            <a href="#contact" class="cta-button">
+            <a href="/contact" class="cta-button">
               <div class="button-content">WORK WITH US</div>
               <div class="scan-line"></div>
             </a>
