@@ -570,7 +570,10 @@ button {
   height: 100%;
   filter: grayscale(100%) blur(0.5px);
   opacity: 0.6;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: 
+    filter 0.3s ease,
+    opacity 0.3s ease,
+    transform 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
   object-fit: contain;
   transform: scale(1.1) skew(-1deg, 0);
   transform-origin: center center;
