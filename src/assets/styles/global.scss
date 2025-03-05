@@ -138,11 +138,12 @@ a:hover {
     gap: 0.5rem;
   }
   
-  .cta-button {
+  .cta-button{
+  &::before { 
     margin-left: 50%;
     transform: translateX(-25%);
   }
-
+  }
   .scan-line {
     position: absolute;
     top: 0;
