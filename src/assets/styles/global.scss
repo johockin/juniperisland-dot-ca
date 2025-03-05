@@ -529,7 +529,8 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: transform 0.3s ease;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  perspective: 1000px;
 
   &::before {
     content: 'VIEW OUR CASE STUDIES';
@@ -545,12 +546,12 @@ button {
     font-weight: 500;
     letter-spacing: 0.15em;
     opacity: 0;
-    transition: opacity 0.3s ease;
-    backdrop-filter: blur(4px);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(8px);
   }
 
   &:hover {
-    transform: translateY(1px);
+    transform: translateY(1px) translateZ(20px);
     
     &::before {
       opacity: 1;
@@ -558,6 +559,8 @@ button {
 
     .brands-image {
       opacity: 0.3;
+      filter: grayscale(100%) blur(2px) contrast(0.9);
+      transform: scale(1.15) skew(-2deg, 0);
     }
   }
 }
@@ -565,11 +568,17 @@ button {
 .brands-image {
   width: 100%;
   height: 100%;
-  filter: grayscale(100%);
+  filter: grayscale(100%) blur(0.5px);
   opacity: 0.6;
-  transition: opacity 0.3s ease;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   object-fit: contain;
-  transform: scale(1.1);
+  transform: scale(1.1) skew(-1deg, 0);
+  transform-origin: center center;
+  will-change: transform, filter;
+
+  @supports (backdrop-filter: blur(4px)) {
+    filter: grayscale(100%) blur(0.5px) contrast(0.95);
+  }
 }
 
 .brand-message {
