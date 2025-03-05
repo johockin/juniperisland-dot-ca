@@ -35,15 +35,12 @@
     <section class="video-preview">
       <div class="container">
         <div class="video-preview-content">
-          <div class="video-preview-text">
-            <h3>Skip the guesswork. In 60 seconds, you'll know if we're your people.</h3>
-            <p>This will be the most useful minute of your day.</p>
-          </div>
+          <h3 class="video-preview-heading">Watch this 60-second video—because the fastest way to know if we're your people is to hear it straight from us.</h3>
           <div class="video-preview-container">
             <div class="video-preview-wrapper">
               <img src="@/assets/video-thumbnail.jpg" alt="Our team explaining how we can help your brand" class="video-thumbnail">
               <div class="video-overlay">
-                <button class="play-button">
+                <button class="play-button" aria-label="Play video">
                   <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
                     <path d="M12 8L24 16L12 24V8Z" fill="currentColor"/>
                   </svg>
