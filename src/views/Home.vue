@@ -32,6 +32,25 @@
       </div>
     </section>
 
+    <section class="video-preview">
+      <div class="container">
+        <div class="video-preview-content">
+          <div class="video-preview-text">
+            <h3>The fastest way to know if we're the right fit?</h3>
+            <p>Watch this 60-second video.</p>
+          </div>
+          <div class="video-preview-container">
+            <img src="@/assets/video-thumbnail.jpg" alt="Preview of our 60-second introduction video" class="video-thumbnail">
+            <button class="play-button">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <path d="M12 8L24 16L12 24V8Z" fill="currentColor"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Value Proposition Section -->
     <section class="value-proposition">
       <div class="value-content">
@@ -464,5 +483,120 @@ export default {
 .navbar.scrolled {
   background: #0c232c;
   padding: 1rem 0;
+}
+
+.video-preview {
+  padding: 8rem 0;
+  background-color: var(--secondary-color);
+  border-top: 1px solid rgba(6, 29, 32, 0.1);
+  border-bottom: 1px solid rgba(6, 29, 32, 0.1);
+}
+
+.video-preview-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.video-preview-text {
+  margin-bottom: 3rem;
+
+  h3 {
+    font-family: var(--font-secondary);
+    font-size: 2.4rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-weight: 400;
+  }
+
+  p {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    opacity: 0.8;
+  }
+}
+
+.video-preview-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(6, 29, 32, 0.15);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 25px 50px rgba(6, 29, 32, 0.2);
+
+    .play-button {
+      transform: translate(-50%, -50%) scale(1.1);
+      background-color: var(--tactical-red);
+    }
+
+    .video-thumbnail {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.video-thumbnail {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: var(--tactical-red-dark);
+  border: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(255, 59, 48, 0.3);
+
+  svg {
+    width: 32px;
+    height: 32px;
+    margin-left: 4px;
+  }
+}
+
+@media (max-width: 768px) {
+  .video-preview {
+    padding: 4rem 0;
+  }
+
+  .video-preview-text {
+    h3 {
+      font-size: 1.8rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
+  }
+
+  .play-button {
+    width: 60px;
+    height: 60px;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
 }
 </style>

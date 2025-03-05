@@ -429,6 +429,8 @@ button {
   hyphens: auto;
   -webkit-hyphens: auto;
   -ms-hyphens: auto;
+  margin-left: 50%;
+  transform: translateX(-25%);
 }
 
 .hero-cta-container {
