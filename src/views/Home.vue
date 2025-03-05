@@ -485,62 +485,9 @@ export default {
   padding: 1rem 0;
 }
 
-.video-preview {
-  padding: 8rem 0;
-  background-color: var(--secondary-color);
-  border-top: 1px solid rgba(6, 29, 32, 0.1);
-  border-bottom: 1px solid rgba(6, 29, 32, 0.1);
-}
 
-.video-preview-content {
-  max-width: 1000px;
-  margin: 0 auto;
-  text-align: center;
-}
 
-.video-preview-text {
-  margin-bottom: 3rem;
 
-  h3 {
-    font-family: var(--font-secondary);
-    font-size: 2.4rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-    font-weight: 400;
-  }
-
-  p {
-    font-size: 1.4rem;
-    color: var(--primary-color);
-    opacity: 0.8;
-  }
-}
-
-.video-preview-container {
-  position: relative;
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 20px 40px rgba(6, 29, 32, 0.15);
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 25px 50px rgba(6, 29, 32, 0.2);
-
-    .play-button {
-      transform: translate(-50%, -50%) scale(1.1);
-      background-color: var(--tactical-red);
-    }
-
-    .video-thumbnail {
-      transform: scale(1.05);
-    }
-  }
-}
 
 .video-thumbnail {
   width: 100%;
