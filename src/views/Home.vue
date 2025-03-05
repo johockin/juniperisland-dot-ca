@@ -36,16 +36,20 @@
       <div class="container">
         <div class="video-preview-content">
           <div class="video-preview-text">
-            <h3>The fastest way to know if we're the right fit?</h3>
-            <p>Watch this 60-second video.</p>
+            <h3>Skip the guesswork. In 60 seconds, you'll know if we're your people.</h3>
+            <p>This will be the most useful minute of your day.</p>
           </div>
           <div class="video-preview-container">
-            <img src="@/assets/video-thumbnail.jpg" alt="Preview of our 60-second introduction video" class="video-thumbnail">
-            <button class="play-button">
-              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                <path d="M12 8L24 16L12 24V8Z" fill="currentColor"/>
-              </svg>
-            </button>
+            <div class="video-preview-wrapper">
+              <img src="@/assets/video-thumbnail.jpg" alt="Our team explaining how we can help your brand" class="video-thumbnail">
+              <div class="video-overlay">
+                <button class="play-button">
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <path d="M12 8L24 16L12 24V8Z" fill="currentColor"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -484,8 +488,6 @@ export default {
   background: #0c232c;
   padding: 1rem 0;
 }
-
-
 
 @media (max-width: 768px) {
   .video-preview {
