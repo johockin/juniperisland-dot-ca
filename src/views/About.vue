@@ -2,15 +2,19 @@
   <div class="about">
     <section class="hero">
       <div class="container">
-        <h1>About Juniper Island</h1>
-        <p class="subtitle">Toronto's Premier Video Production Company</p>
+        <div class="hero-content">
+          <div class="hero-label">Our Company</div>
+          <h1 class="hero-title">About Juniper Island</h1>
+          <p class="hero-subtext">Toronto's Premier Video Production Company specializing in strategic visual storytelling that elevates brands and drives results.</p>
+        </div>
       </div>
     </section>
 
     <section class="our-story">
       <div class="container">
-        <div class="section-header">
-          <h2>Our Story</h2>
+        <div class="section-intro">
+          <div class="section-label">Our Journey</div>
+          <h2 class="section-title">Our Story</h2>
         </div>
         <div class="story-content">
           <div class="story-text">
@@ -18,8 +22,8 @@
             <p>What began as a passion for visual storytelling has evolved into a full-service video production company trusted by industry leaders across Toronto and beyond.</p>
             <p>Our team combines technical expertise with strategic thinking to create video content that not only looks beautiful but also drives real business results.</p>
           </div>
-          <div class="story-image">
-            <img src="@/assets/about-team.jpg" alt="Juniper Island Team" class="team-image">
+          <div class="story-image-container">
+            <div class="placeholder-image" aria-label="Team image placeholder"></div>
           </div>
         </div>
       </div>
@@ -27,24 +31,32 @@
 
     <section class="our-approach">
       <div class="container">
-        <div class="section-header">
-          <h2>Our Approach</h2>
+        <div class="section-intro">
+          <div class="section-label">Our Process</div>
+          <h2 class="section-title">Our Approach</h2>
+          <div class="section-description">
+            <p>We believe in a structured yet flexible approach that ensures every project delivers on its strategic objectives while maintaining creative excellence.</p>
+          </div>
         </div>
         <div class="approach-content">
           <div class="approach-item">
-            <h3>1. Strategic Discovery</h3>
+            <div class="approach-number">01</div>
+            <h3>Strategic Discovery</h3>
             <p>We begin by understanding your brand, audience, and objectives to develop a content strategy that aligns with your business goals.</p>
           </div>
           <div class="approach-item">
-            <h3>2. Creative Development</h3>
+            <div class="approach-number">02</div>
+            <h3>Creative Development</h3>
             <p>Our creative team crafts compelling narratives and visual concepts that communicate your unique value proposition.</p>
           </div>
           <div class="approach-item">
-            <h3>3. Production Excellence</h3>
+            <div class="approach-number">03</div>
+            <h3>Production Excellence</h3>
             <p>Using state-of-the-art equipment and techniques, we bring your story to life with meticulous attention to detail.</p>
           </div>
           <div class="approach-item">
-            <h3>4. Strategic Distribution</h3>
+            <div class="approach-number">04</div>
+            <h3>Strategic Distribution</h3>
             <p>We help optimize your content for various platforms to maximize reach and engagement with your target audience.</p>
           </div>
         </div>
@@ -113,9 +125,13 @@
 
     <section class="contact-cta">
       <div class="container">
+        <div class="cta-label">Next Steps</div>
         <h2>Ready to work with us?</h2>
-        <p>Let's create video content that elevates your brand and drives results.</p>
-        <router-link to="/contact" class="cta-button">Get in Touch</router-link>
+        <p>Let's create video content that elevates your brand and drives results. Our team is ready to help bring your vision to life with strategic storytelling that resonates with your audience.</p>
+        <router-link to="/contact" class="cta-button">
+          <div class="button-content">Get in Touch</div>
+          <div class="scan-line"></div>
+        </router-link>
       </div>
     </section>
   </div>
@@ -130,68 +146,181 @@ export default {
 <style scoped>
 .about {
   padding-top: 0;
+  background-color: var(--primary-color);
 }
 
 .hero {
   background-color: var(--primary-color);
-  color: var(--secondary-color);
-  padding: 6rem 0;
-  text-align: center;
-}
-
-.hero h1 {
-  font-size: 3.5rem;
-  margin-bottom: 1rem;
-}
-
-.subtitle {
-  font-size: 1.5rem;
-  opacity: 0.8;
-}
-
-.section-header {
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-.section-header h2 {
-  font-size: 2.5rem;
+  color: var(--light-gold);
+  padding: 10rem 0 8rem;
+  padding-top: calc(10rem + 80px);
   position: relative;
-  display: inline-block;
+  overflow: hidden;
+  margin-top: -80px;
 }
 
-.section-header h2:after {
+.hero::after {
   content: '';
   position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50px;
-  height: 3px;
-  background-color: var(--accent-color);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('@/assets/grid-pattern.png');
+  background-size: 50px 50px;
+  opacity: 0.1;
+  z-index: 1;
 }
 
-.our-story {
-  padding: 6rem 0;
-  background-color: var(--secondary-color);
+.hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.hero-label {
+  font-size: min(1vw, 16px);
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  color: var(--light-gold);
+  opacity: 0.9;
+  margin-left: 0;
+  text-align: left;
+  width: 40%;
+  max-width: 500px;
+}
+
+.hero-title {
+  font-family: var(--font-secondary);
+  font-size: 7vw;
+  font-weight: 400;
+  line-height: 1;
+  margin-bottom: 1.5rem;
+  color: var(--light-gold) !important;
+  letter-spacing: -0.02em;
+  max-width: 24ch;
+  text-align: left;
+  margin-left: 0;
+  transform: none;
+}
+
+.hero-subtext {
+  font-size: min(2vw, 28px);
+  margin-top: 6rem;
+  margin-bottom: 2rem;
+  line-height: 1.4;
+  font-weight: 300;
+  width: 40%;
+  max-width: 500px;
+  color: white;
+  opacity: 0.9;
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  margin-left: 45%;
+}
+
+.section-intro {
+  text-align: left;
+  margin-bottom: 5rem;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.section-label {
+  font-size: min(1vw, 16px);
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  color: var(--primary-color);
+  opacity: 0.9;
+  text-align: left;
+}
+
+.section-title {
+  font-size: 3.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  text-align: left;
+  max-width: 24ch;
 }
 
 .story-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  gap: 3rem;
   align-items: center;
+  margin-top: 3rem;
+}
+
+.story-text {
+  font-size: 1.25rem;
+  color: var(--primary-color);
+  line-height: 1.6;
 }
 
 .story-text p {
   margin-bottom: 1.5rem;
-  font-size: 1.1rem;
+  color: var(--primary-color);
 }
 
-.story-image {
-  border-radius: 8px;
+.our-story {
+  padding: 8rem 0;
+  background-color: var(--light-color);
+  position: relative;
+  color: var(--primary-color);
+}
+
+.story-image-container {
+  width: 100%;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.story-image-container::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: var(--accent-color);
+}
+
+.placeholder-image {
+  width: 100%;
+  height: 400px;
+  background-color: #d0d0d0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.placeholder-image::after {
+  content: 'Image';
+  font-size: 1.5rem;
+  color: #777777;
+  font-weight: 500;
 }
 
 .team-image {
@@ -201,125 +330,286 @@ export default {
 }
 
 .our-approach {
-  padding: 6rem 0;
+  padding: 8rem 0;
   background-color: var(--background-color);
+  position: relative;
 }
 
 .approach-content {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 3rem;
+  margin-top: 2rem;
 }
 
 .approach-item {
-  background-color: var(--secondary-color);
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  background-color: var(--light-color);
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.approach-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+.approach-number {
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  opacity: 0.15;
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  line-height: 1;
 }
 
 .approach-item h3 {
-  color: var(--accent-color);
-  margin-bottom: 1rem;
-  font-size: 1.3rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  position: relative;
+  z-index: 1;
+}
+
+.approach-item p {
+  color: var(--primary-color);
+  line-height: 1.6;
+  position: relative;
+  z-index: 1;
 }
 
 .team {
-  padding: 6rem 0;
-  background-color: var(--secondary-color);
+  padding: 8rem 0;
+  background-color: var(--light-color);
+  position: relative;
 }
 
 .team-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 3rem;
+  margin-top: 2rem;
 }
 
 .team-member {
   text-align: center;
+  background-color: white;
+  padding: 3rem 2rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+  position: relative;
+  transition: transform 0.3s ease;
+  color: var(--primary-color);
+}
+
+.team-member:hover {
+  transform: translateY(-10px);
 }
 
 .member-image {
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
   overflow: hidden;
-  margin: 0 auto 1.5rem;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  margin: 0 auto 2rem;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  border: 5px solid var(--light-color);
+  position: relative;
+  background-color: #d0d0d0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.member-image img {
+.member-image::before {
+  content: 'Photo';
+  font-size: 1rem;
+  color: #777777;
+  font-weight: 500;
+  z-index: 2;
+}
+
+.member-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  background: linear-gradient(135deg, rgba(var(--accent-color-rgb), 0.2) 0%, rgba(var(--primary-color-rgb), 0.2) 100%);
+  z-index: 1;
 }
 
 .team-member h3 {
   margin-bottom: 0.5rem;
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
 .member-title {
   color: var(--accent-color);
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   font-weight: 600;
+  font-size: 1rem;
 }
 
 .member-bio {
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 1.6;
+  color: var(--text-color);
 }
 
 .values {
-  padding: 6rem 0;
+  padding: 8rem 0;
   background-color: var(--background-color);
+  position: relative;
 }
 
 .values-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 3rem;
+  margin-top: 2rem;
 }
 
 .value-item {
-  background-color: var(--secondary-color);
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  background-color: var(--light-color);
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-left: 5px solid var(--accent-color);
+}
+
+.value-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
 }
 
 .value-item h3 {
-  color: var(--accent-color);
-  margin-bottom: 1rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.value-item p {
+  color: var(--primary-color);
+  line-height: 1.6;
 }
 
 .contact-cta {
-  padding: 6rem 0;
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
-  text-align: center;
+  padding: 8rem 0;
+  background: var(--primary-color);
+  color: var(--light-gold);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('@/assets/grid-pattern.png');
+  background-size: 50px 50px;
+  opacity: 0.1;
+  z-index: 1;
+}
+
+.contact-cta .container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.cta-label {
+  font-size: min(1vw, 16px);
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  color: var(--light-gold);
+  opacity: 0.9;
+  text-align: left;
+  width: 40%;
+  max-width: 500px;
 }
 
 .contact-cta h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+  text-align: left;
+  max-width: 24ch;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--light-gold);
 }
 
 .contact-cta p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  opacity: 0.8;
+  font-size: 1.25rem;
+  width: 40%;
+  max-width: 500px;
+  margin: 0 0 2.5rem 45%;
+  opacity: 0.9;
+  text-align: justify;
+  margin-top: -5rem;
+  line-height: 1.6;
+  color: white;
 }
 
 .cta-button {
   display: inline-block;
-  padding: 1rem 2rem;
-  background-color: var(--accent-color);
+  background: var(--accent-color);
   color: var(--primary-color);
-  text-decoration: none;
+  padding: 1rem 2.5rem;
   border-radius: 4px;
   font-weight: 600;
-  box-shadow: 4px 4px 0 var(--accent-secondary);
-  transition: transform 0.3s ease;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin-left: 45%;
+  position: relative;
+  overflow: hidden;
+}
+
+.button-content {
+  position: relative;
+  z-index: 2;
+}
+
+.scan-line {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  z-index: 1;
+  animation: scan 2s infinite;
+}
+
+@keyframes scan {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 200%;
+  }
 }
 
 .cta-button:hover {
@@ -327,8 +617,46 @@ export default {
 }
 
 @media (max-width: 768px) {
-  .hero h1 {
+  .hero {
+    padding: 6rem 0 4rem;
+    padding-top: calc(6rem + 80px);
+  }
+
+  .hero-label {
+    width: 80%;
+    margin-bottom: 1rem;
+  }
+
+  .hero-title {
+    font-size: 10vw;
+  }
+
+  .hero-subtext {
+    width: 80%;
+    margin-left: 0;
+    margin-top: 2rem;
+    font-size: 5vw;
+  }
+  
+  .section-intro {
+    margin-bottom: 3rem;
+  }
+
+  .section-label {
+    width: 80%;
+  }
+
+  .section-title {
     font-size: 2.5rem;
+  }
+  
+  .story-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .story-image-container {
+    margin-top: 1rem;
   }
   
   .story-content,
@@ -344,8 +672,27 @@ export default {
     height: 150px;
   }
   
+  .contact-cta {
+    padding: 6rem 0 4rem;
+  }
+
+  .cta-label {
+    width: 80%;
+  }
+
   .contact-cta h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
+  }
+
+  .contact-cta p {
+    width: 80%;
+    margin-left: 0;
+    margin-top: 1.5rem;
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    margin-left: 0;
   }
 }
 </style> 

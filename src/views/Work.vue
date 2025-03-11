@@ -2,66 +2,60 @@
   <div class="work">
     <section class="hero">
       <div class="container">
-        <h1>Our Work</h1>
-        <p class="hero-text">We create compelling video content that helps brands connect with their audience and achieve their goals.</p>
+        <div class="hero-content">
+          <div class="hero-label">Portfolio</div>
+          <h1 class="hero-title">Our Work</h1>
+          <p class="hero-subtext">We create compelling video content that helps brands connect with their audience and achieve their goals.</p>
+        </div>
       </div>
     </section>
 
-    <section class="work-grid">
+    <section class="case-studies-section">
       <div class="container">
-        <div class="work-categories">
-          <div class="work-category">
-            <h2>Brand Films</h2>
-            <div class="video-grid">
-              <div class="video-item">
-                <div class="video-wrapper">
-                  <iframe
-                    src="https://player.vimeo.com/video/123456789"
-                    frameborder="0"
-                    allow="autoplay; fullscreen"
-                    allowfullscreen
-                  ></iframe>
+        <div v-if="isLoading" class="loading-container">
+          <div class="spinner"></div>
+          <p>Loading case studies...</p>
+        </div>
+        
+        <div v-else-if="error" class="error-container">
+          <p>{{ error }}</p>
+        </div>
+
+        <div v-else>
+          <!-- Section intro -->
+          <div v-if="caseStudies.length > 0" class="work-intro">
+            <div class="section-label">Showcase</div>
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-description">Explore our portfolio of creative work across various industries and mediums.</p>
+          </div>
+          
+          <div class="case-studies-grid">
+            <div 
+              v-for="caseStudy in filteredCaseStudies" 
+              :key="caseStudy.path"
+              class="case-study-card"
+            >
+              <router-link :to="`/work/${caseStudy.path}`" class="card-link">
+                <div class="card-image" :style="{ backgroundImage: `url(${caseStudy.thumbnail})` }">
+                  <div class="overlay"></div>
+                  <div class="client-tag">{{ caseStudy.client }}</div>
                 </div>
-                <h3>CMPA Brand Film</h3>
-                <p>A cinematic brand film showcasing the impact of Canadian media producers.</p>
-              </div>
+                <div class="card-content">
+                  <h3>{{ caseStudy.title }}</h3>
+                  <p class="subtitle">{{ caseStudy.subtitle }}</p>
+                  <div class="services-list">
+                    <span v-for="(service, index) in caseStudy.services" :key="index" class="service-tag">
+                      {{ service }}
+                    </span>
+                  </div>
+                </div>
+              </router-link>
             </div>
           </div>
 
-          <div class="work-category">
-            <h2>Documentary Style</h2>
-            <div class="video-grid">
-              <div class="video-item">
-                <div class="video-wrapper">
-                  <iframe
-                    src="https://player.vimeo.com/video/123456790"
-                    frameborder="0"
-                    allow="autoplay; fullscreen"
-                    allowfullscreen
-                  ></iframe>
-                </div>
-                <h3>Behind the Scenes</h3>
-                <p>An intimate look at the creative process behind the scenes.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="work-category">
-            <h2>Commercial</h2>
-            <div class="video-grid">
-              <div class="video-item">
-                <div class="video-wrapper">
-                  <iframe
-                    src="https://player.vimeo.com/video/123456791"
-                    frameborder="0"
-                    allow="autoplay; fullscreen"
-                    allowfullscreen
-                  ></iframe>
-                </div>
-                <h3>Product Launch</h3>
-                <p>Dynamic commercial spot highlighting innovative features.</p>
-              </div>
-            </div>
+          <div v-if="filteredCaseStudies.length === 0" class="no-results">
+            <p>No case studies found for the selected filter.</p>
+            <button class="reset-filter" @click="setFilter('all')">View All Work</button>
           </div>
         </div>
       </div>
@@ -69,8 +63,9 @@
 
     <section class="cta">
       <div class="container">
+        <div class="cta-label">Next Steps</div>
         <h2>Ready to Create?</h2>
-        <p>Let's discuss how we can bring your vision to life.</p>
+        <p>Let's discuss how we can bring your vision to life with our team of experts ready to help you tell your story in a compelling and authentic way.</p>
         <router-link to="/contact" class="cta-button">
           <div class="button-content">Get in Touch</div>
           <div class="scan-line"></div>
@@ -80,130 +75,498 @@
   </div>
 </template>
 
-<script setup>
-// Component logic will go here
+<script>
+import { getCaseStudies } from '@/utils/xml.js';
+
+export default {
+  name: 'Work',
+  data() {
+    return {
+      caseStudies: [],
+      isLoading: true,
+      error: null,
+      activeFilter: 'all'
+    };
+  },
+  computed: {
+    availableServices() {
+      // Extract all unique services from case studies
+      const services = new Set();
+      this.caseStudies.forEach(caseStudy => {
+        if (caseStudy.services && Array.isArray(caseStudy.services)) {
+          caseStudy.services.forEach(service => services.add(service));
+        }
+      });
+      return Array.from(services).sort();
+    },
+    filteredCaseStudies() {
+      if (this.activeFilter === 'all') {
+        return this.caseStudies;
+      }
+      return this.caseStudies.filter(caseStudy => 
+        caseStudy.services && 
+        Array.isArray(caseStudy.services) && 
+        caseStudy.services.includes(this.activeFilter)
+      );
+    }
+  },
+  async created() {
+    try {
+      this.caseStudies = await getCaseStudies();
+    } catch (error) {
+      console.error('Error fetching case studies:', error);
+      this.error = 'There was a problem loading our case studies. Please try again later.';
+    } finally {
+      this.isLoading = false;
+    }
+  },
+  methods: {
+    setFilter(filter) {
+      this.activeFilter = filter;
+    }
+  }
+};
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .work {
-  padding-top: 80px; // Account for fixed navbar
+  padding-top: 0; /* Remove padding as we'll handle it in the hero */
+  background-color: var(--primary-color); /* Match hero background color */
 }
 
 .hero {
-  padding: 6rem 0;
-  background: #f8f8f8;
-  text-align: center;
-
-  h1 {
-    margin-bottom: 1.5rem;
-    font-size: 3.5rem;
-  }
-
-  .hero-text {
-    max-width: 800px;
-    margin: 0 auto;
-    font-size: 1.25rem;
-    color: #666;
-  }
+  padding: 10rem 0 8rem;
+  padding-top: calc(10rem + 80px); /* Add navbar height to top padding */
+  background: var(--primary-color);
+  position: relative;
+  overflow: hidden;
+  margin-top: -80px; /* Pull up to cover the navbar area */
 }
 
-.work-grid {
-  padding: 6rem 0;
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('@/assets/grid-pattern.png');
+  background-size: 50px 50px;
+  opacity: 0.1;
+  z-index: 1;
 }
 
-.work-categories {
+.hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content {
   display: flex;
   flex-direction: column;
-  gap: 6rem;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
-.work-category {
-  h2 {
-    margin-bottom: 3rem;
-    font-size: 2.5rem;
-    text-align: center;
+.hero-label {
+  font-size: min(1vw, 16px);
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  color: var(--light-gold);
+  opacity: 0.9;
+  margin-left: 0;
+  text-align: left;
+  width: 40%;
+  max-width: 500px;
+}
+
+.hero-title {
+  font-family: var(--font-secondary);
+  font-size: 7vw;
+  font-weight: 400;
+  line-height: 1;
+  margin-bottom: 1.5rem;
+  color: var(--light-gold) !important;
+  letter-spacing: -0.02em;
+  max-width: 24ch;
+  text-align: left;
+  margin-left: 0;
+  transform: none;
+}
+
+.hero-subtext {
+  font-size: min(2vw, 28px);
+  margin-top: 6rem;
+  margin-bottom: 2rem;
+  line-height: 1.4;
+  font-weight: 300;
+  width: 40%;
+  max-width: 500px;
+  color: var(--light-gold);
+  opacity: 0.9;
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  margin-left: 45%;
+}
+
+.case-studies-section {
+  padding: 8rem 0;
+  background-color: var(--background-color);
+  position: relative;
+}
+
+.case-studies-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0) 100%);
+  z-index: 0;
+}
+
+.work-intro {
+  text-align: left;
+  margin-bottom: 5rem;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.section-label {
+  font-size: min(1vw, 16px);
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  color: var(--primary-color);
+  opacity: 0.8;
+  text-align: left;
+}
+
+.section-title {
+  font-size: 3.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  text-align: left;
+  max-width: 24ch;
+}
+
+.section-description {
+  max-width: 500px;
+  margin-left: 45%;
+  font-size: 1.25rem;
+  color: var(--text-color-secondary);
+  line-height: 1.6;
+  text-align: justify;
+  margin-top: -5rem;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 1rem;
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top-color: var(--accent-color);
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
 }
 
-.video-grid {
+.error-container {
+  text-align: center;
+  padding: 2rem;
+  background-color: #f8d7da;
+  color: #721c24;
+  border-radius: 4px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+
+
+.case-studies-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 3rem;
+  position: relative;
+  z-index: 1;
 }
 
-.video-item {
-  .video-wrapper {
-    position: relative;
-    padding-bottom: 56.25%; // 16:9 aspect ratio
-    height: 0;
-    margin-bottom: 1.5rem;
-    background: #000;
-    border-radius: 8px;
-    overflow: hidden;
+.case-study-card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  background-color: white;
+  position: relative;
+}
 
-    iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-  }
+.case-study-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
 
-  h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-  }
+.card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
 
-  p {
-    color: #666;
-    line-height: 1.6;
-  }
+.card-image {
+  height: 280px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-color);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+}
+
+.case-study-card:hover .card-image::before {
+  opacity: 0.2;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7));
+  z-index: 2;
+}
+
+.client-tag {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 4px;
+  z-index: 3;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.case-study-card:hover .client-tag {
+  transform: translateY(-5px);
+}
+
+.card-content {
+  padding: 2rem;
+  background-color: white;
+  position: relative;
+}
+
+.card-content::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: var(--accent-color);
+  transition: width 0.4s ease;
+}
+
+.case-study-card:hover .card-content::after {
+  width: 100%;
+}
+
+.card-content h3 {
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+  color: var(--primary-color);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  transition: color 0.3s ease;
+}
+
+.case-study-card:hover .card-content h3 {
+  color: var(--accent-color);
+}
+
+.subtitle {
+  color: var(--text-color-secondary);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.services-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.service-tag {
+  padding: 0.25rem 0.75rem;
+  background-color: var(--background-color);
+  font-size: 0.75rem;
+  border-radius: 30px;
+  color: var(--text-color-secondary);
+}
+
+.no-results {
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.reset-filter {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
 }
 
 .cta {
-  padding: 6rem 0;
-  background: #000;
-  color: #fff;
-  text-align: center;
+  padding: 8rem 0;
+  background: var(--primary-color);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
 
-  h2 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-  }
+.cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('@/assets/grid-pattern.png');
+  background-size: 50px 50px;
+  opacity: 0.1;
+  z-index: 1;
+}
 
-  p {
-    font-size: 1.25rem;
-    margin-bottom: 2rem;
-    opacity: 0.8;
-  }
+.cta .container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
 
-  .cta-button {
-    display: inline-block;
-    background: #fff;
-    color: #000;
-    padding: 1rem 2rem;
-    border-radius: 4px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
+.cta-label {
+  font-size: min(1vw, 16px);
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  color: var(--light-gold);
+  opacity: 0.9;
+  text-align: left;
+  width: 40%;
+  max-width: 500px;
+}
 
-    &:hover {
-      background: #f0f0f0;
-    }
-  }
+.cta h2 {
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+  text-align: left;
+  max-width: 24ch;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--light-gold);
+}
+
+.cta p {
+  font-size: 1.25rem;
+  width: 40%;
+  max-width: 500px;
+  margin: 0 0 2.5rem 45%;
+  opacity: 0.9;
+  text-align: justify;
+  margin-top: -5rem;
+  line-height: 1.6;
+  color: var(--light-gold);
+}
+
+.cta-button {
+  display: inline-block;
+  background: var(--accent-color);
+  color: var(--primary-color);
+  padding: 1rem 2.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin-left: 45%;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button:hover {
+  background-color: #c4ac4d;
 }
 
 @media (max-width: 768px) {
   .hero {
-    padding: 4rem 0;
+    padding: 6rem 0 4rem;
 
-    h1 {
-      font-size: 2.5rem;
+    .hero-label {
+      width: 80%;
+      margin-bottom: 1rem;
     }
 
-    .hero-text {
-      font-size: 1rem;
+    .hero-title {
+      font-size: 10vw;
+    }
+
+    .hero-subtext {
+      width: 80%;
+      margin-left: 0;
+      margin-top: 2rem;
+      font-size: 5vw;
     }
   }
 
@@ -217,15 +580,42 @@
     }
   }
 
+  .work-intro {
+    .section-label {
+      width: 80%;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+    }
+
+    .section-description {
+      width: 80%;
+      margin-left: 0;
+      margin-top: 1.5rem;
+    }
+  }
+
   .cta {
-    padding: 4rem 0;
+    padding: 6rem 0 4rem;
+
+    .cta-label {
+      width: 80%;
+    }
 
     h2 {
-      font-size: 2rem;
+      font-size: 2.5rem;
     }
 
     p {
+      width: 80%;
+      margin-left: 0;
+      margin-top: 1.5rem;
       font-size: 1rem;
+    }
+
+    .cta-button {
+      margin-left: 0;
     }
   }
 }

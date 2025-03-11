@@ -64,6 +64,8 @@
 </template>
 
 <script>
+import { updateMetaTags, createOrganizationStructuredData } from './utils/seo';
+
 export default {
   name: 'App',
   data() {
@@ -85,9 +87,23 @@ export default {
         console.error('Error loading fonts:', err);
       });
     }
+    
+    // Add base organization structured data
+    const baseUrl = window.location.origin;
+    createOrganizationStructuredData(baseUrl);
+    
+    // Set initial page metadata
+    this.updatePageMetadata(this.$route);
   },
   beforeUnmount() {
     window.removeEventListener('scroll', this.handleScroll)
+  },
+  
+  watch: {
+    $route(to) {
+      // Update page metadata when route changes
+      this.updatePageMetadata(to);
+    }
   },
   methods: {
     handleScroll() {
@@ -100,6 +116,24 @@ export default {
     closeMobileMenu() {
       this.isMobileMenuOpen = false
       document.body.style.overflow = ''
+    },
+    updatePageMetadata(route) {
+      // Get meta information from route
+      const meta = route.meta || {};
+      
+      // Default metadata
+      const defaultTitle = 'Juniper Island - Toronto\'s Premier Video Production Company';
+      const defaultDescription = 'Juniper Island creates brand stories and high-end video production for bold brands in Toronto, helping your story reach its audience.';
+      
+      // Update meta tags
+      updateMetaTags({
+        title: meta.title || defaultTitle,
+        description: meta.description || defaultDescription,
+        url: window.location.href,
+        type: meta.type || 'website',
+        image: meta.image || '/assets/logo.png',
+        keywords: meta.keywords || ['video production', 'toronto', 'brand videos', 'marketing videos']
+      });
     }
   }
 }

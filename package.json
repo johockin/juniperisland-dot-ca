@@ -9,12 +9,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@rollup/pluginutils": "^5.1.4",
+    "frontmatter-markdown-loader": "^3.7.0",
+    "gray-matter": "^4.0.3",
+    "markdown-it": "^14.1.0",
     "vue": "^3.4.15",
-    "vue-router": "^4.2.5"
+    "vue-router": "^4.2.5",
+    "xml2js": "^0.6.2"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.3",
     "sass": "^1.70.0",
     "vite": "^5.0.11"
   }
-} 
+}

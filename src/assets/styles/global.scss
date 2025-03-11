@@ -350,9 +350,12 @@ button {
 /* Layout Components */
 .hero {
   position: relative;
+  overflow: hidden;
+}
+
+.home-hero {
   height: 75vh;
   min-height: 600px;
-  overflow: hidden;
 }
 
 .hero-background {
@@ -403,16 +406,21 @@ button {
 .hero-text-container {
   max-width: 1400px;
   margin-top: -2vh;
+  text-align: left;
 }
 
 .hero-label {
-  font-size: 0.875rem;
+  font-size: min(1vw, 16px);
   font-weight: 500;
   letter-spacing: 0.15em;
-  margin-bottom: 1.5rem;
+  margin-bottom: 6rem;
   text-transform: uppercase;
   color: var(--light-gold);
   opacity: 0.9;
+  margin-left: 45%;
+  text-align: justify;
+  width: 40%;
+  max-width: 500px;
 }
 
 .hero-title {
@@ -424,27 +432,34 @@ button {
   color: var(--light-gold) !important;
   letter-spacing: -0.02em;
   max-width: 24ch;
+  text-align: left;
+  margin-left: 0;
+  transform: none;
 }
 
 .hero-subtext {
-  font-size: 1.75rem;
-  margin-top:6rem;
+  font-size: min(2vw, 28px);
+  margin-top: 6rem;
   margin-bottom: 2rem;
   line-height: 1.4;
   font-weight: 300;
-  max-width: 36ch;
+  width: 40%;
+  max-width: 500px;
   color: var(--light-gold);
   opacity: 0.9;
   text-align: justify;
   hyphens: auto;
   -webkit-hyphens: auto;
   -ms-hyphens: auto;
-  margin-left: 50%;
-  transform: translateX(-25%);
+  margin-left: 45%;
 }
 
 .hero-cta-container {
   margin-top: 1.5rem;
+  margin-left: 45%;
+  text-align: left;
+  width: 40%;
+  max-width: 500px;
 }
 
 .technical-overlay {
@@ -491,6 +506,10 @@ button {
 
   .hero-subtext {
     font-size: 2.1rem;
+  }
+
+  .hero-text-container {
+    padding-left: 0;
   }
 
   .technical-overlay {

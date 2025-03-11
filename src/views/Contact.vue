@@ -1,9 +1,12 @@
 <template>
   <div class="contact">
+    <div class="navbar-padding"></div>
     <section class="hero">
       <div class="container">
-        <h1>Let's Talk</h1>
-        <p class="hero-text">Ready to elevate your brand with strategic video content? We'd love to hear about your project.</p>
+        <div class="hero-content">
+          <h1 class="hero-title">Let's Connect</h1>
+          <p class="hero-subtext">We are eager to collaborate and bring your vision to life with our creative solutions.</p>
+        </div>
       </div>
     </section>
 
@@ -15,39 +18,22 @@
               <label for="name">Name</label>
               <input type="text" id="name" v-model="form.name" required />
             </div>
-            
             <div class="form-group">
               <label for="email">Email</label>
               <input type="email" id="email" v-model="form.email" required />
             </div>
-            
             <div class="form-group">
               <label for="company">Company</label>
               <input type="text" id="company" v-model="form.company" />
             </div>
-            
-            <div class="form-group">
-              <label for="project">Project Type</label>
-              <select id="project" v-model="form.projectType">
-                <option value="" disabled selected>Select a project type</option>
-                <option value="brand-story">Brand Story</option>
-                <option value="commercial">Commercial</option>
-                <option value="corporate">Corporate Documentary</option>
-                <option value="event">Event Coverage</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-            
             <div class="form-group">
               <label for="message">Tell us about your project</label>
               <textarea id="message" v-model="form.message" rows="5" required></textarea>
             </div>
-            
             <div class="form-checkbox">
               <input type="checkbox" id="newsletter" v-model="form.newsletter">
               <label for="newsletter">Subscribe to our monthly video marketing insights</label>
             </div>
-            
             <button type="submit" class="submit-button">
               <div class="button-content">Send Message</div>
               <div class="scan-line"></div>
@@ -60,13 +46,11 @@
             <h3>Our Office</h3>
             <p>123 King Street West<br>Toronto, ON M5V 1J5</p>
           </div>
-          
           <div class="info-item">
             <h3>Contact</h3>
             <p><a href="mailto:hello@juniperisland.ca">hello@juniperisland.ca</a></p>
             <p><a href="tel:+14165551234">(416) 555-1234</a></p>
           </div>
-          
           <div class="info-item">
             <h3>Follow Us</h3>
             <div class="social-links">
@@ -75,16 +59,10 @@
               <a href="https://vimeo.com/juniperisland" target="_blank" rel="noopener" class="social-link">Vimeo</a>
             </div>
           </div>
-          
-          <div class="info-item">
-            <h3>Working Hours</h3>
-            <p>Monday - Friday: 9am - 6pm</p>
-            <p>Weekend: By appointment</p>
-          </div>
         </div>
       </div>
     </section>
-    
+
     <section class="faq">
       <div class="container">
         <h2>Frequently Asked Questions</h2>
@@ -120,7 +98,6 @@ export default {
         name: '',
         email: '',
         company: '',
-        projectType: '',
         message: '',
         newsletter: false
       }
@@ -135,7 +112,6 @@ export default {
         name: '',
         email: '',
         company: '',
-        projectType: '',
         message: '',
         newsletter: false
       }
@@ -148,31 +124,78 @@ export default {
 
 <style scoped>
 .contact {
-  padding-top: 0;
+  padding-top: 2rem;
+}
+
+.navbar-padding {
+  height: 3rem;
+  background-color: #333;
 }
 
 .hero {
-  padding: 6rem 0;
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
-  text-align: center;
+  padding: 10rem 0 8rem;
+  padding-top: calc(10rem + 80px);
+  background: var(--primary-color);
+  position: relative;
+  overflow: hidden;
+  margin-top: -80px;
 }
 
-.hero h1 {
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('@/assets/grid-pattern.png');
+  background-size: 50px 50px;
+  opacity: 0.1;
+  z-index: 1;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.hero-title {
+  font-family: var(--font-secondary);
+  font-size: 7vw;
+  font-weight: 400;
+  line-height: 1;
   margin-bottom: 1.5rem;
-  font-size: 3.5rem;
+  color: var(--light-gold) !important;
+  letter-spacing: -0.02em;
+  max-width: 24ch;
+  text-align: left;
+  margin-left: 0;
+  transform: none;
 }
 
-.hero-text {
+.hero-subtext {
   max-width: 800px;
   margin: 0 auto;
   font-size: 1.25rem;
-  opacity: 0.8;
+  opacity: 0.9;
+  text-align: justify;
 }
 
 .contact-form {
-  padding: 6rem 0;
-  background-color: var(--secondary-color);
+  padding: 4rem 0;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
 }
 
 .contact-form .container {
@@ -182,26 +205,38 @@ export default {
 }
 
 .form-wrapper form {
-  max-width: 600px;
+  max-width: 800px;
+  padding: 3rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(5px);
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-wrapper form:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
 
 .form-group {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .form-group label {
   display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 500;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  color: #444;
 }
 
 .form-group input,
 .form-group textarea,
 .form-group select {
   width: 100%;
-  padding: 0.75rem;
+  padding: 1rem;
   border: 1px solid #ddd;
-  border-radius: 4px;
+  border-radius: 8px;
   font-size: 1rem;
   font-family: inherit;
   transition: border-color 0.3s ease;
@@ -211,13 +246,16 @@ export default {
 .form-group textarea:focus,
 .form-group select:focus {
   outline: none;
-  border-color: var(--accent-color);
+  border-color: var(--primary-color);
 }
 
 .form-checkbox {
   display: flex;
   align-items: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: rgba(240, 240, 240, 0.8);
 }
 
 .form-checkbox input {
@@ -225,61 +263,30 @@ export default {
 }
 
 .submit-button {
-  background-color: var(--accent-color);
-  color: var(--primary-color);
+  background-color: #444;
+  color: #fff;
   padding: 1rem 2rem;
   border: none;
-  border-radius: 4px;
-  font-size: 1rem;
-  font-weight: 600;
+  border-radius: 8px;
   cursor: pointer;
-  transition: transform 0.3s ease;
-  box-shadow: 4px 4px 0 var(--accent-secondary);
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .submit-button:hover {
+  background-color: #555;
   transform: translateY(-3px);
 }
 
 .contact-info .info-item {
-  margin-bottom: 2rem;
+  color: #333;
+  text-align: justify;
+  margin-bottom: 1.5rem;
 }
 
 .contact-info .info-item h3 {
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
-  color: var(--accent-color);
-}
-
-.contact-info .info-item p {
-  margin-bottom: 0.5rem;
-}
-
-.contact-info .info-item a {
-  color: var(--primary-color);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.contact-info .info-item a:hover {
-  color: var(--accent-color);
-}
-
-.social-links {
-  display: flex;
-  gap: 1rem;
-}
-
-.social-link {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  background-color: #f5f5f5;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-}
-
-.social-link:hover {
-  background-color: #e5e5e5;
+  color: #222;
 }
 
 .faq {
@@ -290,8 +297,9 @@ export default {
 .faq h2 {
   text-align: center;
   margin-bottom: 3rem;
-  font-size: 2.5rem;
+  font-size: 2rem;
   position: relative;
+  color: #222;
 }
 
 .faq h2:after {
@@ -319,8 +327,13 @@ export default {
 }
 
 .faq-item h3 {
+  font-size: 1.5rem;
+  color: #333;
   margin-bottom: 1rem;
-  color: var(--accent-color);
+}
+
+.faq-item p {
+  color: #444;
 }
 
 @media (max-width: 768px) {
@@ -345,4 +358,4 @@ export default {
     grid-template-columns: 1fr;
   }
 }
-</style> 
+</style>

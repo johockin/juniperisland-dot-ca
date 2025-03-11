@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <section class="hero">
+    <section class="hero home-hero">
       <div class="hero-background">
         <video autoplay muted loop playsinline poster="@/assets/video-thumbnail.jpg">
           <source src="@/assets/hero.mp4" type="video/mp4">
@@ -83,22 +83,22 @@
       <div class="container">
         <div class="stats-grid">
           <div class="stat-item">
-            <p>🎬 300+ video projects</p>
+            <p> 300+ video projects</p>
           </div>
           <div class="stat-item">
-            <p>👀 25 million+ views</p>
+            <p> 25 million+ views</p>
           </div>
           <div class="stat-item">
-            <p>📺 Broadcast television</p>
+            <p> Broadcast television</p>
           </div>
           <div class="stat-item">
-            <p>📸 Instagram</p>
+            <p> Instagram</p>
           </div>
           <div class="stat-item">
-            <p>🎥 YouTube</p>
+            <p> YouTube</p>
           </div>
           <div class="stat-item">
-            <p>🎵 TikTok</p>
+            <p> TikTok</p>
           </div>
         </div>
       </div>
