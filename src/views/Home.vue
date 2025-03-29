@@ -1,43 +1,47 @@
 <template>
   <div class="home">
-    <section class="hero home-hero">
-      <div class="hero-background">
+    <!-- Hero Section with Full-Width Video -->
+    <section class="hero">
+      <div class="hero-video">
         <video autoplay muted loop playsinline poster="@/assets/video-thumbnail.jpg">
           <source src="@/assets/hero.mp4" type="video/mp4">
         </video>
       </div>
-      <div class="technical-overlay"></div>
-      <div class="hero-content">
-        <div class="hero-text-container">
-          <div class="hero-label">Branded Content & High-End Video Production for Bold Brands</div>
-          <h1 class="hero-title">Brand Stories.<br>Beautifully Filmed.</h1>
-          <p class="hero-subtext">Great Stories Deserve an Audience—We Make Sure They Find One</p>
-          <div class="hero-cta-container">
-            <a href="/contact" class="cta-button">
-              <div class="button-content">WORK WITH US</div>
-              <div class="scan-line"></div>
-            </a>
+      
+      <GridLayout>
+        <div class="hero-content grid-span-6 grid-start-4">
+          <div class="hero-text">
+            <div class="hero-label">Branded Content & High-End Video Production</div>
+            <h1>Brand Stories.<br>Beautifully Filmed.</h1>
+            <p>Great Stories Deserve an Audience—We Make Sure They Find One</p>
           </div>
         </div>
-      </div>
+      </GridLayout>
     </section>
-
-    <section class="trusted-brands">
-      <div class="container">
-        <div class="brands-grid">
-          <router-link to="/work" class="brands-image-container">
-            <img src="@/assets/logo-strip.png" alt="Trusted brands including Olympus, RedBull, Nike, Dentsu Creative, Riley, Subway" class="brands-image">
-          </router-link>
+    
+    <!-- Brand Strip -->
+    <section class="brand-logos">
+      <GridLayout>
+        <div class="brand-logos-content grid-span-12">
+          <img src="@/assets/logo-strip.png" alt="Trusted brands including Olympus, RedBull, Nike, Dentsu Creative, Riley, Subway" class="brands-image">
         </div>
-      </div>
+      </GridLayout>
     </section>
-
+    
+    <!-- Video Preview Section -->
     <section class="video-preview">
-      <div class="container">
-        <div class="video-preview-content">
-          <h3 class="video-preview-heading">Watch this 60-second video—because the fastest way to know if we're your people is to hear it straight from us.</h3>
-          <div class="video-preview-container">
-            <div class="video-preview-wrapper">
+      <GridLayout>
+        <div class="section-title grid-span-12">
+          <h2>Our Approach</h2>
+        </div>
+        
+        <div class="video-content grid-span-8 grid-start-3">
+          <div class="video-text">
+            <h3>Watch this 60-second video—because the fastest way to know if we're your people is to hear it straight from us.</h3>
+          </div>
+          
+          <div class="video-container">
+            <div class="video-wrapper">
               <img src="@/assets/video-thumbnail.jpg" alt="Our team explaining how we can help your brand" class="video-thumbnail">
               <div class="video-overlay">
                 <button class="play-button" aria-label="Play video">
@@ -49,466 +53,495 @@
             </div>
           </div>
         </div>
-      </div>
+      </GridLayout>
     </section>
-
+    
     <!-- Value Proposition Section -->
-    <section class="value-proposition">
-      <div class="value-content">
-        <h2 class="value-headline">We Know What Makes Audiences Watch, Share, and Engage.</h2>
-        <p class="value-copy">Brands don't struggle with storytelling—they struggle with getting their stories seen and shared. We craft social-first, strategy-driven videos that don't just look great—they break through.</p>
+    <section class="value-prop">
+      <GridLayout>
+        <div class="value-content grid-span-6 grid-start-4">
+          <h2>We Know What Makes Audiences Watch, Share, and Engage.</h2>
+          <p>Brands don't struggle with storytelling—they struggle with getting their stories seen and shared. We craft social-first, strategy-driven videos that don't just look great—they break through.</p>
+        </div>
         
-        <div class="value-stats">
-          <div class="stat-card">
+        <div class="stats-grid grid-span-12">
+          <div class="stat-item">
             <div class="stat-number">1M+</div>
             <div class="stat-label">Average Views per Campaign</div>
           </div>
-          <div class="stat-card">
+          <div class="stat-item">
             <div class="stat-number">300%</div>
             <div class="stat-label">Average ROI for Clients</div>
           </div>
-          <div class="stat-card">
+          <div class="stat-item">
             <div class="stat-number">50+</div>
             <div class="stat-label">Brands Trust Us</div>
           </div>
         </div>
-
-        <div class="value-cta">
-          <a href="/work" class="cta-button">See Our Work</a>
-        </div>
-      </div>
+      </GridLayout>
     </section>
-
-    <section class="stats-section">
-      <div class="container">
-        <div class="stats-grid">
-          <div class="stat-item">
-            <p> 300+ video projects</p>
-          </div>
-          <div class="stat-item">
-            <p> 25 million+ views</p>
-          </div>
-          <div class="stat-item">
-            <p> Broadcast television</p>
-          </div>
-          <div class="stat-item">
-            <p> Instagram</p>
-          </div>
-          <div class="stat-item">
-            <p> YouTube</p>
-          </div>
-          <div class="stat-item">
-            <p> TikTok</p>
-          </div>
+    
+    <!-- Process Section -->
+    <section class="process">
+      <GridLayout>
+        <div class="section-title grid-span-12">
+          <h2>Our Process</h2>
         </div>
-      </div>
-    </section>
-
-    <section class="sustainability">
-      <div class="container">
-        <div class="sustainability-content">
-          <div class="sustainability-item">
-            <img src="@/assets/bullfrog.png" alt="Bullfrog Power" class="sustainability-logo">
-            <p>Proudly 100% Bullfrog Powered</p>
-          </div>
-          <div class="sustainability-item">
-            <img src="@/assets/green-guide.png" alt="Green Production Guide" class="sustainability-logo">
-            <p>Our sets voluntarily adhere to the Green Production Guide for on-set sustainability</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="process-section">
-      <div class="container">
-        <h2 class="process-title">Here's how...</h2>
-        <div class="process-steps">
+        
+        <div class="process-steps grid-span-12">
           <div class="process-step">
-            <h3 class="step-number">1.</h3>
-            <h3 class="step-title">Discover & Define</h3>
-            <p class="step-description">We start with a thorough consultation to grasp your brand's specific needs. Delving into your story and market position, we craft a creative direction aligned with your goals.</p>
+            <h3>01</h3>
+            <h4>Discover & Define</h4>
+            <p>We start with a thorough consultation to grasp your brand's specific needs. Delving into your story and market position, we craft a creative direction aligned with your goals.</p>
           </div>
+          
           <div class="process-step">
-            <h3 class="step-number">2.</h3>
-            <h3 class="step-title">Create & Craft</h3>
-            <p class="step-description">Our experts turn your narrative into striking video content, covering scriptwriting, storyboarding, filming, and editing, to echo your brand's voice and vision.</p>
+            <h3>02</h3>
+            <h4>Create & Craft</h4>
+            <p>Our experts turn your narrative into striking video content, covering scriptwriting, storyboarding, filming, and editing, to echo your brand's voice and vision.</p>
           </div>
+          
           <div class="process-step">
-            <h3 class="step-number">3.</h3>
-            <h3 class="step-title">Deliver & Drive Impact</h3>
-            <p class="step-description">Deliver the final video content along with a tailored distribution strategy to maximize impact, engagement, and meet your marketing goals.</p>
+            <h3>03</h3>
+            <h4>Deliver & Drive Impact</h4>
+            <p>Deliver the final video content along with a tailored distribution strategy to maximize impact, engagement, and meet your marketing goals.</p>
           </div>
         </div>
-        <div class="process-cta">
-          <a href="#contact" class="cta-button">WORK WITH US</a>
-          <router-link to="/work" class="secondary-button">VIEW OUR WORK</router-link>
-        </div>
-      </div>
+      </GridLayout>
     </section>
-
-    <section class="testimonial-section">
-      <div class="container">
-        <div class="testimonial">
-          <div class="quote-mark">"</div>
-          <div class="testimonial-content">
-            <p class="testimonial-text">"The Juniper Island team are ideal partners, anticipating our needs and exceeding our expectations at every turn.</p>
-            <p class="testimonial-text">They take time to understand the "why" of everything we're doing, and then put in the work to make sure it's as creative and beautiful as possible."</p>
-            <div class="testimonial-author">
-              <p class="author-name">Andrew Addison, Vice-President, Communications, Marketing & Membership</p>
-              <p class="author-company">The Canadian Media Producers Association (CMPA)</p>
+    
+    <!-- Testimonial Section -->
+    <section class="testimonial">
+      <GridLayout>
+        <div class="testimonial-content grid-span-8 grid-start-3">
+          <div class="quote-content">
+            <p>"The Juniper Island team are ideal partners, anticipating our needs and exceeding our expectations at every turn. They take time to understand the "why" of everything we're doing, and then put in the work to make sure it's as creative and beautiful as possible."</p>
+            <div class="quote-author">
+              <p>Andrew Addison, Vice-President, Communications, Marketing & Membership</p>
+              <p>The Canadian Media Producers Association (CMPA)</p>
             </div>
           </div>
         </div>
-      </div>
+      </GridLayout>
     </section>
-
-    <section class="newsletter-section" id="contact">
-      <div class="container">
-        <div class="newsletter-content">
+    
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+      <GridLayout>
+        <div class="newsletter-content grid-span-6 grid-start-4">
           <h2>Our quarterly newsletter offers essential insights for brand marketers determined to make a real impact in a saturated market.</h2>
           <form class="newsletter-form">
             <input type="email" placeholder="Your work email" class="email-input" required>
-            <button type="submit" class="submit-button">
-              <div class="button-content">Subscribe</div>
-              <div class="scan-line"></div>
-            </button>
+            <button type="submit" class="submit-button">Subscribe</button>
           </form>
         </div>
-      </div>
+      </GridLayout>
     </section>
   </div>
 </template>
 
 <script>
+import GridLayout from '@/components/GridLayout.vue';
+
 export default {
-  name: 'Home'
+  name: 'Home',
+  components: {
+    GridLayout
+  }
 }
 </script>
 
 <style lang="scss" scoped>
 .home {
-  padding-top: 0;
-  font-family: var(--font-primary);
   color: var(--text-color);
 }
 
-.process-guide-section {
+/* Hero Section */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+  }
+  
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: var(--secondary-color);
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.hero-label {
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-family: var(--font-accent);
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 400;
+  line-height: 1.1;
+  margin: 0;
+  font-family: var(--font-secondary);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  font-weight: 300;
+  max-width: 500px;
+}
+
+/* Brand Logos Section */
+.brand-logos {
   padding: 4rem 0;
+  background-color: #fff;
+}
+
+.brand-logos-content {
+  display: flex;
+  justify-content: center;
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Video Preview Section */
+.video-preview {
+  padding: 6rem 0;
   background-color: var(--secondary-color);
 }
 
-.process-guide {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 3rem;
-  background: #f8f8f8;
-  border-radius: 8px;
+.section-title {
+  margin-bottom: 3rem;
   text-align: center;
+  
+  h2 {
+    font-family: var(--font-secondary);
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--primary-color);
+  }
 }
 
-.process-guide h3 {
-  margin-bottom: 2rem;
-  font-size: 1.4rem;
-  font-weight: 500;
-  color: var(--primary-color);
-}
-
-.guide-form {
-  margin-top: 2rem;
-}
-
-.form-group {
+.video-content {
   display: flex;
-  gap: 1rem;
-  margin-bottom: 1rem;
-  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
 }
 
-.email-input {
-  flex: 0 1 400px;
-  padding: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 1rem;
+.video-text {
+  h3 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1.4;
+    font-family: var(--font-secondary);
+    color: var(--primary-color);
+  }
 }
 
-.submit-button {
-  padding: 1rem 2rem;
-  background: var(--primary-color);
-  color: #fff;
-  border: none;
-  border-radius: 4px;
+.video-container {
+  position: relative;
   cursor: pointer;
-  font-weight: 600;
-  text-transform: uppercase;
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    
+    .video-thumbnail {
+      filter: brightness(1.15) contrast(1.05);
+    }
+    
+    .video-overlay {
+      background: rgba(0, 0, 0, 0.3);
+    }
+    
+    .play-button {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    }
+  }
 }
 
-.stats-section {
-  padding: 4rem 0;
-  background-color: #f8f8f8;
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  overflow: hidden;
+}
+
+.video-thumbnail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 0.3s ease;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease;
+}
+
+.play-button {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  
+  svg {
+    width: 24px;
+    height: 24px;
+    margin-left: 5px;
+    color: var(--primary-color);
+  }
+}
+
+/* Value Proposition Section */
+.value-prop {
+  padding: 6rem 0;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.value-content {
+  text-align: center;
+  margin-bottom: 4rem;
+  
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    font-family: var(--font-secondary);
+  }
+  
+  p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    line-height: 1.6;
+  }
 }
 
 .stats-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.stat-item {
-  text-align: center;
-  font-size: 1.2rem;
-  font-weight: 500;
-}
-
-.sustainability {
-  padding: 4rem 0;
-  background-color: #0c2340;
-  color: white;
-}
-
-.sustainability-content {
   display: flex;
   justify-content: space-around;
-  align-items: center;
   flex-wrap: wrap;
   gap: 2rem;
 }
 
-.sustainability-item {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  max-width: 400px;
-}
-
-.sustainability-logo {
-  width: 60px;
-  height: auto;
-}
-
-.process-section {
-  padding: 6rem 0;
-  background-color: #a8c5c9;
+.stat-item {
   text-align: center;
+  
+  .stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    font-family: var(--font-accent);
+    color: var(--accent-color);
+  }
+  
+  .stat-label {
+    font-size: 1rem;
+    font-weight: 300;
+  }
 }
 
-.process-title {
-  font-size: 2.5rem;
-  margin-bottom: 4rem;
-  color: var(--primary-color);
+/* Process Section */
+.process {
+  padding: 6rem 0;
+  background-color: var(--secondary-color);
 }
 
 .process-steps {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
-  margin-bottom: 4rem;
+  gap: 2rem;
 }
 
 .process-step {
-  text-align: center;
+  padding: 2rem;
+  
+  h3 {
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    font-family: var(--font-accent);
+    color: var(--primary-color);
+  }
+  
+  h4 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    font-family: var(--font-secondary);
+    color: var(--primary-color);
+  }
+  
+  p {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.6;
+  }
 }
 
-.step-number {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: var(--primary-color);
-}
-
-.step-title {
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
-  color: var(--primary-color);
-}
-
-.step-description {
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-.process-cta {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 3rem;
-}
-
-.secondary-button {
-  display: inline-block;
-  padding: 1rem 2rem;
-  background: transparent;
-  color: var(--primary-color);
-  text-decoration: none;
-  border: 2px solid var(--primary-color);
-  border-radius: 4px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.secondary-button:hover {
-  background: var(--primary-color);
-  color: white;
-}
-
-.testimonial-section {
+/* Testimonial Section */
+.testimonial {
   padding: 6rem 0;
   background-color: var(--primary-color);
-  color: white;
-}
-
-.testimonial {
-  max-width: 800px;
-  margin: 0 auto;
-  position: relative;
-  padding: 2rem;
-}
-
-.quote-mark {
-  font-size: 6rem;
-  position: absolute;
-  top: -2rem;
-  left: -2rem;
-  color: var(--accent-color);
-  font-family: var(--font-secondary);
+  color: var(--secondary-color);
 }
 
 .testimonial-content {
-  position: relative;
-  z-index: 1;
-}
-
-.testimonial-text {
-  font-size: 1.4rem;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-  font-style: italic;
-}
-
-.testimonial-author {
-  margin-top: 2rem;
-}
-
-.author-name {
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-
-.author-company {
-  opacity: 0.8;
-}
-
-.newsletter-section {
-  padding: 6rem 0;
-  background-color: #e6d08a;
-}
-
-.newsletter-content {
-  max-width: 800px;
-  margin: 0 auto;
   text-align: center;
 }
 
-.newsletter-content h2 {
-  font-size: 1.8rem;
-  margin-bottom: 2rem;
-  color: var(--primary-color);
+.quote-content {
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.6;
+  font-family: var(--font-secondary);
+  
+  p {
+    margin-bottom: 2rem;
+  }
+}
+
+.quote-author {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+/* Newsletter Section */
+.newsletter {
+  padding: 6rem 0;
+  background-color: var(--secondary-color);
+}
+
+.newsletter-content {
+  text-align: center;
+  
+  h2 {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    font-family: var(--font-secondary);
+    color: var(--primary-color);
+  }
 }
 
 .newsletter-form {
   display: flex;
+  flex-direction: column;
   gap: 1rem;
-  justify-content: center;
-  max-width: 600px;
+  max-width: 400px;
   margin: 0 auto;
-}
-
-@media (max-width: 992px) {
-  .hero-title {
-    font-size: 3.8rem;
+  
+  .email-input {
+    padding: 1rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 0;
+    background-color: transparent;
+    font-size: 1rem;
+    color: var(--primary-color);
+    
+    &::placeholder {
+      color: rgba(6, 29, 32, 0.5);
+    }
+  }
+  
+  .submit-button {
+    padding: 1rem;
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+    &:hover {
+      background-color: darken(#061D20, 10%);
+    }
   }
 }
 
+/* Mobile styles */
 @media (max-width: 768px) {
-  .hero-text-container {
-    padding-left: 0;
-    text-align: center;
+  .hero h1 {
+    font-size: 2.5rem;
   }
   
-  .hero-title {
-    font-size: 3.2rem;
+  .section-title h2,
+  .value-content h2 {
+    font-size: 2rem;
   }
   
-  .hero-label {
-    font-size: 0.9rem;
+ .video-text h3 {
+    font-size: 1.5rem;
   }
   
-  .hero-subtext {
-    font-size: 1.2rem;
-  }
-  
-  .form-group {
-    flex-direction: column;
+  .play-button {
+    width: 60px;
+    height: 60px;
   }
   
   .process-steps {
     grid-template-columns: 1fr;
   }
   
-  .stats-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-  
-  .process-cta {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .newsletter-form {
-    flex-direction: column;
-  }
-}
-
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  padding: 1.5rem 0;
-  transition: all var(--transition-speed) ease;
-  background-color: rgba(12, 35, 44, 0.9);
-}
-
-.navbar.scrolled {
-  background: #0c232c;
-  padding: 1rem 0;
-}
-
-@media (max-width: 768px) {
-  .video-preview {
-    padding: 4rem 0;
-  }
-
-  .video-preview-text {
-    h3 {
-      font-size: 1.8rem;
-    }
-
-    p {
-      font-size: 1.2rem;
-    }
-  }
-
-  .play-button {
-    width: 60px;
-    height: 60px;
-
-    svg {
-      width: 24px;
-      height: 24px;
-    }
+  .quote-content {
+    font-size: 1.2rem;
   }
 }
 </style>
