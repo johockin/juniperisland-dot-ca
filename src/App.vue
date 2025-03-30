@@ -3,21 +3,21 @@
     <CustomCursor />
     
     <header class="site-header">
-      <GridLayout>
-        <div class="site-logo grid-span-2 grid-start-1">
-          <router-link to="/" class="logo">
-            Juniper Island
-          </router-link>
+      <div class="grid">
+        <!-- Logo in the top left -->
+        <div class="header-logo col-span-2 col-start-1">
+          <router-link to="/" class="logo">Juniper Island</router-link>
         </div>
         
-        <nav class="site-nav grid-span-6 grid-start-7">
+        <!-- Main navigation in the top right -->
+        <nav class="main-nav col-span-4 col-start-9">
           <router-link to="/" exact>Home</router-link>
           <router-link to="/work">Projects</router-link>
           <router-link to="/about">About</router-link>
           <router-link to="/blog">Journal</router-link>
           <router-link to="/contact">Contact</router-link>
         </nav>
-      </GridLayout>
+      </div>
     </header>
 
     <main class="main-content">
@@ -29,21 +29,31 @@
     </main>
 
     <footer class="site-footer">
-      <GridLayout>
-        <div class="footer-info grid-span-4 grid-start-1">
-          <p>© {{ currentYear }} Juniper Island</p>
+      <div class="grid">
+        <!-- Footer info left -->
+        <div class="footer-info col-span-3 col-start-1">
+          <p>&copy; {{ currentYear }} Juniper Island</p>
           <p>Toronto, ON</p>
         </div>
         
-        <div class="footer-contact grid-span-4 grid-start-5">
-          <a href="mailto:hello@juniperisland.ca">hello@juniperisland.ca</a>
-        </div>
+        <!-- Footer navigation center -->
+        <nav class="footer-nav col-span-6 col-start-4">
+          <router-link to="/">Home</router-link>
+          <router-link to="/work">Projects</router-link>
+          <router-link to="/about">About</router-link>
+          <router-link to="/blog">Journal</router-link>
+          <router-link to="/contact">Contact</router-link>
+        </nav>
         
-        <div class="footer-social grid-span-4 grid-start-9">
-          <a href="https://instagram.com/juniperisland" target="_blank" rel="noopener noreferrer">Instagram</a>
-          <a href="https://linkedin.com/company/juniper-island" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <!-- Footer contact right -->
+        <div class="footer-contact col-span-3 col-start-10">
+          <a href="mailto:hello@juniperisland.ca">hello@juniperisland.ca</a>
+          <div class="social-links">
+            <a href="https://instagram.com/juniperisland" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://linkedin.com/company/juniper-island" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
         </div>
-      </GridLayout>
+      </div>
     </footer>
   </div>
 </template>
@@ -51,31 +61,18 @@
 <script>
 import { updateMetaTags, createOrganizationStructuredData } from './utils/seo';
 import CustomCursor from './components/CustomCursor.vue';
-import GridLayout from './components/GridLayout.vue';
 
 export default {
   name: 'App',
   components: {
-    CustomCursor,
-    GridLayout
+    CustomCursor
   },
   data() {
     return {
-      fontsLoaded: false,
       currentYear: new Date().getFullYear()
     }
   },
   mounted() {
-    // Check if fonts are loaded
-    if (document.fonts) {
-      document.fonts.ready.then(() => {
-        this.fontsLoaded = true;
-        console.log('Fonts loaded successfully');
-      }).catch(err => {
-        console.error('Error loading fonts:', err);
-      });
-    }
-    
     // Add base organization structured data
     const baseUrl = window.location.origin;
     createOrganizationStructuredData(baseUrl);
@@ -83,7 +80,6 @@ export default {
     // Set initial page metadata
     this.updatePageMetadata(this.$route);
   },
-  
   watch: {
     $route(to) {
       // Update page metadata when route changes
@@ -116,20 +112,7 @@ export default {
 <style>
 @import '@/assets/styles/fonts.scss';
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: var(--font-primary);
-  line-height: 1.6;
-  color: var(--text-color);
-  min-height: 100vh;
-  background-color: #fff;
-}
-
+/* App layout */
 .app {
   display: flex;
   flex-direction: column;
@@ -138,7 +121,7 @@ body {
 
 .main-content {
   flex: 1;
-  margin-top: 6rem;
+  margin-top: 60px; /* Height of the header */
 }
 
 /* Header styling */
@@ -147,41 +130,47 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 100;
-  padding: 1.5rem 0;
+  z-index: var(--z-header);
+  padding: var(--space-4) 0;
   mix-blend-mode: difference;
 }
 
-.site-logo {
-  font-family: var(--font-secondary);
-  font-size: 1.25rem;
-  font-weight: 400;
+.header-logo,
+.main-nav {
+  color: white;
 }
 
-.site-logo a {
-  color: white;
+.header-logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--font-secondary);
+  font-size: var(--text-xl);
+  font-weight: 400;
   text-decoration: none;
 }
 
-.site-nav {
+.main-nav {
   display: flex;
   justify-content: flex-end;
-  gap: 2rem;
+  gap: var(--space-6);
 }
 
-.site-nav a {
-  color: white;
-  text-decoration: none;
-  font-size: 1rem;
+.main-nav a {
+  font-size: var(--text-base);
   position: relative;
-  transition: opacity 0.3s ease;
+  opacity: 0.8;
+  transition: opacity var(--transition-base);
 }
 
-.site-nav a:hover {
-  opacity: 0.7;
+.main-nav a:hover,
+.main-nav a.router-link-active {
+  opacity: 1;
 }
 
-.site-nav a.router-link-active::after {
+.main-nav a.router-link-active::after {
   content: '';
   position: absolute;
   bottom: -4px;
@@ -193,35 +182,50 @@ body {
 
 /* Footer styling */
 .site-footer {
-  padding: 3rem 0;
-  background-color: var(--primary-color);
+  padding: var(--space-10) 0;
+  background-color: var(--bg-dark);
   color: var(--secondary-color);
 }
 
 .footer-info,
-.footer-contact,
-.footer-social {
+.footer-contact {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: var(--space-2);
 }
 
-.footer-contact a,
-.footer-social a {
-  color: var(--secondary-color);
-  text-decoration: none;
-  transition: opacity 0.3s ease;
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-5);
 }
 
-.footer-contact a:hover,
-.footer-social a:hover {
+.footer-contact {
+  text-align: right;
+}
+
+.social-links {
+  display: flex;
+  gap: var(--space-4);
+  justify-content: flex-end;
+  margin-top: var(--space-2);
+}
+
+.footer-nav a,
+.footer-contact a {
   opacity: 0.7;
+  transition: opacity var(--transition-base);
+}
+
+.footer-nav a:hover,
+.footer-contact a:hover {
+  opacity: 1;
 }
 
 /* Page transitions */
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.3s ease;
+  transition: opacity var(--transition-base);
 }
 
 .fade-enter-from,
@@ -229,44 +233,85 @@ body {
   opacity: 0;
 }
 
-/* Mobile styles */
-@media (max-width: 768px) {
-  .site-header {
-    padding: 1rem 0;
+/* Mobile menu */
+.mobile-menu-toggle {
+  display: none;
+}
+
+/* Media Queries */
+@media (max-width: 991px) {
+  .main-nav {
+    gap: var(--space-4);
   }
   
-  .site-nav {
+  .footer-nav {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 767px) {
+  .site-header {
+    padding: var(--space-3) 0;
+  }
+  
+  .header-logo {
+    col-span: 6;
+  }
+  
+  .main-nav {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: var(--primary-color);
+    right: 0;
+    bottom: 0;
+    background-color: var(--bg-dark);
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: var(--space-6);
     transform: translateX(-100%);
-    transition: transform 0.3s ease;
+    transition: transform var(--transition-base);
   }
   
-  .site-nav.active {
+  .main-nav.active {
     transform: translateX(0);
   }
   
   .mobile-menu-toggle {
     display: block;
-    z-index: 101;
+    position: absolute;
+    top: var(--space-4);
+    right: var(--space-4);
+    width: 30px;
+    height: 20px;
+    z-index: calc(var(--z-header) + 1);
   }
   
   .site-footer {
-    padding: 2rem 0;
+    padding: var(--space-6) 0;
   }
   
   .footer-info,
-  .footer-contact,
-  .footer-social {
-    margin-bottom: 1.5rem;
+  .footer-nav,
+  .footer-contact {
+    grid-column: span 12;
+    grid-column-start: 1;
+    margin-bottom: var(--space-6);
+    text-align: left;
+  }
+  
+  .footer-nav {
+    flex-direction: column;
+    gap: var(--space-3);
+    align-items: flex-start;
+  }
+  
+  .footer-contact {
+    margin-bottom: 0;
+  }
+  
+  .social-links {
+    justify-content: flex-start;
   }
 }
 </style> 
