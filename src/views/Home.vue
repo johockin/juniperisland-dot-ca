@@ -209,6 +209,7 @@ export default {
   width: 100%;
   height: 100%;
   z-index: var(--z-negative);
+  background-color: var(--primary-color); /* Fallback for missing video */
   
   video {
     width: 100%;
@@ -230,6 +231,7 @@ export default {
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
+  color: var(--primary-color); /* Make hero text dark for fallback */
   
   .label {
     font-family: var(--font-accent);
@@ -243,6 +245,7 @@ export default {
     font-size: var(--text-6xl);
     line-height: 1.1;
     margin-bottom: var(--space-4);
+    font-weight: 600; /* Make headline bolder */
   }
   
   p {
