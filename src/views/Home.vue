@@ -232,6 +232,9 @@ export default {
   flex-direction: column;
   gap: var(--space-4);
   color: var(--primary-color); /* Make hero text dark for fallback */
+  max-width: 900px; /* Make hero text area wider */
+  width: 100%;
+  margin: 0 auto;
   
   .label {
     font-family: var(--font-accent);
@@ -246,12 +249,13 @@ export default {
     line-height: 1.1;
     margin-bottom: var(--space-4);
     font-weight: 600; /* Make headline bolder */
+    max-width: none; /* Remove restrictive max-width */
   }
   
   p {
     font-size: var(--text-xl);
     font-weight: 300;
-    max-width: 600px;
+    max-width: 700px; /* Make subhead wider */
   }
 }
 

@@ -14,6 +14,7 @@ export default {
   data() {
     return {
       position: { x: 0, y: 0 },
+      target: { x: 0, y: 0 },
       isHovering: false,
       isVisible: false,
       isDesktop: true,
@@ -28,57 +29,58 @@ export default {
         '.grid-item',
         '.menu-link',
         '.project-card'
-      ]
+      ],
+      animationFrame: null
     }
   },
   mounted() {
     this.checkDevice();
     if (this.isDesktop) {
-      window.addEventListener('mousemove', this.updatePosition);
+      window.addEventListener('mousemove', this.setTargetPosition);
       window.addEventListener('mouseenter', this.showCursor);
       window.addEventListener('mouseleave', this.hideCursor);
       this.addHoverListeners();
-      
-      // Recheck device on resize
       window.addEventListener('resize', this.checkDevice);
+      this.animate();
     }
   },
   beforeUnmount() {
     if (this.isDesktop) {
-      window.removeEventListener('mousemove', this.updatePosition);
+      window.removeEventListener('mousemove', this.setTargetPosition);
       window.removeEventListener('mouseenter', this.showCursor);
       window.removeEventListener('mouseleave', this.hideCursor);
       window.removeEventListener('resize', this.checkDevice);
       this.removeHoverListeners();
+      cancelAnimationFrame(this.animationFrame);
     }
   },
   methods: {
     checkDevice() {
       this.isDesktop = window.innerWidth > 767;
       this.isVisible = this.isDesktop;
-      
-      // If switching to desktop, add listeners
       if (this.isDesktop) {
-        window.addEventListener('mousemove', this.updatePosition);
+        window.addEventListener('mousemove', this.setTargetPosition);
         window.addEventListener('mouseenter', this.showCursor);
         window.addEventListener('mouseleave', this.hideCursor);
         this.addHoverListeners();
+        this.animate();
       } else {
-        // If switching to mobile, remove listeners
-        window.removeEventListener('mousemove', this.updatePosition);
+        window.removeEventListener('mousemove', this.setTargetPosition);
         window.removeEventListener('mouseenter', this.showCursor);
         window.removeEventListener('mouseleave', this.hideCursor);
         this.removeHoverListeners();
+        cancelAnimationFrame(this.animationFrame);
       }
     },
-    updatePosition(e) {
-      // Use requestAnimationFrame for smoother performance
-      requestAnimationFrame(() => {
-        this.position = {
-          x: e.clientX,
-          y: e.clientY
-        };
-      });
+    setTargetPosition(e) {
+      this.target = { x: e.clientX, y: e.clientY };
+    },
+    animate() {
+      // Inertia/physics: move a fraction toward the target each frame
+      const speed = 0.18;
+      this.position.x += (this.target.x - this.position.x) * speed;
+      this.position.y += (this.target.y - this.position.y) * speed;
+      this.animationFrame = requestAnimationFrame(this.animate);
     },
     showCursor() {
       this.isVisible = true;
@@ -87,23 +89,18 @@ export default {
       this.isVisible = false;
     },
     addHoverListeners() {
-      // Add listeners after DOM is fully loaded
       this.$nextTick(() => {
-        // Target interactive elements
         const elements = document.querySelectorAll(this.interactionElements.join(', '));
         elements.forEach(element => {
           element.addEventListener('mouseenter', this.onElementHover);
           element.addEventListener('mouseleave', this.onElementLeave);
         });
       });
-      
-      // Add mutation observer to watch for new elements
       this.observer = new MutationObserver((mutations) => {
         mutations.forEach((mutation) => {
           if (mutation.addedNodes.length) {
             mutation.addedNodes.forEach(node => {
-              if (node.nodeType === 1) { // Element node
-                // Check if the new node matches our selectors
+              if (node.nodeType === 1) {
                 if (this.interactionElements.some(selector => 
                   node.matches?.(selector) || 
                   node.querySelectorAll?.(selector).length > 0
@@ -115,7 +112,6 @@ export default {
           }
         });
       });
-      
       this.observer.observe(document.body, {
         childList: true,
         subtree: true
@@ -137,7 +133,6 @@ export default {
         element.removeEventListener('mouseenter', this.onElementHover);
         element.removeEventListener('mouseleave', this.onElementLeave);
       });
-      
       if (this.observer) {
         this.observer.disconnect();
       }
@@ -171,7 +166,7 @@ export default {
   margin-left: calc(var(--cursor-size) / -2);
   margin-top: calc(var(--cursor-size) / -2);
   border-radius: 50%;
-  background-color: white;
+  background-color: var(--secondary-color); /* Cream color */
   transition: width var(--cursor-transition), height var(--cursor-transition);
   will-change: transform, width, height;
 }
