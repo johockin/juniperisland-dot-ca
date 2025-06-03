@@ -238,9 +238,9 @@ export default {
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
-  color: var(--primary-color); /* Make hero text dark for fallback */
-  max-width: 900px; /* Make hero text area wider */
-  width: 100%;
+  color: var(--secondary-color); /* Make hero text light for contrast */
+  max-width: 80%; /* Use percent-based width for less text wrapping */
+  width: 80%;
   margin: 0 auto;
   
   .label {
@@ -255,14 +255,16 @@ export default {
     font-size: var(--text-6xl);
     line-height: 1.1;
     margin-bottom: var(--space-4);
-    font-weight: 600; /* Make headline bolder */
-    max-width: none; /* Remove restrictive max-width */
+    font-weight: 600;
+    max-width: none;
+    color: var(--secondary-color); /* Ensure headline is light */
   }
   
   p {
     font-size: var(--text-xl);
     font-weight: 300;
-    max-width: 700px; /* Make subhead wider */
+    max-width: 90%; /* Make subhead wider */
+    color: var(--secondary-color); /* Ensure subhead is light */
   }
 }
 
