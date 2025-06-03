@@ -321,5 +321,6 @@ export default {
   height: 36px;
   width: auto;
   display: block;
+  filter: invert(1); /* Invert logo for better contrast on light backgrounds */
 }
 </style> 
