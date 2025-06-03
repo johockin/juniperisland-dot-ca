@@ -12,6 +12,9 @@
         <div class="label">Branded Content & High-End Video Production</div>
         <h1>We help brands tell better stories.</h1>
         <p>You'll know you're telling your brand's story well when the audience comes clamouring to you</p>
+        <div class="hero-supporting-line">
+          We've helped more than 100 companies hone their message into something unforgettable—turning brand stories into the kind of audience magnet every marketer dreams of.
+        </div>
       </div>
     </section>
     
@@ -692,5 +695,20 @@ export default {
       height: 20px;
     }
   }
+}
+
+.hero-supporting-line {
+  margin-top: 2rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--secondary-color);
+  background: rgba(0,0,0,0.08);
+  border-radius: 8px;
+  padding: 1.25rem 2rem;
+  text-align: center;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
 }
 </style>
