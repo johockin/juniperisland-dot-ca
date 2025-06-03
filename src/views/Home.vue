@@ -207,6 +207,7 @@ export default {
   display: flex;
   align-items: center;
   color: var(--secondary-color);
+  background-color: var(--primary-color); /* Fallback dark BG if video fails */
 }
 
 .video-background {
@@ -238,9 +239,9 @@ export default {
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
-  color: var(--secondary-color); /* Make hero text light for contrast */
-  max-width: 80%; /* Use percent-based width for less text wrapping */
-  width: 80%;
+  color: var(--secondary-color);
+  max-width: 1000px;
+  width: 100%;
   margin: 0 auto;
   
   .label {
