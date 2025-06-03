@@ -4,7 +4,7 @@
     <section class="hero full-width">
       <div class="video-background">
         <video autoplay muted loop playsinline poster="@/assets/video-thumbnail.jpg">
-          <source src="@/assets/hero.mp4" type="video/mp4">
+          <source :src="heroVideo" type="video/mp4">
         </video>
         <div class="overlay"></div>
       </div>
@@ -186,8 +186,15 @@
 </template>
 
 <script>
+import heroVideo from '@/assets/hero.mp4';
+
 export default {
-  name: 'Home'
+  name: 'Home',
+  data() {
+    return {
+      heroVideo
+    }
+  }
 }
 </script>
 
