@@ -416,6 +416,7 @@ p {
   height: 100%;
   pointer-events: none;
   z-index: var(--z-cursor);
+  overflow: hidden;
 }
 
 .custom-cursor {
@@ -425,11 +426,10 @@ p {
   margin-left: calc(var(--cursor-size) / -2);
   margin-top: calc(var(--cursor-size) / -2);
   border-radius: 50%;
-  background-color: white;
-  mix-blend-mode: difference;
+  background-color: var(--secondary-color); /* Cream color */
   transition: width var(--transition-base), height var(--transition-base);
-  transform-origin: center;
   will-change: transform, width, height;
+  mix-blend-mode: difference; /* Invert text behind cursor */
 }
 
 .custom-cursor.hover {
@@ -439,11 +439,14 @@ p {
   margin-top: calc(var(--cursor-hover-size) / -2);
 }
 
-/* Media Queries to disable custom cursor on mobile */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .custom-cursor-container {
-    display: none;
+    display: none !important;
   }
+}
+
+.video-background {
+  z-index: 0 !important;
 }
 
 /* Utilities for working with images */

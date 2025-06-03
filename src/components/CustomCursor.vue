@@ -77,7 +77,7 @@ export default {
     },
     animate() {
       // Inertia/physics: move a fraction toward the target each frame
-      const speed = 0.18;
+      const speed = 0.38;
       this.position.x += (this.target.x - this.position.x) * speed;
       this.position.y += (this.target.y - this.position.y) * speed;
       this.animationFrame = requestAnimationFrame(this.animate);
