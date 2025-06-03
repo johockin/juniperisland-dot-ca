@@ -12,8 +12,8 @@
       <div class="grid">
         <div class="hero-content col-span-7 col-start-3">
           <div class="label">Branded Content & High-End Video Production</div>
-          <h1>Brand Stories.<br>Beautifully Filmed.</h1>
-          <p>Great Stories Deserve an Audience—We Make Sure They Find One</p>
+          <h1>We help brands tell better stories.</h1>
+          <p>You'll know you're telling your brand's story well when the audience comes clamouring to you</p>
         </div>
       </div>
     </section>
