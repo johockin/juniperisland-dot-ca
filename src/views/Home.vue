@@ -8,13 +8,10 @@
         </video>
         <div class="overlay"></div>
       </div>
-      
-      <div class="grid">
-        <div class="hero-content col-span-7 col-start-3">
-          <div class="label">Branded Content & High-End Video Production</div>
-          <h1>We help brands tell better stories.</h1>
-          <p>You'll know you're telling your brand's story well when the audience comes clamouring to you</p>
-        </div>
+      <div class="hero-content">
+        <div class="label">Branded Content & High-End Video Production</div>
+        <h1>We help brands tell better stories.</h1>
+        <p>You'll know you're telling your brand's story well when the audience comes clamouring to you</p>
       </div>
     </section>
     
