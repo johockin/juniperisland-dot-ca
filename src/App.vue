@@ -2,7 +2,7 @@
   <div class="app">
     <CustomCursor />
     
-    <header class="site-header">
+    <header class="site-header" v-if="$route.path !== '/admin'">
       <div class="grid">
         <!-- Logo in the top left -->
         <div class="header-logo col-span-2 col-start-1">
@@ -28,7 +28,7 @@
       </router-view>
     </main>
 
-    <footer class="site-footer">
+    <footer class="site-footer" v-if="$route.path !== '/admin'">
       <div class="grid">
         <!-- Footer info left -->
         <div class="footer-info col-span-3 col-start-1">
