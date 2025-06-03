@@ -206,8 +206,11 @@ export default {
   min-height: 600px;
   display: flex;
   align-items: center;
+  justify-content: center;
   color: var(--secondary-color);
-  background-color: var(--primary-color); /* Fallback dark BG if video fails */
+  background-color: var(--primary-color);
+  padding-top: 100px; /* Avoid header overlap */
+  box-sizing: border-box;
 }
 
 .video-background {
@@ -217,7 +220,7 @@ export default {
   width: 100%;
   height: 100%;
   z-index: 0;
-  background-color: var(--primary-color); /* Fallback for missing video */
+  background-color: var(--primary-color);
   
   video {
     width: 100%;
@@ -231,25 +234,33 @@ export default {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.55); /* Darker overlay for contrast */
   }
 }
 
 .hero-content {
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: var(--space-4);
   color: var(--secondary-color);
-  max-width: 1000px;
+  max-width: 700px;
   width: 100%;
   margin: 0 auto;
-  
+  padding: 0 2rem;
+  text-align: center;
+  box-sizing: border-box;
+
   .label {
     font-family: var(--font-accent);
     font-size: var(--text-sm);
     font-weight: 500;
     letter-spacing: 0.05em;
     text-transform: uppercase;
+    margin-bottom: var(--space-2);
+    opacity: 0.85;
   }
   
   h1 {
@@ -258,14 +269,17 @@ export default {
     margin-bottom: var(--space-4);
     font-weight: 600;
     max-width: none;
-    color: var(--secondary-color); /* Ensure headline is light */
+    color: var(--secondary-color);
+    text-align: center;
   }
   
   p {
     font-size: var(--text-xl);
     font-weight: 300;
-    max-width: 90%; /* Make subhead wider */
-    color: var(--secondary-color); /* Ensure subhead is light */
+    max-width: 90%;
+    color: var(--secondary-color);
+    margin: 0 auto;
+    text-align: center;
   }
 }
 
