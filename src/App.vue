@@ -6,7 +6,9 @@
       <div class="grid">
         <!-- Logo in the top left -->
         <div class="header-logo col-span-2 col-start-1">
-          <router-link to="/" class="logo">Juniper Island</router-link>
+          <router-link to="/" class="logo">
+            <img src="@/assets/logo.svg" alt="Juniper Island logo" class="logo-img" />
+          </router-link>
         </div>
         
         <!-- Main navigation in the top right -->
@@ -313,5 +315,11 @@ export default {
   .social-links {
     justify-content: flex-start;
   }
+}
+
+.logo-img {
+  height: 36px;
+  width: auto;
+  display: block;
 }
 </style> 
