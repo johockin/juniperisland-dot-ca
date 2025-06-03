@@ -197,6 +197,8 @@ export default {
 
 <style scoped>
 .case-study-page {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
   padding-top: 0;
 }
 
@@ -243,11 +245,15 @@ export default {
 }
 
 .case-study-hero {
-  position: relative;
-  height: 80vh;
-  min-height: 600px;
-  color: white;
-  overflow: hidden;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 7rem 0 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 400px;
+  margin-top: 0;
 }
 
 .hero-background {
@@ -271,13 +277,24 @@ export default {
 }
 
 .hero-content {
-  position: relative;
-  z-index: 1;
+  max-width: 700px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  height: 100%;
-  padding: 0 2rem;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+h1, h2, .client-tag, .subtitle {
+  font-family: var(--font-secondary);
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
 
 .client-tag {

@@ -124,7 +124,9 @@ export default {
 
 <style scoped>
 .contact {
-  padding-top: 2rem;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding-top: 0;
 }
 
 .navbar-padding {
@@ -133,61 +135,46 @@ export default {
 }
 
 .hero {
-  padding: 10rem 0 8rem;
-  padding-top: calc(10rem + 80px);
-  background: var(--primary-color);
-  position: relative;
-  overflow: hidden;
-  margin-top: -80px;
-}
-
-.hero::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('@/assets/grid-pattern.png');
-  background-size: 50px 50px;
-  opacity: 0.1;
-  z-index: 1;
-}
-
-.hero .container {
-  position: relative;
-  z-index: 2;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 7rem 0 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 400px;
+  margin-top: 0;
 }
 
 .hero-content {
+  max-width: 700px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 .hero-title {
   font-family: var(--font-secondary);
-  font-size: 7vw;
-  font-weight: 400;
-  line-height: 1;
-  margin-bottom: 1.5rem;
-  color: var(--light-gold) !important;
-  letter-spacing: -0.02em;
-  max-width: 24ch;
-  text-align: left;
-  margin-left: 0;
-  transform: none;
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--secondary-color);
 }
 
 .hero-subtext {
-  max-width: 800px;
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: var(--secondary-color);
+  opacity: 0.95;
+  margin-bottom: 1.5rem;
+}
+
+.container {
+  max-width: 900px;
   margin: 0 auto;
-  font-size: 1.25rem;
-  opacity: 0.9;
-  text-align: justify;
+  padding: 0 1.5rem;
 }
 
 .contact-form {

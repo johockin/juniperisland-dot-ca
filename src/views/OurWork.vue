@@ -178,34 +178,44 @@ const getVideoSrc = (videoId) => {
 
 <style lang="scss" scoped>
 .our-work {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
   padding-top: 80px;
   font-family: var(--font-primary);
-  color: var(--text-color);
 }
 
 .hero {
-  padding: 6rem 0 4rem;
-  background: var(--primary-color);
-  text-align: center;
+  background-color: var(--primary-color);
   color: var(--secondary-color);
+  padding: 7rem 0 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 400px;
+  margin-top: 0;
+}
 
-  h1 {
-    font-family: var(--font-secondary);
-    margin-bottom: 2rem;
-    font-size: 3.5rem;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    line-height: 1.1;
-    color: var(--secondary-color);
-  }
+.hero h1 {
+  font-family: var(--font-secondary);
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--secondary-color);
+}
 
-  .hero-text {
-    max-width: 800px;
-    margin: 0 auto;
-    font-size: 1.25rem;
-    font-weight: 300;
-    line-height: 1.6;
-  }
+.hero-text {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: var(--secondary-color);
+  opacity: 0.95;
+  margin-bottom: 1.5rem;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
 
 .work-categories {

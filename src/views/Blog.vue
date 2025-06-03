@@ -139,8 +139,9 @@ export default {
 
 <style scoped>
 .blog {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
   padding-top: 0;
-  background-color: #e8e8e8;
 }
 
 .navbar-dark-section {
@@ -174,24 +175,20 @@ export default {
 }
 
 .posts-layout {
+  max-width: 900px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
 .blog-post {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 3rem;
-  padding: 2.5rem 2rem;
-  text-decoration: none;
-  position: relative;
-  transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-  transform-style: preserve-3d;
-  perspective: 1000px;
-  margin-bottom: 1.5rem;
+  background: var(--primary-color);
+  color: var(--secondary-color);
   border-radius: 12px;
-  background-color: transparent;
+  padding: 2rem 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: none;
 }
 
 .post-even {
@@ -230,8 +227,6 @@ export default {
   animation: timelineProgress 5s linear forwards;
   transform: none;
 }
-
-
 
 .blog-post:hover {
   transform: translateY(-5px) rotateX(2deg);
@@ -275,8 +270,6 @@ export default {
   100% { transform: rotate(30deg) translateX(100%); }
 }
 
-
-
 .blog-post:hover .placeholder-grid div {
   opacity: 1;
   transform: scale(1);
@@ -293,8 +286,6 @@ export default {
   overflow: hidden;
   position: relative;
 }
-
-
 
 .placeholder-image {
   width: 100%;
@@ -336,8 +327,6 @@ export default {
 .placeholder-grid div:nth-child(2) { transition-delay: 0.1s; }
 .placeholder-grid div:nth-child(3) { transition-delay: 0.2s; }
 .placeholder-grid div:nth-child(4) { transition-delay: 0.3s; }
-
-
 
 .post-content {
   display: flex;
@@ -400,8 +389,6 @@ export default {
   max-width: 40ch;
   margin-bottom: 1.5rem;
 }
-
-
 
 .newsletter {
   padding: 8rem 0;
@@ -622,5 +609,11 @@ export default {
   .newsletter-form button {
     width: 100%;
   }
+}
+
+.post-title, .cta-label, h2 {
+  font-family: var(--font-secondary);
+  font-weight: 600;
+  color: var(--secondary-color);
 }
 </style>

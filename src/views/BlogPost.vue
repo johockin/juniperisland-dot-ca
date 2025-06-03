@@ -199,8 +199,33 @@ export default {
 
 <style scoped>
 .blog-post-page {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
   padding-top: 0;
-  min-height: 80vh;
+}
+
+.post-header {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 7rem 0 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 400px;
+  margin-top: 0;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+h1, h2, .post-category, .post-date, .author-name {
+  font-family: var(--font-secondary);
+  font-weight: 600;
+  color: var(--secondary-color);
 }
 
 .loading {
@@ -245,29 +270,10 @@ export default {
   font-weight: 500;
 }
 
-.post-header {
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
-  padding: 6rem 0 3rem;
-}
-
 .post-meta {
   display: flex;
   gap: 1.5rem;
   margin-bottom: 1.5rem;
-}
-
-.post-category {
-  color: var(--accent-color);
-  font-weight: 600;
-  font-size: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.post-date {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 1rem;
 }
 
 .post-header h1 {
@@ -291,10 +297,6 @@ export default {
   object-fit: cover;
 }
 
-.author-name {
-  font-size: 1rem;
-}
-
 .post-featured-image {
   padding: 0;
   margin-bottom: 2rem;
@@ -308,10 +310,6 @@ export default {
 
 .post-content {
   padding: 3rem 0 5rem;
-}
-
-.post-content .container {
-  max-width: 800px;
 }
 
 .content {
