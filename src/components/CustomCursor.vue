@@ -169,6 +169,7 @@ export default {
   background-color: var(--secondary-color); /* Cream color */
   transition: width var(--cursor-transition), height var(--cursor-transition);
   will-change: transform, width, height;
+  mix-blend-mode: difference; /* Invert text behind cursor */
 }
 
 .custom-cursor.hover {
